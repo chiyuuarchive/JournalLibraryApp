@@ -13,7 +13,7 @@ namespace DbJournalLibrary.Models
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public string Password { get; set; } = null!;
-        public string Email { get; set; } = null!;    // Future works: A boolean for email verification
+        public string Email { get; set; } = null!;    // Future works: A boolean for email 
         public DateTime LastTimeLoggedIn { get; set; }
         ICollection<ArticleDownloadLog> Log { get; set; } = null!;
 
