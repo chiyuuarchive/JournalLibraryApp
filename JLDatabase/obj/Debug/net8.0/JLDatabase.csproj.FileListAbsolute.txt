@@ -120,3 +120,5 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Deb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\JLDatabase.pdb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\JLDatabase.genruntimeconfig.cache
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\ref\JLDatabase.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\JLAuthenticationAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\JLAuthenticationAPI.pdb

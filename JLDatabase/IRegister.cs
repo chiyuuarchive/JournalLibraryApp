@@ -8,6 +8,6 @@ namespace JLDatabase
 {
     internal interface IRegister
     {
-        bool Register(string[] fields, out string errorMessage);
+        void Register(string[] fields);
     }
 }

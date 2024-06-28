@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-//using JLAuthenticationAPI;
+using JLAuthenticationAPI.Validation;
 using JLDatabase.Experimental;
 
 TestUserRegistration();
@@ -11,8 +11,21 @@ static void TestUserRegistration()
 
     // Implement registration
     UserRegistration registration = new UserRegistration();
-    string errorMessage = string.Empty;
+
+    string[] mockUserData = new string[Enum.GetValues(typeof(UserFieldTypes.Registration)).Length];
+    mockUserData =
+        [
+            "True",
+            "John",
+            "Doe",
+            "johndoe@gmail.com",
+            "abc123",
+        ];
+
+    // Validate fields
     
-    //string[] mockUserData = new string[]
-    //egistration.Register()
+
+
+    // Register user to database
+    registration.Register(mockUserData);
 }

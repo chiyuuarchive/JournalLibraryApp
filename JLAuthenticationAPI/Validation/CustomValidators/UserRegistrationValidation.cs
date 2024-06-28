@@ -29,28 +29,28 @@ namespace JLAuthenticationAPI.Validation.CustomValidators
 
         public bool ValidateField(int fieldTypeIndex, string fieldValue, string[] fields, out string errorMessage)
         {
-            FieldTypes.RegistrationFieldTypes type = (FieldTypes.RegistrationFieldTypes)fieldTypeIndex;
+            UserFieldTypes.Registration type = (UserFieldTypes.Registration)fieldTypeIndex;
             errorMessage = string.Empty;
 
             switch(type)
             {
-                case FieldTypes.RegistrationFieldTypes.FirstName:
+                case UserFieldTypes.Registration.FirstName:
                     // Check if name only has letters
                     errorMessage = _validateMatchPattern(fieldValue, RegexValidatorPatterns.LettersOnly) ? errorMessage : "Invalid name (e.g. John)";
                     break;
-                case FieldTypes.RegistrationFieldTypes.LastName:
+                case UserFieldTypes.Registration.LastName:
                     // Check if name only has letters
                     errorMessage = _validateMatchPattern(fieldValue, RegexValidatorPatterns.LettersOnly) ? errorMessage : "Invalid name (e.g. Doe)";
                     break;
-                case FieldTypes.RegistrationFieldTypes.Email:
+                case UserFieldTypes.Registration.Email:
                     // Check if email has a valid format (example_user@domain.com)
                     errorMessage = _validateMatchPattern(fieldValue, RegexValidatorPatterns.Email) ? errorMessage : "Invalid email format (e.g. JohnDoe@gmail.com";
                     break;
-                case FieldTypes.RegistrationFieldTypes.Password:
+                case UserFieldTypes.Registration.Password:
                     // Check if password fits the criteria (alphabet + number)
                     errorMessage = _validateMatchPattern(fieldValue, RegexValidatorPatterns.Password)? errorMessage : "Input a passowrd with 6 letters + numbers";
                     // Check if the password matches
-                    errorMessage = _validateMatchingField(fieldValue, fields[(int)FieldTypes.RegistrationFieldTypes.Password]) ? errorMessage : "Password doesn't match";
+                    errorMessage = _validateMatchingField(fieldValue, fields[(int)UserFieldTypes.Registration.Password]) ? errorMessage : "Password doesn't match";
                     break;
                 default:
                     throw new Exception("This field doesn't exist");

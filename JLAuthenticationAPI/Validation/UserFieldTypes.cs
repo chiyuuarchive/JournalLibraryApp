@@ -6,22 +6,29 @@ using System.Threading.Tasks;
 
 namespace JLAuthenticationAPI.Validation
 {
-    public class FieldTypes
+    public class UserFieldTypes
     {
-        public enum RegistrationFieldTypes
+        public enum Registration
         {
             IsAdmin,
             FirstName,
             LastName, 
             Email, 
-            Password,
-            ConfirmedPassword     
+            Password 
         }
 
-        public enum LoginFieldTypes
+        public enum Login
         {
             Email,
             Password
+        }
+    }
+
+    public class ArticleFieldTypes
+    {
+        public enum RegistrationFields
+        {
+
         }
     }
 }
