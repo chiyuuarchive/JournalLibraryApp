@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{956E5231-ABDC-4532-A323-159095614FCE}|Authenticator\\Authenticator.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\authenticator\\regexvalidatorpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956E5231-ABDC-4532-A323-159095614FCE}|Authenticator\\Authenticator.csproj|solutionrelative:authenticator\\regexvalidatorpatterns.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}|JLAuthenticationAPI\\JLAuthenticationAPI.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlauthenticationapi\\validation\\customvalidators\\articleregistrationvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}|JLAuthenticationAPI\\JLAuthenticationAPI.csproj|solutionrelative:jlauthenticationapi\\validation\\customvalidators\\articleregistrationvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{956E5231-ABDC-4532-A323-159095614FCE}|Authenticator\\Authenticator.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\authenticator\\fieldvalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{956E5231-ABDC-4532-A323-159095614FCE}|Authenticator\\Authenticator.csproj|solutionrelative:authenticator\\fieldvalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}|JLAuthenticationAPI\\JLAuthenticationAPI.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlauthenticationapi\\validation\\customvalidators\\loginvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}|JLAuthenticationAPI\\JLAuthenticationAPI.csproj|solutionrelative:jlauthenticationapi\\validation\\customvalidators\\loginvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\librarydatabase\\migrations\\20240620114458_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|solutionrelative:librarydatabase\\migrations\\20240620114458_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}|JLAuthenticationAPI\\JLAuthenticationAPI.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlauthenticationapi\\validation\\customvalidators\\userregistrationvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}|JLAuthenticationAPI\\JLAuthenticationAPI.csproj|solutionrelative:jlauthenticationapi\\validation\\customvalidators\\userregistrationvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\librarydatabase\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|solutionrelative:librarydatabase\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\experimental\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\experimental\\userregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0987FC1E-8676-474A-9018-EF8AF46AB0E3}|DatabaseTester\\DatabaseTester.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\databasetester\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0987FC1E-8676-474A-9018-EF8AF46AB0E3}|DatabaseTester\\DatabaseTester.csproj|solutionrelative:databasetester\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\librarydatabase\\data\\journallibrarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|solutionrelative:librarydatabase\\data\\journallibrarycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\librarydatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A1E1AF4-FBCF-4C79-A668-171E7B623500}|LibraryDatabase\\LibraryDatabase.csproj|solutionrelative:librarydatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,98 +29,73 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 232,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Models\\User.cs",
-              "RelativeDocumentMoniker": "LibraryDatabase\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Models\\User.cs",
-              "RelativeToolTip": "LibraryDatabase\\Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABbAAAA",
+              "DocumentIndex": 0,
+              "Title": "ArticleRegistrationValidation.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\Validation\\CustomValidators\\ArticleRegistrationValidation.cs",
+              "RelativeDocumentMoniker": "JLAuthenticationAPI\\Validation\\CustomValidators\\ArticleRegistrationValidation.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\Validation\\CustomValidators\\ArticleRegistrationValidation.cs",
+              "RelativeToolTip": "JLAuthenticationAPI\\Validation\\CustomValidators\\ArticleRegistrationValidation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-23T12:58:32.155Z",
+              "WhenOpened": "2024-06-28T15:55:16.223Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RegexValidatorPatterns.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\Authenticator\\RegexValidatorPatterns.cs",
-              "RelativeDocumentMoniker": "Authenticator\\RegexValidatorPatterns.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\Authenticator\\RegexValidatorPatterns.cs",
-              "RelativeToolTip": "Authenticator\\RegexValidatorPatterns.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAFAAAA",
+              "DocumentIndex": 1,
+              "Title": "LoginValidation.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\Validation\\CustomValidators\\LoginValidation.cs",
+              "RelativeDocumentMoniker": "JLAuthenticationAPI\\Validation\\CustomValidators\\LoginValidation.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\Validation\\CustomValidators\\LoginValidation.cs",
+              "RelativeToolTip": "JLAuthenticationAPI\\Validation\\CustomValidators\\LoginValidation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T08:06:01.864Z",
+              "WhenOpened": "2024-06-28T15:55:13.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRegistrationValidation.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\Validation\\CustomValidators\\UserRegistrationValidation.cs",
+              "RelativeDocumentMoniker": "JLAuthenticationAPI\\Validation\\CustomValidators\\UserRegistrationValidation.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\Validation\\CustomValidators\\UserRegistrationValidation.cs",
+              "RelativeToolTip": "JLAuthenticationAPI\\Validation\\CustomValidators\\UserRegistrationValidation.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T15:55:10.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Experimental\\UserRegistration.cs",
+              "RelativeDocumentMoniker": "JLDatabase\\Experimental\\UserRegistration.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Experimental\\UserRegistration.cs",
+              "RelativeToolTip": "JLDatabase\\Experimental\\UserRegistration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-28T15:38:20.622Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\DatabaseTester\\Program.cs",
-              "RelativeDocumentMoniker": "DatabaseTester\\Program.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\DatabaseTester\\Program.cs",
-              "RelativeToolTip": "DatabaseTester\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Program.cs",
+              "RelativeDocumentMoniker": "JLDatabase\\Program.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Program.cs",
+              "RelativeToolTip": "JLDatabase\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T07:26:50.55Z",
+              "WhenOpened": "2024-06-27T16:20:11.486Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FieldValidators.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\Authenticator\\FieldValidators.cs",
-              "RelativeDocumentMoniker": "Authenticator\\FieldValidators.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\Authenticator\\FieldValidators.cs",
-              "RelativeToolTip": "Authenticator\\FieldValidators.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T07:22:02.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20240620114458_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Migrations\\20240620114458_InitialCreate.cs",
-              "RelativeDocumentMoniker": "LibraryDatabase\\Migrations\\20240620114458_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Migrations\\20240620114458_InitialCreate.cs",
-              "RelativeToolTip": "LibraryDatabase\\Migrations\\20240620114458_InitialCreate.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T11:44:58.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "JournalLibraryContext.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Data\\JournalLibraryContext.cs",
-              "RelativeDocumentMoniker": "LibraryDatabase\\Data\\JournalLibraryContext.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Data\\JournalLibraryContext.cs",
-              "RelativeToolTip": "LibraryDatabase\\Data\\JournalLibraryContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T11:45:03.105Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Program.cs",
-              "RelativeDocumentMoniker": "LibraryDatabase\\Program.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\LibraryDatabase\\Program.cs",
-              "RelativeToolTip": "LibraryDatabase\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T11:42:02.465Z"
             }
           ]
         }
