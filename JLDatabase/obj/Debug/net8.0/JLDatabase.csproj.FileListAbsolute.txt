@@ -108,6 +108,8 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Deb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\JLAuthenticationAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\JLAuthenticationAPI.pdb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\JLDatabase.csproj.AssemblyReference.cache
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\JLDatabase.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\JLDatabase.AssemblyInfoInputs.cache
@@ -120,5 +122,3 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Deb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\JLDatabase.pdb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\JLDatabase.genruntimeconfig.cache
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\obj\Debug\net8.0\ref\JLDatabase.dll
-C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\JLAuthenticationAPI.dll
-C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLDatabase\bin\Debug\net8.0\JLAuthenticationAPI.pdb

@@ -17,6 +17,20 @@ namespace JLDatabase.Database.Models
         public DateTime LastTimeLoggedIn { get; set; }
         public ICollection<ArticleDownloadLog>? Log { get; set; }
 
+
+        public void Copy(User other)
+        {
+            RegisteredAt = other.RegisteredAt;
+            IsAdmin = other.IsAdmin;
+            IsVerified = other.IsVerified;
+            FirstName = other.FirstName;
+            LastName = other.LastName;
+            Password = other.Password;
+            Email = other.Email;
+            LastTimeLoggedIn = other.LastTimeLoggedIn;
+            Log = other.Log;
+        }
+
         public bool IsSameUser(int otherId) => Id == otherId;
         public string Name()
         {

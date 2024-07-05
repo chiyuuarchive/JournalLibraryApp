@@ -1,0 +1,12 @@
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\bin\Release\net8.0\JLAuthenticationAPI.deps.json
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\bin\Release\net8.0\JLAuthenticationAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\bin\Release\net8.0\JLAuthenticationAPI.pdb
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\JLAuthenticationAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\JLAuthenticationAPI.AssemblyInfoInputs.cache
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\JLAuthenticationAPI.AssemblyInfo.cs
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\JLAuthenticationAPI.csproj.CoreCompileInputs.cache
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\JLAuthenticationAPI.sourcelink.json
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\JLAuthenticationAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\refint\JLAuthenticationAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\JLAuthenticationAPI.pdb
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Release\net8.0\ref\JLAuthenticationAPI.dll

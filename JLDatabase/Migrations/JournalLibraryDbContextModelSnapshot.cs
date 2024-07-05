@@ -17,7 +17,7 @@ namespace JLDatabase.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.Article", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.Article", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -61,7 +61,7 @@ namespace JLDatabase.Migrations
                     b.ToTable("Articles");
                 });
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.ArticleDownloadLog", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.ArticleDownloadLog", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -85,7 +85,7 @@ namespace JLDatabase.Migrations
                     b.ToTable("ArticleDownloadLog");
                 });
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.Project", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -113,7 +113,7 @@ namespace JLDatabase.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.User", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -157,34 +157,34 @@ namespace JLDatabase.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.ArticleDownloadLog", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.ArticleDownloadLog", b =>
                 {
-                    b.HasOne("JournalLibraryApp.Database.Models.Article", "Article")
+                    b.HasOne("JLDatabase.Database.Models.Article", "Article")
                         .WithMany()
                         .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("JournalLibraryApp.Database.Models.User", null)
+                    b.HasOne("JLDatabase.Database.Models.User", null)
                         .WithMany("Log")
                         .HasForeignKey("UserId");
 
                     b.Navigation("Article");
                 });
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.User", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.User", b =>
                 {
-                    b.HasOne("JournalLibraryApp.Database.Models.Project", null)
+                    b.HasOne("JLDatabase.Database.Models.Project", null)
                         .WithMany("Members")
                         .HasForeignKey("ProjectId");
                 });
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.Project", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.Project", b =>
                 {
                     b.Navigation("Members");
                 });
 
-            modelBuilder.Entity("JournalLibraryApp.Database.Models.User", b =>
+            modelBuilder.Entity("JLDatabase.Database.Models.User", b =>
                 {
                     b.Navigation("Log");
                 });
