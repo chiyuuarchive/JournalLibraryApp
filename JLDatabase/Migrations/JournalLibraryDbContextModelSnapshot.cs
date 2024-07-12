@@ -26,7 +26,11 @@ namespace JLDatabase.Migrations
                     b.Property<string>("Abstract")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Authors")
+                    b.Property<string>("ArticleTitle")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Author")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -34,26 +38,14 @@ namespace JLDatabase.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Hyperlink")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("IssueNumber")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("JournalTitle")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Pages")
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime>("RegisteredAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("VolumeNumber")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

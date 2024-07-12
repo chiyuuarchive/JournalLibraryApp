@@ -1,7 +1,6 @@
 ﻿using JLAuthenticationAPI;
-using JLDatabase.Database.Models;
+using JLDatabase.Wrappers;
 using JLDatabase.Managers;
-using JLDatabase.Validation;
 
 namespace JLDatabase
 {
@@ -9,18 +8,12 @@ namespace JLDatabase
     {
         private static void Main(string[] args)
         {
-            TestUserRegistration();
+            //TestUserRegistrationOperations();
         }
 
-        static void TestUserRegistration()
+        static void TestUserRegistrationOperations()
         {
             Console.WriteLine("Attempt registering user...");
-
-            #region Completed tests
-            // Implement registration
-            EntityFactory factory = new EntityFactory();
-            IValidator userRegistrationValidation = new UserRegistrationValidation();
-            IEntityManager userManager = new UserManager(factory);
 
             string[] mockUserData =
                 [
@@ -31,33 +24,19 @@ namespace JLDatabase
                     "Abc123",
                 ];
 
-            // Validate fields
-            string errorMessage = string.Empty;
-            userRegistrationValidation.Validate(mockUserData, out errorMessage);
+            EntityFactory factory = new EntityFactory();
+            IEntityManager userManager = new UserManager();
+            UserWrapper userWrapper = new UserWrapper(factory, userManager);
 
-            if (errorMessage == string.Empty)
-            {
-                Console.WriteLine("Validation completed!");
-
-                // Register user to database
-                userManager.Register(mockUserData);
-
-            }
-            else
-                Console.WriteLine(errorMessage);
-
+            // Test registration
+            userWrapper.RegisterUser(mockUserData);
 
             // Test deletion
-            //Console.WriteLine(userManager.RemoveAt("john_doe@gmail.com") ? "Deletion completed" : "Deletion failed");
-
+            userWrapper.UnregisterUser("john_doe@gmail.com");
 
             // Create a mock user object and test db change
             mockUserData[3] = "john.doe@hotmail.com";
-            User u = factory.CreateUser(mockUserData);
-            if (!userManager.ChangeAt(u, "john_doe@gmail.com")) Console.WriteLine("Failed changing user");
-            Console.WriteLine("User changed!");
-
-            #endregion
+            userWrapper.ChangeUser(mockUserData, "john_doe@gmail.com");
         }
     }
 }

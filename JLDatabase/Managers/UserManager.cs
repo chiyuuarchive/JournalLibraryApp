@@ -1,45 +1,35 @@
-﻿using JLAuthenticationAPI;
-using JLDatabase.Database.Data;
+﻿using JLDatabase.Database.Data;
 using JLDatabase.Database.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace JLDatabase.Managers
 {
     internal class UserManager : IEntityManager
     {
-        EntityFactory _factory;
         ICollection<User> _users;
-        User? _activeUser;
+        public ICollection<object> Entities => new List<object>(_users);
+        public string FailRegistrationMessage(object entity) => $"Unable to register {((User)entity).Name}";
+        public string SuccessRegistrationMessage(object entity) => $"{((User)entity).Name} registered to database";
+        public string FailRemoveAtMessage(object entity) => $"{(string)entity} doesn't exist";
+        public string SuccessRemoveAtMessage(object entity) => $"{(string)entity} removed from database";
+        public string FailChangeAtMessage(object entity) => $"Unable to update user information of {(string)entity}";
+        public string SuccessChangeAtMessage(object entity) => $"{(string)entity} has been updated";
 
-        public UserManager(EntityFactory factory)
+        public UserManager()
         {
-            _factory = factory;
             _users = new List<User>();
             InitializeManager();
         }
-
-        public bool SetActiveUser(string email)
-        {
-            _activeUser = _users.SingleOrDefault(u => u.Email == email);
-            return _activeUser != null;
-        }
-
-        #region Debug Helpers
-        public void LogUsersToConsole()
-        {
-            foreach (var user in _users)
-                Console.WriteLine(user.Name());
-        }
-        #endregion
-
-        public bool ChangeAt(object updatedUser, string emailID)
+        
+        public bool ChangeAt(object newUser, string userEmailID)
         {
             try
             {
-                User user = (User)updatedUser;
-                User? userToChange = _users.SingleOrDefault(u => u.Email == emailID);
-                if (user == null || userToChange == null) return false;
+                // Find user to change
+                User user = (User)newUser;
+                User? userToChange = _users.SingleOrDefault(u => u.Email == userEmailID);
+                if (userToChange == null) return false;
 
+                // Update database
                 using (var dbContext = new JournalLibraryDbContext())
                 {
                     User u = dbContext.Users.First(u => u == userToChange);
@@ -60,22 +50,21 @@ namespace JLDatabase.Managers
 
         public void InitializeManager()
         {
+            // Update user list in manager class with current database
             using (var dbContext = new JournalLibraryDbContext())
             {
                 dbContext.Database.EnsureCreated();
-
                 foreach (var userSet in dbContext.Users)
                     _users.Add(userSet);
             }
-
-            LogUsersToConsole();
         }
 
-        public bool Register(string[] fields)
+        public bool Register(object entity)
         {
             try
             {
-                User user = _factory.CreateUser(fields);
+                User user = (User)entity;
+                // Update database
                 using (var dbContext = new JournalLibraryDbContext())
                 {
                     dbContext.Users.Add(user);
@@ -84,13 +73,12 @@ namespace JLDatabase.Managers
 
                 // Update manager
                 _users.Add(user);
-            } 
+            }
             catch (Exception e) 
             {
                 Console.Error.WriteLine(e.Message.ToString());
                 return false;
             }
-
             return true;
         }
 
@@ -98,8 +86,11 @@ namespace JLDatabase.Managers
         {
             try
             {
+                // Find user to remove
                 User? userToRemove = _users.SingleOrDefault(u => u.Email == emailID);
                 if (userToRemove == null) return false;
+                
+                // Update database
                 using (var dbContext = new JournalLibraryDbContext() )
                 {
                     dbContext.Users.Remove(userToRemove);

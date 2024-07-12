@@ -27,12 +27,19 @@ namespace JLDatabase
             return user;
         }
 
-        //Article CreateArticle(string[] fields)
-        //{
-        //    Article article = new Article
-        //    {
-
-        //    }
-        //}
+        public Article CreateArticle(string[] fields)
+        {
+            Article article = new Article
+            {
+                RegisteredAt = DateTime.Now,
+                Category = (IEEECategory)int.Parse(fields[(int)ArticleFieldTypes.Registration.IEEECategory]),
+                Author = fields[(int)ArticleFieldTypes.Registration.Author],
+                ArticleTitle = fields[(int)ArticleFieldTypes.Registration.ArticleTitle],
+                Abstract = fields[(int)ArticleFieldTypes.Registration.Abstract],
+                JournalTitle = fields[(int)ArticleFieldTypes.Registration.JournalTitle],
+                Hyperlink = fields[(int)ArticleFieldTypes.Registration.Hyperlink]
+            };
+            return article;
+        }
     }
 }

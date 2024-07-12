@@ -11,6 +11,6 @@ namespace JLAuthenticationAPI
     public interface IValidator
     {
         FieldValidator Validator { get; }
-        bool Validate(string[] fields, out string errorMessage);
+        bool ValidateFields(string[] fields, out string errorMessage);
     }
 }

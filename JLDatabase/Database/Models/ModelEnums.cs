@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JLDatabase.Database.Models
+﻿namespace JLDatabase.Database.Models
 {
     public enum IEEECategory
     {
@@ -32,5 +26,36 @@ namespace JLDatabase.Database.Models
         Completed,
         Cancelled,
         OnHold
+    }
+
+    public class UserFieldTypes
+    {
+        public enum Registration
+        {
+            IsAdmin,
+            FirstName,
+            LastName,
+            Email,
+            Password
+        }
+
+        public enum Login
+        {
+            Email,
+            Password
+        }
+    }
+
+    public class ArticleFieldTypes
+    {
+        public enum Registration
+        {
+            IEEECategory,
+            Author,
+            ArticleTitle,
+            Abstract,
+            JournalTitle,
+            Hyperlink,
+        }
     }
 }
