@@ -2,21 +2,25 @@
 using JLDatabase.Managers;
 using JLDatabase.Validators;
 using JLDatabase.Database.Models;
+using JLDatabase.Database.Data;
+using System.Linq;
 
 namespace JLDatabase.Wrappers
 {
     internal class UserWrapper
-    {
+    {        
         EntityFactory _factory;
         IValidator _validator;
         IEntityManager _userManager;
 
-        User? _activeUser;
-        public bool SetActiveUser(string email)
+        public const string SuccessSetActiveUser = "Active user set";
+        public const string FailSetActiveUser = "User not found";
+
+        public string SetActiveUser(string email, out User? activeUser)
         {
             List<User> users = (List<User>)_userManager.Entities;
-            _activeUser = users.SingleOrDefault(u => u.Email == email);
-            return _activeUser != null;
+            activeUser = users.SingleOrDefault(u => u.Email == email);
+            return activeUser != null ? SuccessSetActiveUser : FailSetActiveUser;
         }
 
         public UserWrapper(EntityFactory factory, IEntityManager userManager)
@@ -28,6 +32,7 @@ namespace JLDatabase.Wrappers
         public void ChangeUser(string[] fields, string userEmailID)
         {
             string errorMessage = string.Empty;
+
             // Check if input is valid for registration
             _validator.ValidateFields(fields, out errorMessage);
 
@@ -45,6 +50,7 @@ namespace JLDatabase.Wrappers
         public void RegisterUser(string[] fields)
         {
             string errorMessage = string.Empty;
+
             // Check if input is valid for registration
             _validator.ValidateFields(fields, out errorMessage);
 

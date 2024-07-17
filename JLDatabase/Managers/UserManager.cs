@@ -7,7 +7,7 @@ namespace JLDatabase.Managers
     {
         ICollection<User> _users;
         public ICollection<object> Entities => new List<object>(_users);
-        public string FailRegistrationMessage(object entity) => $"Unable to register {((User)entity).Name}";
+        public string FailRegistrationMessage(object entity) => $"Email is already registered";
         public string SuccessRegistrationMessage(object entity) => $"{((User)entity).Name} registered to database";
         public string FailRemoveAtMessage(object entity) => $"{(string)entity} doesn't exist";
         public string SuccessRemoveAtMessage(object entity) => $"{(string)entity} removed from database";
@@ -64,6 +64,10 @@ namespace JLDatabase.Managers
             try
             {
                 User user = (User)entity;
+                // Verify unique user email
+                User? sameUser = _users.SingleOrDefault(u => u.Email == user.Email);
+                if (sameUser != null) return false;
+
                 // Update database
                 using (var dbContext = new JournalLibraryDbContext())
                 {
@@ -77,7 +81,6 @@ namespace JLDatabase.Managers
             catch (Exception e) 
             {
                 Console.Error.WriteLine(e.Message.ToString());
-                return false;
             }
             return true;
         }

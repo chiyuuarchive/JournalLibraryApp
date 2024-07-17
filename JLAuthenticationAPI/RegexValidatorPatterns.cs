@@ -21,8 +21,8 @@ namespace JLAuthenticationAPI
         /// <summary>
         /// Regex patterns for article 
         /// </summary>
-        // Follows the bibliographic format of author names (e.g. "A, Kerstin., K, Daniel.")
-        public const string AuthorNameFormat = @"^([A-Z], [A-Z][a-z]+\.)?(, [A-Z], [A-Z][a-z]+\.)*$";
+        // Follows the bibliographic format of author names (e.g. "John Doe, Tee Bee")
+        public const string AuthorNameFormat = @"^([A-Z][a-z]+( [A-Z][a-z]+)*(, )?)+$";
         // Article title
         public const string ArticleTitle = @"^[A-Za-z0-9.,:;!?'()\[\]{}&\- ]+$";
         // Journal title

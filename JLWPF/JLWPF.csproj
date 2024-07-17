@@ -9,7 +9,49 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\" />
+    <None Remove="Images\add.png" />
+    <None Remove="Images\admin.png" />
+    <None Remove="Images\back.png" />
+    <None Remove="Images\close.png" />
+    <None Remove="Images\download.png" />
+    <None Remove="Images\email.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\library.png" />
+    <None Remove="Images\login.png" />
+    <None Remove="Images\logout.png" />
+    <None Remove="Images\menu.png" />
+    <None Remove="Images\minimize.png" />
+    <None Remove="Images\password.png" />
+    <None Remove="Images\remove.png" />
+    <None Remove="Images\restore_window.png" />
+    <None Remove="Images\save.png" />
+    <None Remove="Images\settings.png" />
+    <None Remove="Images\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\Core\" />
+    <Folder Include="MVVM\ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+    <Resource Include="Images\admin.png" />
+    <Resource Include="Images\back.png" />
+    <Resource Include="Images\close.png" />
+    <Resource Include="Images\download.png" />
+    <Resource Include="Images\email.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\login.png" />
+    <Resource Include="Images\logout.png" />
+    <Resource Include="Images\menu.png" />
+    <Resource Include="Images\minimize.png" />
+    <Resource Include="Images\password.png" />
+    <Resource Include="Images\remove.png" />
+    <Resource Include="Images\restore_window.png" />
+    <Resource Include="Images\save.png" />
+    <Resource Include="Images\settings.png" />
+    <Resource Include="Images\user.png" />
   </ItemGroup>
 
 </Project>

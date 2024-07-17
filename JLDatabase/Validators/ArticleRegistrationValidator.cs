@@ -7,7 +7,7 @@ namespace JLDatabase.Validators
     internal class ArticleRegistrationValidator : IValidator
     {
         private const string invalidIEEECategoryMsg = "Category is unspecified/ incorrect";
-        private const string invalidAuthorMsg = "Invalid name format (rf. to bibliographic format, e.g. 'A, Kerstin., K, Daniel.')";
+        private const string invalidAuthorMsg = "Invalid name format (rf. to bibliographic format, e.g. 'John Doe, Tee Bee')";
         private const string invalidArticleTitleMsg = "Invalid article title (e.g. The Future of AI: Trends & Predictions)";
         private const string invalidJournalTitleMsg = "Invalid journal title (e.g. Journal of Machine Learning Research)";
         private const string invalidHyperlinkMsg = "Invalid link address to source (e.g. www.example.com)";
@@ -36,6 +36,7 @@ namespace JLDatabase.Validators
             int enumLength = Enum.GetValues(typeof(ArticleFieldTypes.Registration)).Length;
 
             bool isPublishedInJournal = _validateRequiredField(fields[(int)ArticleFieldTypes.Registration.JournalTitle]);
+
             for (int i = 0; i < enumLength; i++)
             {
                 ArticleFieldTypes.Registration fieldType = (ArticleFieldTypes.Registration)i;
@@ -67,8 +68,6 @@ namespace JLDatabase.Validators
                     case ArticleFieldTypes.Registration.Hyperlink:
                         // Check if a source link was provided
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Provide a source link";
-                        // Check if the source link is already registered
-                        errorMessage = ValidateUniqueHyperlinkWithDatabase(fields[i], errorMessage);
                         // Validate link address format
                         errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.Hyperlink) ? errorMessage : invalidHyperlinkMsg;
                         break;
@@ -78,18 +77,5 @@ namespace JLDatabase.Validators
             }
             return string.IsNullOrEmpty(errorMessage);
         }
-
-        public string ValidateUniqueHyperlinkWithDatabase(string hyperlink, string errorMessage)
-        {
-            // Check if hyperlink already exist in database
-            using (var dbContext = new JournalLibraryDbContext())
-            {
-                ICollection<Article> articles = new List<Article>(dbContext.Articles);
-                Article? articleWithSameHyperlink = articles.FirstOrDefault(a => a.Hyperlink == hyperlink);
-                errorMessage = articleWithSameHyperlink == null ? errorMessage : hyperlinkAlreadyRegistered;
-            }
-            return errorMessage;
-        }
-
     }
 }

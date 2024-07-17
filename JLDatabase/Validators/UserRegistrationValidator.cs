@@ -11,7 +11,6 @@ namespace JLDatabase.Validators
         private const string invalidFirstNameMsg = "Invalid name (e.g. John)";
         private const string invalidLastNameMsg = "Invalid last name (e.g. Doe)";
         private const string invalidEmailMsg = "Invalid email format (e.g. john_doe@gmail.com)";
-        private const string emailAlreadyRegisteredMsg = "Email is already registered!";
         private const string invalidPasswordMsg = "Invalid password format (at least 6 letters + numbers)";
 
         // Field validator delegates 
@@ -57,8 +56,6 @@ namespace JLDatabase.Validators
                     case UserFieldTypes.Registration.Email:
                         // Check if email has a valid format (example_user@domain.com)
                         errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.Email) ? errorMessage : invalidEmailMsg;
-                        // Check if email is already registered in database!
-                        errorMessage = ValidateUniqueEmailWithDatabase(fields[i], errorMessage);
                         break;
                     case UserFieldTypes.Registration.Password:
                         // Check if password fits the criteria (alphabet + number)
@@ -71,19 +68,5 @@ namespace JLDatabase.Validators
 
             return string.IsNullOrEmpty(errorMessage);
         }
-
-        private string ValidateUniqueEmailWithDatabase(string email, string errorMessage)
-        {
-            // Check if email is already registered in database!
-            using (var dbContext = new JournalLibraryDbContext())
-            {
-                ICollection<User> users = new List<User>(dbContext.Users);
-                User? userWithSameEmail = users.SingleOrDefault(u => u.Email == email);
-                errorMessage = userWithSameEmail == null ? errorMessage : emailAlreadyRegisteredMsg;
-            }
-
-            return errorMessage;
-        }
-
     }
 }

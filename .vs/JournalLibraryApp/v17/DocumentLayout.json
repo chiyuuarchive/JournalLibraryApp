@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\wrappers\\userwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\wrappers\\userwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\database\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\database\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\database\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\database\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\entityfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\entityfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\managers\\articlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\managers\\articlemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,83 +26,77 @@
       "DocumentGroups": [
         {
           "DockedWidth": 232,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserWrapper.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Wrappers\\UserWrapper.cs",
-              "RelativeDocumentMoniker": "JLDatabase\\Wrappers\\UserWrapper.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Wrappers\\UserWrapper.cs",
-              "RelativeToolTip": "JLDatabase\\Wrappers\\UserWrapper.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-12T20:04:09.154Z",
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\App.xaml",
+              "RelativeDocumentMoniker": "JLWPF\\App.xaml",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\App.xaml",
+              "RelativeToolTip": "JLWPF\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-17T16:58:18.649Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ArticleManager.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Managers\\ArticleManager.cs",
-              "RelativeDocumentMoniker": "JLDatabase\\Managers\\ArticleManager.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Managers\\ArticleManager.cs",
-              "RelativeToolTip": "JLDatabase\\Managers\\ArticleManager.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAABkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T19:36:42.772Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Program.cs",
-              "RelativeDocumentMoniker": "JLDatabase\\Program.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Program.cs",
-              "RelativeToolTip": "JLDatabase\\Program.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBQAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T18:58:09.6Z"
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "7ba717c0-a6ef-405d-9d6d-2363a17b4336",
+        "Display": 0,
+        "X": 369,
+        "Y": 138,
+        "Width": 916,
+        "Height": 650,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Database\\Models\\User.cs",
-              "RelativeDocumentMoniker": "JLDatabase\\Database\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Database\\Models\\User.cs",
-              "RelativeToolTip": "JLDatabase\\Database\\Models\\User.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "JLWPF\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MainWindow.xaml.cs",
+              "RelativeToolTip": "JLWPF\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T17:57:48.401Z",
+              "WhenOpened": "2024-07-17T17:13:59.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Article.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Database\\Models\\Article.cs",
-              "RelativeDocumentMoniker": "JLDatabase\\Database\\Models\\Article.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Database\\Models\\Article.cs",
-              "RelativeToolTip": "JLDatabase\\Database\\Models\\Article.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T17:57:31.219Z",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "JLWPF\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MainWindow.xaml",
+              "RelativeToolTip": "JLWPF\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-17T16:59:48.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "EntityFactory.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\EntityFactory.cs",
-              "RelativeDocumentMoniker": "JLDatabase\\EntityFactory.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\EntityFactory.cs",
-              "RelativeToolTip": "JLDatabase\\EntityFactory.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-11T17:27:23.476Z"
+              "Title": "LoginView.xaml",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\LoginView.xaml",
+              "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\LoginView.xaml",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\LoginView.xaml",
+              "RelativeToolTip": "JLWPF\\MVVM\\Views\\LoginView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-17T17:00:26.725Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -5,47 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLWPF"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="450" 
-        Width="800"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen"
-        Background="Transparent"
-        AllowsTransparency="True">
-    
-    <!--Default Windows border/background styling -->
-    <Border CornerRadius="10"
-        BorderThickness="2"
-        Opacity=".95">
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".05*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <Border.BorderBrush>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#462AD8" Offset="0"/>
-                <GradientStop Color="#DA34AE" Offset="0.75"/>
-                <GradientStop Color="#8A16C1" Offset="1"/>
-            </LinearGradientBrush>
-        </Border.BorderBrush>
-
-        <Border.Background>
-            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="#060531" Offset="0"/>
-                <GradientStop Color="#1B1448" Offset="1"/>
-            </LinearGradientBrush>
-        </Border.Background>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="20"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            
-            
-            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="Hello World!" Foreground="AliceBlue"/>
-            </Grid>
-        </Grid>
-    </Border>
-
-    
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnMinimize" 
+                    Background="Transparent" 
+                    BorderBrush="Transparent" 
+                    Width="25"
+                    Click="btnMinimize_Click">
+                <Image Source="Images/minimize.png"/>
+            </Button>
+            <Button x:Name="btnClose" 
+                    Background="Transparent" 
+                    BorderBrush="Transparent" 
+                    Width="25"
+                    Click="btnClose_Click">
+                <Image Source="Images/close.png"/>
+            </Button>
+        </StackPanel>
+    </Grid>
 </Window>
