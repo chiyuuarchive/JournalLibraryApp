@@ -52,6 +52,7 @@ namespace JLWPF.MVVM.Views
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             _vm = (LoginViewModel)DataContext;
+            _owner = Window.GetWindow(this);
             _vm.ResetInputFields(this);
         }
 

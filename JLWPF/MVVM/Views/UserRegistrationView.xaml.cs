@@ -22,7 +22,14 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class UserRegistrationView : UserControl
     {
+        private Window _owner;
         UserRegistrationViewModel? _viewModel;
+
+        public Window Owner
+        {
+            get { return _owner; }
+            set { _owner = value; }
+        }
 
         public UserRegistrationView()
         {
@@ -95,6 +102,7 @@ namespace JLWPF.MVVM.Views
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             _viewModel = (UserRegistrationViewModel)DataContext;
+            _owner = Window.GetWindow(this);
             _viewModel.ResetInputFields(this);
         }
     }

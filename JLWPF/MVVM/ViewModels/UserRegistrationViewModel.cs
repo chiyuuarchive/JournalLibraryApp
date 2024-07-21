@@ -1,6 +1,10 @@
-﻿using JLWPF.MVVM.Auxiliaries;
+﻿using JLDatabase.Database.Models;
+using JLDatabase.Interface;
+using JLWPF.Components;
+using JLWPF.MVVM.Auxiliaries;
 using JLWPF.MVVM.Core;
 using JLWPF.MVVM.Views;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -8,9 +12,12 @@ namespace JLWPF.MVVM.ViewModels
 {
     class UserRegistrationViewModel : ViewModelBase
     {
+        UserRegistration _registration;
+
         public UserRegistrationViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
+            _registration = new UserRegistration();
         }
 
         public void ResetInputFields(UserRegistrationView view)
@@ -56,16 +63,49 @@ namespace JLWPF.MVVM.ViewModels
 
         public void TrySubmitRegistration(UserRegistrationView view)
         {
-            string[] userData = [
-                (view.chkIsAdmin.IsChecked == true).ToString(),
-                view.txtFirstName.Text,
-                view.txtLastName.Text,
-                view.txtEmail.Text,
-                view.txtPassword.Text,
-                ];
+            string[] fields = new string[Enum.GetValues(typeof(UserFieldTypes.Registration)).Length];
+            fields[(int)UserFieldTypes.Registration.IsAdmin] = (view.chkIsAdmin.IsChecked == true).ToString();
+            fields[(int)UserFieldTypes.Registration.FirstName] = view.txtFirstName.Text;
+            fields[(int)UserFieldTypes.Registration.LastName] = view.txtLastName.Text;
+            fields[(int)UserFieldTypes.Registration.Email] = view.txtEmail.Text;
+            fields[(int)UserFieldTypes.Registration.Password] = view.txtPassword.Text;
 
+            InvalidInputField result = InvalidInputField.None;
+            string registrationMsg = _registration.Register(fields, out result);
 
+            // Validate user input fields
+            switch(result)
+            {
+                case InvalidInputField.IsAdmin:
+                    ShowMessage(view.Owner, "Invalid admin settings");
+                    return;
+                case InvalidInputField.FirstName:
+                    ShowMessage(view.Owner, "Invalid name format");
+                    return;
+                case InvalidInputField.LastName:
+                    ShowMessage(view.Owner, "Invalid name format");
+                    return;
+                case InvalidInputField.Email:
+                    ShowMessage(view.Owner, "Invalid email format");
+                    return;
+                case InvalidInputField.Password:
+                    ShowMessage(view.Owner, "Invalid password format");
+                    return;
+                default: 
+                    break;
+            }
+            
+            // Display registration message
+            if (registrationMsg != string.Empty)
+                ShowMessage(view.Owner, registrationMsg);
 
+            UpdateViewCommand?.Execute("LoginView");
+        }
+
+        private void ShowMessage(Window parent, string message)
+        {
+            MessageWindow mw = new MessageWindow(parent, message);
+            mw.ShowDialog();
         }
     }
 }

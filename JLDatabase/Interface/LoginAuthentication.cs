@@ -2,6 +2,7 @@
 using JLDatabase.Database.Models;
 using JLDatabase.Managers;
 using JLDatabase.Validators;
+
 namespace JLDatabase
 {
     public class LoginAuthentication
@@ -18,7 +19,6 @@ namespace JLDatabase
         public User? Authenticate(string[] fields, out InvalidInputField result)
         {
             User? user = null;
-            string errorMessage = string.Empty;
             result = _validator.ValidateFields(fields);
 
             if (result == InvalidInputField.None)

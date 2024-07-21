@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace JLDatabase.Wrappers
 {
-    public class UserWrapper
+    internal class UserWrapper
     {        
         EntityFactory _factory;
         IEntityManager _userManager;
@@ -58,7 +58,7 @@ namespace JLDatabase.Wrappers
             if (errorMessage == string.Empty)
             {
                 // Create and register user to database
-                User u = _factory.CreateUser(fields);
+                User u = _factory.CreateVerifiedUser(fields);
                 errorMessage = _userManager.Register(u)? SuccessRegistrationMessage(u) : FailRegistrationMessage;
             }
 

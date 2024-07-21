@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JLAuthenticationAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b53fd367c72314d9a4044bcc7c630312dfc2be48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2ce13e3dcde2ca001da15bb4b2c1a8626d6d37e")]
 [assembly: System.Reflection.AssemblyProductAttribute("JLAuthenticationAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JLAuthenticationAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

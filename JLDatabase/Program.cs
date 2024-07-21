@@ -21,10 +21,10 @@ namespace JLDatabase
 
             string[] mockUserData =
                 [
-                    "True",
-                    "John",                     // Can be changed by user
+                    "False",
+                    "User",                     // Can be changed by user
                     "Doe",                      // Can be changed by user
-                    "john_doe@gmail.com",       // Can be changed by user
+                    "user@gmail.com",       // Can be changed by user
                     "Abc123",                   // Can be changed by user
                 ];
 

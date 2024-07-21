@@ -27,6 +27,23 @@ namespace JLDatabase
             return user;
         }
 
+        public User CreateVerifiedUser(string[] fields)
+        {
+            User user = new User
+            {
+                RegisteredAt = DateTime.Now,
+                IsAdmin = bool.Parse(fields[(int)UserFieldTypes.Registration.IsAdmin]),
+                IsVerified = true,
+                FirstName = fields[(int)UserFieldTypes.Registration.FirstName],
+                LastName = fields[(int)UserFieldTypes.Registration.LastName],
+                Password = fields[(int)UserFieldTypes.Registration.Password],
+                Email = fields[(int)UserFieldTypes.Registration.Email],
+                LastTimeLoggedIn = DateTime.Now,
+                Log = new List<ArticleDownloadLog>()
+            };
+            return user;
+        }
+
         public Article CreateArticle(string[] fields)
         {
             Article article = new Article

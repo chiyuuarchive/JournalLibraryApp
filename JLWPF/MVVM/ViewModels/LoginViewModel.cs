@@ -4,6 +4,7 @@ using JLWPF.Components;
 using JLWPF.MVVM.Auxiliaries;
 using JLWPF.MVVM.Core;
 using JLWPF.MVVM.Views;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -53,7 +54,7 @@ namespace JLWPF.MVVM.ViewModels
             }
         }
 
-        public bool TryLogin(LoginView view)
+        public void TryLogin(LoginView view)
         {
             string[] fields = new string[Enum.GetValues(typeof(UserFieldTypes.Login)).Length];
             fields[(int)UserFieldTypes.Login.Email] = view.txtEmail.Text;
@@ -61,47 +62,44 @@ namespace JLWPF.MVVM.ViewModels
             InvalidInputField result = InvalidInputField.None;
             User? u = _authentication.Authenticate(fields, out result);
 
-            // Handle visual cue of invalid fields + Login command
-            MessageWindow mw;
+            // Validate user input fields
             switch (result)
             {
                 case InvalidInputField.Email:
-                    ShowMessage("Invalid email!");
-                    return false;
+                    ShowMessage(view.Owner, "Invalid email format");
+                    return;
                 case InvalidInputField.Password:
-                    ShowMessage("Invalid password!");
-                    return false;
+                    ShowMessage(view.Owner, "Invalid password format");
+                    return;
+                default:
+                    break;
             }
-
-            if (result != InvalidInputField.None)
-                return false;
 
             // If user is not found
             if (u == null)
             {
-                ShowMessage("Invalid login information. User not found!");
-                return false;
+                ShowMessage(view.Owner, "Invalid login information. User not found!");
+                return;
             }
 
-            // Check if user is verified
+            // If user is not verified
             if (!u.IsVerified)
             {
-                ShowMessage("User found but not verified. Contact adminstration!");
-                return false;
-            }
-
+                ShowMessage(view.Owner, "User found but not verified. Contact adminstration!");
+                return;
+            } 
+            
             // Perform login action
             if (u.IsAdmin)
-                UpdateViewCommand!.Execute("AdminHomeView");
+                UpdateViewCommand?.Execute("AdminHomeView");
             else
-                UpdateViewCommand!.Execute("UserHomeView");
-
-            return true;
+                UpdateViewCommand?.Execute("UserHomeView");
+            
         }
 
-        private void ShowMessage(string message)
+        private void ShowMessage(Window parent, string message)
         {
-            MessageWindow mw = new MessageWindow(message);
+            MessageWindow mw = new MessageWindow(parent, message);
             mw.ShowDialog();
         }
     } 
