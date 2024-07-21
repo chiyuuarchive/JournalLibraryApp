@@ -2,8 +2,21 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:JLWPF"
+             xmlns:viewmodels="clr-namespace:JLWPF.MVVM.ViewModels"
+             xmlns:views="clr-namespace:JLWPF.MVVM.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
+            <views:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:UserRegistrationViewModel}">
+            <views:UserRegistrationView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AdminHomeViewModel}">
+            <views:AdminHomeView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:UserHomeViewModel}">
+            <views:UserHomeView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

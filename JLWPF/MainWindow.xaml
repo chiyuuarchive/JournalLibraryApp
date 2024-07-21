@@ -4,29 +4,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLWPF"
+        xmlns:components="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown"
+        >
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height=".05*"/>
+            <RowDefinition Height=".075*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="btnMinimize" 
-                    Background="Transparent" 
-                    BorderBrush="Transparent" 
-                    Width="25"
-                    Click="btnMinimize_Click">
-                <Image Source="Images/minimize.png"/>
-            </Button>
-            <Button x:Name="btnClose" 
-                    Background="Transparent" 
-                    BorderBrush="Transparent" 
-                    Width="25"
-                    Click="btnClose_Click">
-                <Image Source="Images/close.png"/>
-            </Button>
+        <components:Header Grid.Row="0" x:Name="UIHeader" MouseDown="UIHeader_MouseDown"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button Content="Login" Margin="10 0" Padding="5" 
+                    Command="{Binding UpdateViewCommand}" 
+                    CommandParameter="LoginView"/>
+            <Button Content="AdminHome" Margin="10 0" Padding="5"
+                    Command="{Binding UpdateViewCommand}" 
+                    CommandParameter="AdminHomeView"/>
         </StackPanel>
+        
+        <ContentControl Grid.Row="2" x:Name="ccMainWindow" Content="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>

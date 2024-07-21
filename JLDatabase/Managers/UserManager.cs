@@ -7,19 +7,12 @@ namespace JLDatabase.Managers
     {
         ICollection<User> _users;
         public ICollection<object> Entities => new List<object>(_users);
-        public string FailRegistrationMessage(object entity) => $"Email is already registered";
-        public string SuccessRegistrationMessage(object entity) => $"{((User)entity).Name} registered to database";
-        public string FailRemoveAtMessage(object entity) => $"{(string)entity} doesn't exist";
-        public string SuccessRemoveAtMessage(object entity) => $"{(string)entity} removed from database";
-        public string FailChangeAtMessage(object entity) => $"Unable to update user information of {(string)entity}";
-        public string SuccessChangeAtMessage(object entity) => $"{(string)entity} has been updated";
-
         public UserManager()
         {
             _users = new List<User>();
             InitializeManager();
         }
-        
+
         public bool ChangeAt(object newUser, string userEmailID)
         {
             try
@@ -78,7 +71,7 @@ namespace JLDatabase.Managers
                 // Update manager
                 _users.Add(user);
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 Console.Error.WriteLine(e.Message.ToString());
             }
@@ -92,9 +85,9 @@ namespace JLDatabase.Managers
                 // Find user to remove
                 User? userToRemove = _users.SingleOrDefault(u => u.Email == emailID);
                 if (userToRemove == null) return false;
-                
+
                 // Update database
-                using (var dbContext = new JournalLibraryDbContext() )
+                using (var dbContext = new JournalLibraryDbContext())
                 {
                     dbContext.Users.Remove(userToRemove);
                     dbContext.SaveChanges();

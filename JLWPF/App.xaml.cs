@@ -1,6 +1,7 @@
 ﻿using System.Configuration;
 using System.Data;
 using System.Windows;
+using JLWPF.MVVM.ViewModels;
 
 namespace JLWPF
 {
@@ -10,5 +11,4 @@ namespace JLWPF
     public partial class App : Application
     {
     }
-
 }

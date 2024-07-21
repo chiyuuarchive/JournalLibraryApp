@@ -39,8 +39,8 @@ namespace JLDatabase
             //userWrapper.UnregisterUser("john_doe@gmail.com");
 
             // Create a mock user object and test db change
-            mockUserData[2] = "Does";
-            userWrapper.ChangeUser(mockUserData, "john_doe@gmail.com");
+            //mockUserData[2] = "Does";
+            //userWrapper.ChangeUser(mockUserData, "john_doe@gmail.com");
         }
 
         static void TestArticleRegistrationOperations()

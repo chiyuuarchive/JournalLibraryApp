@@ -5,8 +5,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:JLWPF.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <Style x:Key="InputFields" TargetType="TextBox">
+            <Setter Property="Margin" Value="0 5 0 0"/>
+            <Setter Property="MinWidth" Value="150"/>
+            <Setter Property="Height" Value="20"/>
+        </Style>
+        <Style x:Key="Buttons" TargetType="Button">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Width" Value="65"/>
+        </Style>
+
+        <Style x:Key="Icons" TargetType="Image">
+            <Setter Property="MaxWidth" Value="15"/>
+            <Setter Property="Margin" Value="2.5 0"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-        <StackPanel></StackPanel>
+        <StackPanel HorizontalAlignment="Center" Margin="25">
+            <TextBlock Text="Login View" Foreground="IndianRed"/>
+
+            <Rectangle Height="50"/>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../../Images/email.png" Style="{StaticResource Icons}"/>
+                <TextBlock Text="Email" FontWeight="Bold"/>
+            </StackPanel>
+            <TextBox x:Name="txtEmail" Style="{StaticResource InputFields}" GotFocus="txtEmail_GotFocus" LostFocus="txtEmail_LostFocus"/>
+            
+            <Rectangle Height="25"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Image Source="../../Images/password.png" Style="{StaticResource Icons}"/>
+                <TextBlock Text="Password" FontWeight="Bold"/>
+            </StackPanel>
+
+            <TextBox x:Name="txtPassword" Style="{StaticResource InputFields}" GotFocus="txtPassword_GotFocus" LostFocus="txtPassword_LostFocus"/>
+            <TextBlock FontSize="8" Foreground="Blue" HorizontalAlignment="Right" Margin="0 2.5" TextDecorations="Underline">
+                <Hyperlink Command="{Binding UpdateViewCommand}" CommandParameter="UserRegistrationView">Register new account</Hyperlink>
+            </TextBlock>
+            
+            <Rectangle Height="25"/>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnClear" Content="Clear" Style="{StaticResource Buttons}" Click="btnClear_Click"/>
+                <Rectangle Width="50"/>
+                <Button x:Name="btnLogin" Content="Log in" Style="{StaticResource Buttons}" Click="btnLogin_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

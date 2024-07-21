@@ -10,9 +10,9 @@ namespace JLDatabase.Database.Data
         public DbSet<Article> Articles { get; set; }
 
         public string DbPath { get; }
-        public JournalLibraryDbContext(string fileName = "JournalLibraryDb.db")
+        public JournalLibraryDbContext()
         {
-            DbPath = $"{AppDomain.CurrentDomain.BaseDirectory}{fileName}";
+            DbPath = DatabasePathGenerator.DbPath;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

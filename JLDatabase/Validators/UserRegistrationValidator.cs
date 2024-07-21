@@ -1,6 +1,6 @@
 ﻿using JLAuthenticationAPI;
-using JLDatabase.Database.Data;
 using JLDatabase.Database.Models;
+using Microsoft.VisualBasic.FileIO;
 
 namespace JLDatabase.Validators
 {
@@ -27,10 +27,10 @@ namespace JLDatabase.Validators
             _validateMatchingField = FieldValidators.ValidateMatchingFields;
             _validateMatchPattern = FieldValidators.ValidateMatchPattern;
 
-            _fieldValidator = new FieldValidator(ValidateFields);  
+            _fieldValidator = new FieldValidator(ValidateFieldsExperimental);  
         }
 
-        public bool ValidateFields(string[] fields, out string errorMessage)
+        public bool ValidateFieldsExperimental(string[] fields, out string errorMessage)
         {
             errorMessage = string.Empty;
 
@@ -61,12 +61,44 @@ namespace JLDatabase.Validators
                         // Check if password fits the criteria (alphabet + number)
                         errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.Password) ? errorMessage : invalidPasswordMsg;
                         break;
-                    default:
-                        throw new Exception("This field doesn't exist");
                 }
             }
 
             return string.IsNullOrEmpty(errorMessage);
+        }
+
+        public InvalidInputField ValidateFields(string[] fields)
+        {
+            InvalidInputField fieldStatus = InvalidInputField.None;
+            for (int i = 0; i < Enum.GetValues(typeof(UserFieldTypes.Registration)).Length; i++)
+            {
+                UserFieldTypes.Registration fieldType = (UserFieldTypes.Registration)i;
+                switch (fieldType)
+                {
+                    case UserFieldTypes.Registration.IsAdmin:
+                        // Check if boolean string
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.BooleanString) ? fieldStatus : InvalidInputField.IsAdmin;
+                        break;
+                    case UserFieldTypes.Registration.FirstName:
+                        // Check if name only has letters
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.LettersOnly) ? fieldStatus : InvalidInputField.FirstName;
+                        break;
+                    case UserFieldTypes.Registration.LastName:
+                        // Check if name only has letters
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.LettersOnly) ?   fieldStatus : InvalidInputField.LastName;
+                        break;
+                    case UserFieldTypes.Registration.Email:
+                        // Check if email has a valid format (example_user@domain.com)
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Email) ?  fieldStatus : InvalidInputField.Email;
+                        break;
+                    case UserFieldTypes.Registration.Password:
+                        // Check if password fits the criteria (alphabet + number)
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Password) ? fieldStatus : InvalidInputField.Password;
+                        break;
+                }
+            }
+
+            return fieldStatus;
         }
     }
 }

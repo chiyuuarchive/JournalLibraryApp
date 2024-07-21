@@ -30,8 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\Core\" />
-    <Folder Include="MVVM\ViewModels\" />
+    <ProjectReference Include="..\JLAuthenticationAPI\JLAuthenticationAPI.csproj" />
+    <ProjectReference Include="..\JLDatabase\JLDatabase.csproj" />
   </ItemGroup>
 
   <ItemGroup>

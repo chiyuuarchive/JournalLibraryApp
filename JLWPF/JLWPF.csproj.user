@@ -7,24 +7,57 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Components\ExitAppWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\Header.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\MessageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\Views\CloseAppWindow.xaml.cs">
+    <Compile Update="MVVM\Views\AdminHomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\Views\UserHomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\UserRegistrationView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Components\ExitAppWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\Header.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\MessageWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\Views\CloseAppWindow.xaml">
+    <Page Update="MVVM\Views\AdminHomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\UserHomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\UserRegistrationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\WindowStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

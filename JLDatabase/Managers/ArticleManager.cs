@@ -8,13 +8,6 @@ namespace JLDatabase.Managers
         ICollection<Article> _articles;
         public ICollection<object> Entities => new List<object>(_articles);
 
-        public string FailRegistrationMessage(object entity) => $"Article with same source ({((Article)entity).Hyperlink}) is already registered";
-        public string SuccessRegistrationMessage(object entity) => $"'{((Article)entity).ArticleTitle}' registered to database";
-        public string FailRemoveAtMessage(object entity) => $"Article with source link: ({(string)entity}) doesn't exist";
-        public string SuccessRemoveAtMessage(object entity) => $"Article with source link ({(string)entity}) removed from database";
-        public string FailChangeAtMessage(object entity) => $"Unable to update article information in '{(string)entity}'";
-        public string SuccessChangeAtMessage(object entity) => $"'{(string)entity}' has been updated";
-
         public ArticleManager()
         {
             _articles = new List<Article>();
@@ -47,7 +40,6 @@ namespace JLDatabase.Managers
             }
             return true;
         }
-
 
         public void InitializeManager()
         {
