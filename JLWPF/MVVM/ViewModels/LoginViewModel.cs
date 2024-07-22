@@ -12,11 +12,9 @@ namespace JLWPF.MVVM.ViewModels
 {
     class LoginViewModel : ViewModelBase
     {
-        LoginAuthentication _authentication;
         public LoginViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
-            _authentication = new LoginAuthentication();
         }
 
         public void ResetInputFields(LoginView view)
@@ -59,42 +57,45 @@ namespace JLWPF.MVVM.ViewModels
             string[] fields = new string[Enum.GetValues(typeof(UserFieldTypes.Login)).Length];
             fields[(int)UserFieldTypes.Login.Email] = view.txtEmail.Text;
             fields[(int)(UserFieldTypes.Login.Password)] = view.txtPassword.Text;
-            InvalidInputField result = InvalidInputField.None;
-            User? u = _authentication.Authenticate(fields, out result);
+            InvalidInputFieldStatus validateResult = InvalidInputFieldStatus.None;
+            InvalidAuthenticationStatus authenticateResult = InvalidAuthenticationStatus.None;
 
-            // Validate user input fields
-            switch (result)
+            User? u = JLInterface.Login(fields, out validateResult, out authenticateResult);
+
+            // Handle validation results
+            switch (validateResult)
             {
-                case InvalidInputField.Email:
+                case InvalidInputFieldStatus.Email:
                     ShowMessage(view.Owner, "Invalid email format");
                     return;
-                case InvalidInputField.Password:
+                case InvalidInputFieldStatus.Password:
                     ShowMessage(view.Owner, "Invalid password format");
                     return;
                 default:
                     break;
             }
 
-            // If user is not found
-            if (u == null)
+            // Handle authentication results
+            switch (authenticateResult)
             {
-                ShowMessage(view.Owner, "Invalid login information. User not found!");
-                return;
+                case InvalidAuthenticationStatus.None:
+                    if (u == null) return;
+                    if (u.IsAdmin) UpdateViewCommand?.Execute("AdminHomeView");
+                    else UpdateViewCommand?.Execute("UserHomeView");
+                    break;
+                case InvalidAuthenticationStatus.UserDoesntExist:
+                    ShowMessage(view.Owner, "Invalid login information. User not found!");
+                    return;
+                case InvalidAuthenticationStatus.UserNotVerified:
+                    ShowMessage(view.Owner, "User found but not verified. Contact adminstration!");
+                    return;
+                default:
+                    throw new Exception("Unexpected error from LoginViewModel.cs");
             }
 
-            // If user is not verified
-            if (!u.IsVerified)
-            {
-                ShowMessage(view.Owner, "User found but not verified. Contact adminstration!");
-                return;
-            } 
-            
-            // Perform login action
-            if (u.IsAdmin)
-                UpdateViewCommand?.Execute("AdminHomeView");
-            else
-                UpdateViewCommand?.Execute("UserHomeView");
-            
+            // Set active user
+            MainWindow mw = (MainWindow)view.Owner;
+            if (mw != null) mw.User = u;
         }
 
         private void ShowMessage(Window parent, string message)

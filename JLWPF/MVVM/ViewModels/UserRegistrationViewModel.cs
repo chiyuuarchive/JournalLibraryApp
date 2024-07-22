@@ -1,5 +1,5 @@
-﻿using JLDatabase.Database.Models;
-using JLDatabase.Interface;
+﻿using JLDatabase;
+using JLDatabase.Database.Models;
 using JLWPF.Components;
 using JLWPF.MVVM.Auxiliaries;
 using JLWPF.MVVM.Core;
@@ -12,12 +12,10 @@ namespace JLWPF.MVVM.ViewModels
 {
     class UserRegistrationViewModel : ViewModelBase
     {
-        UserRegistration _registration;
 
         public UserRegistrationViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
-            _registration = new UserRegistration();
         }
 
         public void ResetInputFields(UserRegistrationView view)
@@ -70,36 +68,46 @@ namespace JLWPF.MVVM.ViewModels
             fields[(int)UserFieldTypes.Registration.Email] = view.txtEmail.Text;
             fields[(int)UserFieldTypes.Registration.Password] = view.txtPassword.Text;
 
-            InvalidInputField result = InvalidInputField.None;
-            string registrationMsg = _registration.Register(fields, out result);
+            InvalidInputFieldStatus validateResult = InvalidInputFieldStatus.None;
+            InvalidAuthenticationStatus authenticateResult = InvalidAuthenticationStatus.None;
+            
+            JLInterface.RegisterUser(fields, out validateResult, out authenticateResult);
 
-            // Validate user input fields
-            switch(result)
+            // Handle validation results
+            switch (validateResult)
             {
-                case InvalidInputField.IsAdmin:
+                case InvalidInputFieldStatus.IsAdmin:
                     ShowMessage(view.Owner, "Invalid admin settings");
                     return;
-                case InvalidInputField.FirstName:
-                    ShowMessage(view.Owner, "Invalid name format");
+                case InvalidInputFieldStatus.FirstName:
+                    ShowMessage(view.Owner, "Invalid first name");
                     return;
-                case InvalidInputField.LastName:
-                    ShowMessage(view.Owner, "Invalid name format");
+                case InvalidInputFieldStatus.LastName:
+                    ShowMessage(view.Owner, "Invalid last name");
                     return;
-                case InvalidInputField.Email:
+                case InvalidInputFieldStatus.Email:
                     ShowMessage(view.Owner, "Invalid email format");
                     return;
-                case InvalidInputField.Password:
+                case InvalidInputFieldStatus.Password:
                     ShowMessage(view.Owner, "Invalid password format");
                     return;
                 default: 
                     break;
             }
-            
-            // Display registration message
-            if (registrationMsg != string.Empty)
-                ShowMessage(view.Owner, registrationMsg);
 
-            UpdateViewCommand?.Execute("LoginView");
+            // Handle validation results
+            switch (authenticateResult)
+            {
+                case InvalidAuthenticationStatus.None:
+                    UpdateViewCommand?.Execute("LoginView");
+                    break;
+                case InvalidAuthenticationStatus.EmailAlreadyRegistered:
+                    ShowMessage(view.Owner, "Email is already registered");
+                    return;
+                default:
+                    throw new Exception("Unexpected error from UserRegistrationViewModel.cs");
+
+            }
         }
 
         private void ShowMessage(Window parent, string message)

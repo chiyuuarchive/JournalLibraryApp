@@ -11,7 +11,6 @@
         WindowStyle="None"
         ResizeMode="CanMinimize"
         AllowsTransparency="True"
-        MouseDown="Window_MouseDown"
         >
     <Grid>
 
@@ -24,12 +23,16 @@
         <components:Header Grid.Row="0" x:Name="UIHeader" MouseDown="UIHeader_MouseDown"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBlock Text="Quick menu bar for debug: " VerticalAlignment="Center" Margin="5"/>
             <Button Content="Login" Margin="10 0" Padding="5" 
                     Command="{Binding UpdateViewCommand}" 
                     CommandParameter="LoginView"/>
             <Button Content="AdminHome" Margin="10 0" Padding="5"
                     Command="{Binding UpdateViewCommand}" 
                     CommandParameter="AdminHomeView"/>
+            <Button Content="UserHome" Margin="10 0" Padding="5"
+                    Command="{Binding UpdateViewCommand}" 
+                    CommandParameter="UserHomeView"/>
         </StackPanel>
         
         <ContentControl Grid.Row="2" x:Name="ccMainWindow" Content="{Binding CurrentViewModel}"/>

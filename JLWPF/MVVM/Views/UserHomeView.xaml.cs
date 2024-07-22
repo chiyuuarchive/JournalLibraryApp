@@ -20,9 +20,21 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class UserHomeView : UserControl
     {
+
+
         public UserHomeView()
         {
             InitializeComponent();
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

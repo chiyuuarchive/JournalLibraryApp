@@ -17,6 +17,8 @@
         <Style x:Key="Buttons" TargetType="Button">
             <Setter Property="Padding" Value="5"/>
             <Setter Property="Width" Value="65"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
 
         <Style x:Key="Icons" TargetType="Image">
@@ -49,11 +51,24 @@
             </TextBlock>
             
             <Rectangle Height="25"/>
-            
+
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnClear" Content="Clear" Style="{StaticResource Buttons}" Click="btnClear_Click"/>
-                <Rectangle Width="50"/>
-                <Button x:Name="btnLogin" Content="Log in" Style="{StaticResource Buttons}" Click="btnLogin_Click"/>
+
+                <Button x:Name="btnClear" Style="{StaticResource Buttons}" Click="btnClear_Click">
+                    <StackPanel>
+                        <Image Source="../../Images/clear.png" Width="25"/>
+                        <TextBlock Text="Clear" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <Rectangle Width="75"/>
+   
+                <Button x:Name="btnLogin" Style="{StaticResource Buttons}" Click="btnLogin_Click">
+                    <StackPanel>
+                        <Image Source="../../Images/login.png" Width="25"/>
+                        <TextBlock Text="Log in" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>

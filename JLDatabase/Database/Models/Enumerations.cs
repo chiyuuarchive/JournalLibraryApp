@@ -28,7 +28,7 @@
         OnHold
     }
 
-    public enum InvalidInputField
+    public enum InvalidInputFieldStatus
     {
         None,
         IsAdmin,
@@ -44,21 +44,32 @@
         Hyperlink,
     }
 
+    public enum InvalidAuthenticationStatus
+    {
+        None,
+        EmailAlreadyRegistered,
+        UserDoesntExist,
+        UserNotVerified,
+    }
+
     public class UserFieldTypes
     {
+        /// <summary>
+        /// Number indicates the order if validation
+        /// </summary>
         public enum Registration
         {
-            IsAdmin,
-            FirstName,
-            LastName,
-            Email,
-            Password
+            IsAdmin = 0,
+            FirstName = 4,
+            LastName = 3,
+            Email = 2, 
+            Password = 1,
         }
 
         public enum Login
         {
-            Password,
-            Email
+            Email = 1,
+            Password = 0,
         }      
     }
 

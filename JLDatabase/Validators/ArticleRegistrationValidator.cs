@@ -19,7 +19,6 @@ namespace JLDatabase.Validators
         ValidateMatchPattern _validateMatchPattern;
 
         FieldValidator _fieldValidator;
-        public FieldValidator Validator => _fieldValidator;
 
         public ArticleRegistrationValidator()
         {
@@ -76,9 +75,9 @@ namespace JLDatabase.Validators
             return string.IsNullOrEmpty(errorMessage);
         }
 
-        public InvalidInputField ValidateFields(string[] fields)
+        public InvalidInputFieldStatus ValidateFields(string[] fields)
         {
-            InvalidInputField fieldStatus = InvalidInputField.None;
+            InvalidInputFieldStatus fieldStatus = InvalidInputFieldStatus.None;
             int enumLength = Enum.GetValues(typeof(ArticleFieldTypes.Registration)).Length;
 
             bool isPublishedInJournal = _validateRequiredField(fields[(int)ArticleFieldTypes.Registration.JournalTitle]);
@@ -91,23 +90,23 @@ namespace JLDatabase.Validators
                     case ArticleFieldTypes.Registration.IEEECategory:
                         // Verify category number is within bounds
                         int val = int.Parse(fields[i]);
-                        fieldStatus = _validateRequiredField(fields[i]) && _validateFieldWithinIntBounds(val, 0, enumLength - 1) ? fieldStatus : InvalidInputField.IEEECategory;
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateFieldWithinIntBounds(val, 0, enumLength - 1) ? fieldStatus : InvalidInputFieldStatus.IEEECategory;
                         break;
                     case ArticleFieldTypes.Registration.Author:
                         // Validate correct name format
-                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.AuthorNameFormat) ? fieldStatus : InvalidInputField.Author;
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.AuthorNameFormat) ? fieldStatus : InvalidInputFieldStatus.Author;
                         break;
                     case ArticleFieldTypes.Registration.ArticleTitle:
                         // Validate article title format
-                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.ArticleTitle) ? fieldStatus : InvalidInputField.ArticleTitle;
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.ArticleTitle) ? fieldStatus : InvalidInputFieldStatus.ArticleTitle;
                         break;
                     case ArticleFieldTypes.Registration.JournalTitle:
                         if (isPublishedInJournal)
-                            fieldStatus = _validateMatchPattern(fields[i], RegexValidatorPatterns.JournalTitle) ? fieldStatus : InvalidInputField.JournalTitle;
+                            fieldStatus = _validateMatchPattern(fields[i], RegexValidatorPatterns.JournalTitle) ? fieldStatus : InvalidInputFieldStatus.JournalTitle;
                         break;
                     case ArticleFieldTypes.Registration.Hyperlink:
                         // Validate link address format
-                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Hyperlink) ? fieldStatus : InvalidInputField.Hyperlink;
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Hyperlink) ? fieldStatus : InvalidInputFieldStatus.Hyperlink;
                         break;
                 }
             }

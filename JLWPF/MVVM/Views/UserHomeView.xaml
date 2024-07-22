@@ -5,8 +5,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:JLWPF.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <Style x:Key="Buttons" TargetType="Button">
+            <Setter Property="Width" Value="65"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+        </Style>
+    </UserControl.Resources>
+
+    
     <Grid>
-        <TextBlock Text="This is UserHomeView" Foreground="IndianRed" FontSize="24"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="User Home View" FontSize="26" Foreground="PaleVioletRed" Margin="10"/>
+        <Button x:Name="btnLogout" Style="{StaticResource Buttons}" HorizontalAlignment="Right" Click="btnLogout_Click">
+            <StackPanel>
+                <Image Source="../../Images/logout.png" Width="25"/>
+                <TextBlock Text="Logout"/>
+            </StackPanel>
+        </Button>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="btnUserSettings">User Settings</Button>
+            <Button x:Name="btnLibrary">Library View</Button>
+        </StackPanel>
+
+        <!--Boolean Converter to switch between Library and User Settings view -->
+        <ContentControl Grid.Row="2">
+            
+        </ContentControl>
     </Grid>
 </UserControl>

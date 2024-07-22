@@ -1,6 +1,5 @@
-﻿using JLWPF.Components;
+﻿using JLDatabase.Database.Models;
 using JLWPF.MVVM.ViewModels;
-using System.ComponentModel;
 using System.Windows;
 
 namespace JLWPF
@@ -10,6 +9,13 @@ namespace JLWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private User? _user;
+        public User? User
+        {
+            get => _user;
+            set => _user = value;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -19,36 +25,12 @@ namespace JLWPF
             MouseDown += UIHeader_MouseDown;
         }
 
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            ExitAppWindow w = new ExitAppWindow();
-
-            // Set owner to the main window
-            w.Owner = this;
-            w.ShowDialog();
-
-            if (w.Confirmed)
-            {
-                Close();
-            }
-        }
-
         private void UIHeader_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
             {
                 DragMove();
             }
-        }
-
-        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-
         }
     }
 }

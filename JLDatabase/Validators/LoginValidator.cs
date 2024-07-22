@@ -13,7 +13,6 @@ namespace JLDatabase.Validators
         ValidateMatchPattern _validateMatchPattern;
 
         FieldValidator _fieldValidator;
-        public FieldValidator Validator => _fieldValidator;
 
         public LoginValidator()
         {
@@ -45,9 +44,9 @@ namespace JLDatabase.Validators
             return string.IsNullOrEmpty(errorMessage);
         }
 
-        public InvalidInputField ValidateFields(string[] fields)
+        public InvalidInputFieldStatus ValidateFields(string[] fields)
         {
-            InvalidInputField fieldStatus = InvalidInputField.None;
+            InvalidInputFieldStatus fieldStatus = InvalidInputFieldStatus.None;
             
             for (int i = 0; i < Enum.GetValues(typeof(UserFieldTypes.Login)).Length; i++)
             {
@@ -55,10 +54,10 @@ namespace JLDatabase.Validators
                 switch (fieldType)
                 {
                     case UserFieldTypes.Login.Email:
-                        fieldStatus = _validateRequiredField(fields[i])  && _validateMatchPattern(fields[i], RegexValidatorPatterns.Email) ? fieldStatus : InvalidInputField.Email;
+                        fieldStatus = _validateRequiredField(fields[i])  && _validateMatchPattern(fields[i], RegexValidatorPatterns.Email) ? fieldStatus : InvalidInputFieldStatus.Email;
                         break;
                     case UserFieldTypes.Login.Password:
-                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Password) ? fieldStatus : InvalidInputField.Password;
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Password) ? fieldStatus : InvalidInputFieldStatus.Password;
                         break;
                 }
             }

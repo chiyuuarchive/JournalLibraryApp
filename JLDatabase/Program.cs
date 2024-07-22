@@ -7,8 +7,6 @@ namespace JLDatabase
 {
     internal class Program
     {
-        User? activeUser;
-
         private static void Main(string[] args)
         {
             //TestUserRegistrationOperations();
@@ -19,14 +17,12 @@ namespace JLDatabase
         {
             Console.WriteLine("Attempt registering user...");
 
-            string[] mockUserData =
-                [
-                    "False",
-                    "User",                     // Can be changed by user
-                    "Doe",                      // Can be changed by user
-                    "user@gmail.com",       // Can be changed by user
-                    "Abc123",                   // Can be changed by user
-                ];
+            string[] mockUserData = new string[Enum.GetValues(typeof(UserFieldTypes.Registration)).Length];
+            mockUserData[(int)UserFieldTypes.Registration.IsAdmin] = "False";
+            mockUserData[(int)UserFieldTypes.Registration.FirstName] = "User";
+            mockUserData[(int)UserFieldTypes.Registration.LastName] = "Doe";
+            mockUserData[(int)UserFieldTypes.Registration.Email] = "user@gmail.com";
+            mockUserData[(int)UserFieldTypes.Registration.Password] = "Abc123";
 
             EntityFactory factory = new EntityFactory();
             IEntityManager userManager = new UserManager();
@@ -47,15 +43,14 @@ namespace JLDatabase
         {
             Console.WriteLine("Attempt registering article...");
 
-            string[] mockArticleData =
-                [
-                    ((int)IEEECategory.Bioengineering).ToString(),
-                    "John Doe, Tee Bee",      // Create a name formatter that validates both first and last name!
-                    "Capture the Essence of AI tools",     
-                    "Placeholder text for abstract",       
-                    "Science",              
-                    "www.example.com"       
-                ];
+            string[] mockArticleData = new string[Enum.GetValues(typeof(ArticleFieldTypes.Registration)).Length];
+            mockArticleData[(int)ArticleFieldTypes.Registration.IEEECategory] = ((int)IEEECategory.Bioengineering).ToString();
+            mockArticleData[(int)ArticleFieldTypes.Registration.Author] = "John Doe, Tee Bee";
+            mockArticleData[(int)ArticleFieldTypes.Registration.ArticleTitle] = "Capture the Essence of AI tools";
+            mockArticleData[(int)ArticleFieldTypes.Registration.Abstract] = "Placeholder text for abstract";
+            mockArticleData[(int)ArticleFieldTypes.Registration.JournalTitle] = "Science";
+            mockArticleData[(int)ArticleFieldTypes.Registration.Hyperlink] = "www.example.com";
+
             EntityFactory factory = new EntityFactory();
             IEntityManager articleManager = new ArticleManager();
             ArticleWrapper articleWrapper = new ArticleWrapper(factory, articleManager);
