@@ -45,6 +45,7 @@
     <Resource Include="Images\download.png" />
     <Resource Include="Images\email.png" />
     <Resource Include="Images\home.png" />
+    <Resource Include="Images\library.png" />
     <Resource Include="Images\login.png" />
     <Resource Include="Images\logout.png" />
     <Resource Include="Images\menu.png" />

@@ -12,6 +12,8 @@ namespace JLWPF.MVVM.ViewModels
 {
     class LoginViewModel : ViewModelBase
     {
+        private MainWindow _owner;
+        public void SetParentWindow(Window owner) => _owner = (MainWindow)owner;
         public LoginViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
@@ -66,10 +68,10 @@ namespace JLWPF.MVVM.ViewModels
             switch (validateResult)
             {
                 case InvalidInputFieldStatus.Email:
-                    ShowMessage(view.Owner, "Invalid email format");
+                    ShowMessage(_owner, "Invalid email format");
                     return;
                 case InvalidInputFieldStatus.Password:
-                    ShowMessage(view.Owner, "Invalid password format");
+                    ShowMessage(_owner, "Invalid password format");
                     return;
                 default:
                     break;
@@ -84,21 +86,20 @@ namespace JLWPF.MVVM.ViewModels
                     else UpdateViewCommand?.Execute("UserHomeView");
                     break;
                 case InvalidAuthenticationStatus.UserDoesntExist:
-                    ShowMessage(view.Owner, "Invalid login information. User not found!");
+                    ShowMessage(_owner, "Invalid login information. User not found!");
                     return;
                 case InvalidAuthenticationStatus.UserNotVerified:
-                    ShowMessage(view.Owner, "User found but not verified. Contact adminstration!");
+                    ShowMessage(_owner, "User found but not verified. Contact adminstration!");
                     return;
                 default:
                     throw new Exception("Unexpected error from LoginViewModel.cs");
             }
 
             // Set active user
-            MainWindow mw = (MainWindow)view.Owner;
-            if (mw != null) mw.User = u;
+            if (_owner != null) _owner.User = u;
         }
 
-        private void ShowMessage(Window parent, string message)
+        private void ShowMessage(MainWindow parent, string message)
         {
             MessageWindow mw = new MessageWindow(parent, message);
             mw.ShowDialog();

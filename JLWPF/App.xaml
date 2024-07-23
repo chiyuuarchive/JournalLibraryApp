@@ -18,5 +18,11 @@
         <DataTemplate DataType="{x:Type viewmodels:UserHomeViewModel}">
             <views:UserHomeView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:LibraryViewModel}">
+            <views:LibraryView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:UserSettingsViewModel}">
+            <views:UserSettingsView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

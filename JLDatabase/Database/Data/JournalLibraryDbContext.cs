@@ -6,7 +6,6 @@ namespace JLDatabase.Database.Data
     public class JournalLibraryDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Project> Projects { get; set; }
         public DbSet<Article> Articles { get; set; }
 
         public string DbPath { get; }

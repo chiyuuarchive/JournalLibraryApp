@@ -9,7 +9,7 @@ namespace JLDatabase
     {
         private static void Main(string[] args)
         {
-            //TestUserRegistrationOperations();
+            TestUserRegistrationOperations();
             //TestArticleRegistrationOperations();
         }
 
@@ -18,10 +18,10 @@ namespace JLDatabase
             Console.WriteLine("Attempt registering user...");
 
             string[] mockUserData = new string[Enum.GetValues(typeof(UserFieldTypes.Registration)).Length];
-            mockUserData[(int)UserFieldTypes.Registration.IsAdmin] = "False";
-            mockUserData[(int)UserFieldTypes.Registration.FirstName] = "User";
+            mockUserData[(int)UserFieldTypes.Registration.IsAdmin] = "True";
+            mockUserData[(int)UserFieldTypes.Registration.FirstName] = "Admin";
             mockUserData[(int)UserFieldTypes.Registration.LastName] = "Doe";
-            mockUserData[(int)UserFieldTypes.Registration.Email] = "user@gmail.com";
+            mockUserData[(int)UserFieldTypes.Registration.Email] = "admin@gmail.com";
             mockUserData[(int)UserFieldTypes.Registration.Password] = "Abc123";
 
             EntityFactory factory = new EntityFactory();

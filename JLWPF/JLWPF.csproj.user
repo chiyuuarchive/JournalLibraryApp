@@ -7,19 +7,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Components\ExitAppWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Components\Header.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\MessageWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Components\YesNoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\Views\AdminHomeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\LibraryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\Views\LoginView.xaml.cs">
@@ -31,21 +34,27 @@
     <Compile Update="MVVM\Views\UserRegistrationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\Views\UserSettingsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Components\ExitAppWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Components\Header.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\MessageWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Components\YesNoWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\AdminHomeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\LibraryView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\LoginView.xaml">
@@ -57,7 +66,10 @@
     <Page Update="MVVM\Views\UserRegistrationView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\WindowStyles.xaml">
+    <Page Update="MVVM\Views\UserSettingsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\Styles.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

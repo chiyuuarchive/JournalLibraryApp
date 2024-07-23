@@ -1,6 +1,4 @@
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\JLWPF.csproj.AssemblyReference.cache
-C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Styles\WindowStyles.baml
-C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\ExitAppWindow.g.cs
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\Header.g.cs
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\MessageWindow.g.cs
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\MainWindow.g.cs
@@ -63,7 +61,6 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\bin\Debug\ne
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\bin\Debug\net8.0-windows\JLAuthenticationAPI.pdb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\bin\Debug\net8.0-windows\JLDatabase.pdb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\App.baml
-C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\ExitAppWindow.baml
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\Header.baml
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\MessageWindow.baml
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\MainWindow.baml
@@ -83,3 +80,10 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\ne
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\JLWPF.pdb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\JLWPF.genruntimeconfig.cache
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\ref\JLWPF.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Styles\Styles.baml
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\MVVM\Views\LibraryView.g.cs
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\MVVM\Views\UserSettingsView.g.cs
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\MVVM\Views\LibraryView.baml
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\MVVM\Views\UserSettingsView.baml
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\YesNoWindow.g.cs
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\YesNoWindow.baml

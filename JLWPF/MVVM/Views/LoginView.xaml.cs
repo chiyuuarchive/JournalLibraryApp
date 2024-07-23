@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using JLWPF.MVVM.ViewModels;
+using System.Windows;
 using System.Windows.Controls;
-using JLWPF.MVVM.ViewModels;
 
 namespace JLWPF.MVVM.Views
 {
@@ -9,15 +9,7 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class LoginView : UserControl
     {
-        private Window _owner;
-        LoginViewModel? _vm;
-
-        public Window Owner
-        {
-            get => _owner;
-            set => _owner = value;
-        }
-
+        private LoginViewModel? _vm;
         public LoginView()
         {
             InitializeComponent();
@@ -52,7 +44,7 @@ namespace JLWPF.MVVM.Views
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             _vm = (LoginViewModel)DataContext;
-            _owner = Window.GetWindow(this);
+            _vm.SetParentWindow(Window.GetWindow(this));
             _vm.ResetInputFields(this);
         }
 

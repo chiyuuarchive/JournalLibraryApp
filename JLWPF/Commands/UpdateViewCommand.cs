@@ -46,6 +46,12 @@ namespace JLWPF.Commands
                 case "UserHomeView":
                     _parentViewModel.CurrentViewModel = new UserHomeViewModel(_parentViewModel.UpdateViewCommand);
                     break;
+                case "UserSettingsView":
+                    _parentViewModel.CurrentViewModel = new UserSettingsViewModel(_parentViewModel.UpdateViewCommand);
+                    break;
+                case "LibraryView":
+                    _parentViewModel.CurrentViewModel = new LibraryViewModel(_parentViewModel.UpdateViewCommand);
+                    break;
                 default:
                     throw new Exception("Invalid navigation string");
             }

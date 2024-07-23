@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JLWPF.MVVM.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JLWPF.MVVM.Views
 {
@@ -20,7 +9,7 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class UserHomeView : UserControl
     {
-
+        private UserHomeViewModel _vm;
 
         public UserHomeView()
         {
@@ -29,12 +18,26 @@ namespace JLWPF.MVVM.Views
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_vm != null)
+                _vm.NavigateToLoginView();
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            _vm = (UserHomeViewModel)DataContext;
+            _vm.InitializeView(this, Window.GetWindow(this));
+        }
 
+        private void btnUserSettings_Click(object sender, RoutedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.NavigateToUserSettingsView();
+        }
+
+        private void btnLibrary_Click(object sender, RoutedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.NavigateToLibraryView();
         }
     }
 }

@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\userhomeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\userhomeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\usersettingsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\usersettingsview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\viewmodels\\usersettingsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\viewmodels\\usersettingsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\usersettingsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\usersettingsview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\loginview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\userhomeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\userhomeview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\jlinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\jlinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\userregistrationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\userregistrationview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\auxiliaries\\inputfieldhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\auxiliaries\\inputfieldhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\viewmodels\\libraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\viewmodels\\libraryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\viewmodels\\userhomeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,16 +35,24 @@
       "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\viewmodels\\userregistrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\viewmodels\\userregistrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\userhomeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\userhomeview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\views\\loginview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\jlinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\jlinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jldatabase\\database\\models\\enumerations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}|JLDatabase\\JLDatabase.csproj|solutionrelative:jldatabase\\database\\models\\enumerations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|c:\\users\\chiyu\\onedrive\\desktop\\programming\\journallibraryapp\\jlwpf\\mvvm\\viewmodels\\adminhomeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E514D5A1-DDA1-419F-8DC5-08106866054C}|JLWPF\\JLWPF.csproj|solutionrelative:jlwpf\\mvvm\\viewmodels\\adminhomeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -57,25 +61,24 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 365,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 366,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "InputFieldHandler.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Auxiliaries\\InputFieldHandler.cs",
-              "RelativeDocumentMoniker": "JLWPF\\MVVM\\Auxiliaries\\InputFieldHandler.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Auxiliaries\\InputFieldHandler.cs",
-              "RelativeToolTip": "JLWPF\\MVVM\\Auxiliaries\\InputFieldHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T19:21:10.638Z",
+              "DocumentIndex": 0,
+              "Title": "UserSettingsView.xaml",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserSettingsView.xaml",
+              "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\UserSettingsView.xaml",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserSettingsView.xaml",
+              "RelativeToolTip": "JLWPF\\MVVM\\Views\\UserSettingsView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-23T19:34:00.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "UserHomeView.xaml",
               "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserHomeView.xaml",
               "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\UserHomeView.xaml",
@@ -87,19 +90,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "JLWPF\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MainWindow.xaml",
-              "RelativeToolTip": "JLWPF\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-22T19:01:28.35Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "LoginView.xaml",
               "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\LoginView.xaml",
               "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\LoginView.xaml",
@@ -108,34 +99,22 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-07-22T18:25:39.177Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserRegistrationView.xaml",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserRegistrationView.xaml",
-              "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\UserRegistrationView.xaml",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserRegistrationView.xaml",
-              "RelativeToolTip": "JLWPF\\MVVM\\Views\\UserRegistrationView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-22T17:46:12.527Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 208,
+          "DockedWidth": 207,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Enumerations.cs",
               "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Database\\Models\\Enumerations.cs",
               "RelativeDocumentMoniker": "JLDatabase\\Database\\Models\\Enumerations.cs",
               "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\Database\\Models\\Enumerations.cs",
               "RelativeToolTip": "JLDatabase\\Database\\Models\\Enumerations.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAADwv0wAAAAFAAAA",
+              "ViewState": "AQIAABUAAAAAAAAAAADwv0EAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-21T15:14:56.499Z",
               "EditorCaption": ""
@@ -158,18 +137,43 @@
       },
       "DocumentGroups": [
         {
-          "DockedWidth": 236,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 202,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
+              "Title": "JLInterface.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\JLInterface.cs",
+              "RelativeDocumentMoniker": "JLDatabase\\JLInterface.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\JLInterface.cs",
+              "RelativeToolTip": "JLDatabase\\JLInterface.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T15:55:47.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\Styles\\Styles.xaml",
+              "RelativeDocumentMoniker": "JLWPF\\Styles\\Styles.xaml",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\Styles\\Styles.xaml",
+              "RelativeToolTip": "JLWPF\\Styles\\Styles.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-23T16:30:22.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UserHomeView.xaml.cs",
               "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserHomeView.xaml.cs",
               "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\UserHomeView.xaml.cs",
               "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserHomeView.xaml.cs",
               "RelativeToolTip": "JLWPF\\MVVM\\Views\\UserHomeView.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T18:19:40.492Z",
               "EditorCaption": ""
@@ -177,72 +181,85 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "JLInterface.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\JLInterface.cs",
-              "RelativeDocumentMoniker": "JLDatabase\\JLInterface.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLDatabase\\JLInterface.cs",
-              "RelativeToolTip": "JLDatabase\\JLInterface.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAABLAAAA",
+              "Title": "UserSettingsView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserSettingsView.xaml.cs",
+              "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\UserSettingsView.xaml.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\UserSettingsView.xaml.cs",
+              "RelativeToolTip": "JLWPF\\MVVM\\Views\\UserSettingsView.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T15:55:47.098Z",
+              "WhenOpened": "2024-07-23T19:33:47.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginView.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\LoginView.xaml.cs",
+              "RelativeDocumentMoniker": "JLWPF\\MVVM\\Views\\LoginView.xaml.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\Views\\LoginView.xaml.cs",
+              "RelativeToolTip": "JLWPF\\MVVM\\Views\\LoginView.xaml.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAkwAsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T17:13:26.93Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 164,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 198,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AdminHomeViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\AdminHomeViewModel.cs",
-              "RelativeDocumentMoniker": "JLWPF\\MVVM\\ViewModels\\AdminHomeViewModel.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\AdminHomeViewModel.cs",
-              "RelativeToolTip": "JLWPF\\MVVM\\ViewModels\\AdminHomeViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T18:17:00.684Z",
+              "WhenOpened": "2024-07-23T19:04:15.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "UserHomeViewModel.cs",
               "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\UserHomeViewModel.cs",
               "RelativeDocumentMoniker": "JLWPF\\MVVM\\ViewModels\\UserHomeViewModel.cs",
               "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\UserHomeViewModel.cs",
               "RelativeToolTip": "JLWPF\\MVVM\\ViewModels\\UserHomeViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-22T17:44:17.633Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "UserRegistrationViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\UserRegistrationViewModel.cs",
-              "RelativeDocumentMoniker": "JLWPF\\MVVM\\ViewModels\\UserRegistrationViewModel.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\UserRegistrationViewModel.cs",
-              "RelativeToolTip": "JLWPF\\MVVM\\ViewModels\\UserRegistrationViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEgAAAAIAAAA",
+              "DocumentIndex": 5,
+              "Title": "LibraryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\LibraryViewModel.cs",
+              "RelativeDocumentMoniker": "JLWPF\\MVVM\\ViewModels\\LibraryViewModel.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\LibraryViewModel.cs",
+              "RelativeToolTip": "JLWPF\\MVVM\\ViewModels\\LibraryViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T17:11:26.705Z",
+              "WhenOpened": "2024-07-23T18:56:04.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "RelativeToolTip": "JLWPF\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAgwGEAAAAhAAAA",
+              "DocumentIndex": 1,
+              "Title": "UserSettingsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\UserSettingsViewModel.cs",
+              "RelativeDocumentMoniker": "JLWPF\\MVVM\\ViewModels\\UserSettingsViewModel.cs",
+              "ToolTip": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLWPF\\MVVM\\ViewModels\\UserSettingsViewModel.cs",
+              "RelativeToolTip": "JLWPF\\MVVM\\ViewModels\\UserSettingsViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T16:03:20.936Z",
+              "WhenOpened": "2024-07-23T18:56:27.311Z",
               "EditorCaption": ""
             }
           ]

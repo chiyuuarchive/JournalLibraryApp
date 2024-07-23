@@ -77,34 +77,6 @@ namespace JLDatabase.Migrations
                     b.ToTable("ArticleDownloadLog");
                 });
 
-            modelBuilder.Entity("JLDatabase.Database.Models.Project", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Category")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("RegisteredAt")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Projects");
-                });
-
             modelBuilder.Entity("JLDatabase.Database.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -136,15 +108,10 @@ namespace JLDatabase.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ProjectId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<DateTime>("RegisteredAt")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ProjectId");
 
                     b.ToTable("Users");
                 });
@@ -162,18 +129,6 @@ namespace JLDatabase.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("Article");
-                });
-
-            modelBuilder.Entity("JLDatabase.Database.Models.User", b =>
-                {
-                    b.HasOne("JLDatabase.Database.Models.Project", null)
-                        .WithMany("Members")
-                        .HasForeignKey("ProjectId");
-                });
-
-            modelBuilder.Entity("JLDatabase.Database.Models.Project", b =>
-                {
-                    b.Navigation("Members");
                 });
 
             modelBuilder.Entity("JLDatabase.Database.Models.User", b =>

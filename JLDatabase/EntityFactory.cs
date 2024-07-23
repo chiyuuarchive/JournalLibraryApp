@@ -27,6 +27,18 @@ namespace JLDatabase
             return user;
         }
 
+        public string[] CreateUserStringArray(User user)
+        {
+            string[] fields = new string[Enum.GetValues(typeof(UserFieldTypes.Registration)).Length];
+
+            fields[(int)UserFieldTypes.Registration.IsAdmin] = user.IsAdmin.ToString();
+            fields[(int)UserFieldTypes.Registration.FirstName] = user.FirstName;
+            fields[(int)UserFieldTypes.Registration.LastName] = user.LastName;
+            fields[(int)UserFieldTypes.Registration.Password] = user.Password;
+            fields[(int)UserFieldTypes.Registration.Email] = user.Email;
+            return fields;
+        }
+
         public User CreateVerifiedUser(string[] fields)
         {
             User user = new User

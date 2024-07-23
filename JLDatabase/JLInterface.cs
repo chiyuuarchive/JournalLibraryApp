@@ -48,5 +48,19 @@ namespace JLDatabase
 
             return user;
         }
+
+        public static void UpdateUserLoginTime(User u)
+        {
+            EntityFactory factory = new EntityFactory();
+            IValidator validator = new UserRegistrationValidator();
+            UserManager userManager = new UserManager();
+
+            InvalidInputFieldStatus validateResult = validator.ValidateFields(factory.CreateUserStringArray(u));
+
+            if (validateResult == InvalidInputFieldStatus.None)
+                userManager.ChangeAt(u, u.Email);
+            else
+                throw new Exception("Active user has invalid details!");
+        }
     }
 }
