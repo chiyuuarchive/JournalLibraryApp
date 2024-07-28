@@ -12,17 +12,17 @@
         <DataTemplate DataType="{x:Type viewmodels:UserRegistrationViewModel}">
             <views:UserRegistrationView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:AdminHomeViewModel}">
-            <views:AdminHomeView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:UserHomeViewModel}">
-            <views:UserHomeView/>
+        <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+            <views:HomeView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:LibraryViewModel}">
             <views:LibraryView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:UserSettingsViewModel}">
-            <views:UserSettingsView/>
+        <DataTemplate DataType="{x:Type viewmodels:SettingsViewModel}">
+            <views:SettingsView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MembersViewModel}">
+            <views:MembersView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

@@ -7,10 +7,25 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Components\AdminLibraryPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\AdminNavigationPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Components\Header.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\MessageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\UserLibraryPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\UserNavigationPanel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Components\ViewArticleWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Components\YesNoWindow.xaml.cs">
@@ -19,7 +34,7 @@
     <Compile Update="MainWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\Views\AdminHomeView.xaml.cs">
+    <Compile Update="MVVM\Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\Views\LibraryView.xaml.cs">
@@ -28,21 +43,36 @@
     <Compile Update="MVVM\Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\Views\UserHomeView.xaml.cs">
+    <Compile Update="MVVM\Views\MembersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\SettingsView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="MVVM\Views\UserRegistrationView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MVVM\Views\UserSettingsView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Components\AdminLibraryPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\AdminNavigationPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Components\Header.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\MessageWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UserLibraryPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\UserNavigationPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Components\ViewArticleWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Components\YesNoWindow.xaml">
@@ -51,7 +81,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\Views\AdminHomeView.xaml">
+    <Page Update="MVVM\Views\HomeView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\LibraryView.xaml">
@@ -60,13 +90,13 @@
     <Page Update="MVVM\Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\Views\UserHomeView.xaml">
+    <Page Update="MVVM\Views\MembersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\SettingsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\UserRegistrationView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MVVM\Views\UserSettingsView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Styles.xaml">

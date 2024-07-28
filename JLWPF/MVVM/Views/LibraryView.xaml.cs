@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JLWPF.MVVM.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JLWPF.MVVM.Views
 {
@@ -20,9 +9,38 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class LibraryView : UserControl
     {
+        LibraryViewModel _vm;
+
         public LibraryView()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            _vm = (LibraryViewModel)DataContext;
+            _vm.InitializeView(this, Window.GetWindow(this));
+        }
+
+        private void btnReturn_Click(object sender, RoutedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.NavigateToHome();
+        }
+
+        private void ArticleDataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (ArticleDataGrid.Columns.Count > 0)
+            {
+                ArticleDataGrid.Columns.Last().Width = new DataGridLength(1, DataGridLengthUnitType.Star);
+            }
+        }
+
+        private void ArticleDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.UpdateSelectedArticle(this);
+
         }
     }
 }

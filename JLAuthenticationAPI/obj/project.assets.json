@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLAuthenticationAPI.csproj",
-      "projectName": "JLAuthenticationAPI",
-      "projectPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLAuthenticationAPI.csproj",
+      "projectUniqueName": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLValidatorAPI.csproj",
+      "projectName": "JLValidatorAPI",
+      "projectPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLValidatorAPI.csproj",
       "packagesPath": "C:\\Users\\chiyu\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\obj\\",
       "projectStyle": "PackageReference",

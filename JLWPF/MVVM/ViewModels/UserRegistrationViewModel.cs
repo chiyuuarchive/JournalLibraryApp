@@ -59,8 +59,11 @@ namespace JLWPF.MVVM.ViewModels
             }
         }
 
-        public void TrySubmitRegistration(UserRegistrationView view)
+        public void TrySubmitRegistration(UserRegistrationView view, Window owner)
         {
+            MainWindow mw = (MainWindow)owner;
+
+            // Retrieve fieldds
             string[] fields = new string[Enum.GetValues(typeof(UserFieldTypes.Registration)).Length];
             fields[(int)UserFieldTypes.Registration.IsAdmin] = (view.chkIsAdmin.IsChecked == true).ToString();
             fields[(int)UserFieldTypes.Registration.FirstName] = view.txtFirstName.Text;
@@ -77,32 +80,32 @@ namespace JLWPF.MVVM.ViewModels
             switch (validateResult)
             {
                 case InvalidInputFieldStatus.IsAdmin:
-                    ShowMessage(view.Owner, "Invalid admin settings");
+                    ShowMessage(mw.Owner, "Invalid admin settings");
                     return;
                 case InvalidInputFieldStatus.FirstName:
-                    ShowMessage(view.Owner, "Invalid first name");
+                    ShowMessage(mw.Owner, "Invalid first name");
                     return;
                 case InvalidInputFieldStatus.LastName:
-                    ShowMessage(view.Owner, "Invalid last name");
+                    ShowMessage(mw.Owner, "Invalid last name");
                     return;
                 case InvalidInputFieldStatus.Email:
-                    ShowMessage(view.Owner, "Invalid email format");
+                    ShowMessage(mw.Owner, "Invalid email format");
                     return;
                 case InvalidInputFieldStatus.Password:
-                    ShowMessage(view.Owner, "Invalid password format");
+                    ShowMessage(mw.Owner, "Invalid password format");
                     return;
                 default: 
                     break;
             }
 
-            // Handle validation results
+            // Handle authentication results
             switch (authenticateResult)
             {
                 case InvalidAuthenticationStatus.None:
                     UpdateViewCommand?.Execute("LoginView");
                     break;
                 case InvalidAuthenticationStatus.EmailAlreadyRegistered:
-                    ShowMessage(view.Owner, "Email is already registered");
+                    ShowMessage(mw.Owner, "Email is already registered");
                     return;
                 default:
                     throw new Exception("Unexpected error from UserRegistrationViewModel.cs");

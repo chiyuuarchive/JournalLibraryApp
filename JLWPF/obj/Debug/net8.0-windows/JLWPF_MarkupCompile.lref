@@ -1,13 +1,18 @@
 ﻿
 FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\App.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\AdminLibraryPanel.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\AdminNavigationPanel.xaml;;
 FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\Header.xaml;;
 FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\MessageWindow.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\UserLibraryPanel.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\UserNavigationPanel.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\ViewArticleWindow.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\YesNoWindow.xaml;;
 FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MainWindow.xaml;;
-FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\AdminHomeView.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\HomeView.xaml;;
 FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\LibraryView.xaml;;
 FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\LoginView.xaml;;
-FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\UserHomeView.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\MembersView.xaml;;
+FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\SettingsView.xaml;;
 FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\UserRegistrationView.xaml;;
-FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\MVVM\Views\UserSettingsView.xaml;;
-FC:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\Components\YesNoWindow.xaml;;
 

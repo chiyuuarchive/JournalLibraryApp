@@ -1,4 +1,4 @@
-﻿using JLAuthenticationAPI;
+﻿using JLValidatorAPI;
 using JLDatabase.Managers;
 using JLDatabase.Validators;
 using JLDatabase.Database.Models;

@@ -11,10 +11,12 @@
   <ItemGroup>
     <None Remove="Images\add.png" />
     <None Remove="Images\admin.png" />
+    <None Remove="Images\article.png" />
     <None Remove="Images\back.png" />
     <None Remove="Images\clear.png" />
     <None Remove="Images\close.png" />
     <None Remove="Images\download.png" />
+    <None Remove="Images\edit.png" />
     <None Remove="Images\email.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\library.png" />
@@ -32,17 +34,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JLAuthenticationAPI\JLAuthenticationAPI.csproj" />
+    <ProjectReference Include="..\JLAuthenticationAPI\JLValidatorAPI.csproj" />
     <ProjectReference Include="..\JLDatabase\JLDatabase.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\add.png" />
     <Resource Include="Images\admin.png" />
+    <Resource Include="Images\article.png" />
     <Resource Include="Images\back.png" />
     <Resource Include="Images\clear.png" />
     <Resource Include="Images\close.png" />
     <Resource Include="Images\download.png" />
+    <Resource Include="Images\edit.png" />
     <Resource Include="Images\email.png" />
     <Resource Include="Images\home.png" />
     <Resource Include="Images\library.png" />

@@ -1,0 +1,12 @@
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\bin\Debug\net8.0\JLValidatorAPI.deps.json
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\bin\Debug\net8.0\JLValidatorAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\bin\Debug\net8.0\JLValidatorAPI.pdb
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\JLValidatorAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\JLValidatorAPI.AssemblyInfoInputs.cache
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\JLValidatorAPI.AssemblyInfo.cs
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\JLValidatorAPI.csproj.CoreCompileInputs.cache
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\JLValidatorAPI.sourcelink.json
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\JLValidatorAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\refint\JLValidatorAPI.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\JLValidatorAPI.pdb
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLAuthenticationAPI\obj\Debug\net8.0\ref\JLValidatorAPI.dll

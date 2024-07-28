@@ -27,12 +27,9 @@
             <Button Content="Login" Margin="10 0" Padding="5" 
                     Command="{Binding UpdateViewCommand}" 
                     CommandParameter="LoginView"/>
-            <Button Content="AdminHome" Margin="10 0" Padding="5"
+            <Button Content="Home" Margin="10 0" Padding="5"
                     Command="{Binding UpdateViewCommand}" 
-                    CommandParameter="AdminHomeView"/>
-            <Button Content="UserHome" Margin="10 0" Padding="5"
-                    Command="{Binding UpdateViewCommand}" 
-                    CommandParameter="UserHomeView"/>
+                    CommandParameter="HomeView"/>
         </StackPanel>
         
         <ContentControl Grid.Row="2" x:Name="ccMainWindow" Content="{Binding CurrentViewModel}"/>

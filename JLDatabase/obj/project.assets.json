@@ -1028,14 +1028,14 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "JLAuthenticationAPI/1.0.0": {
+      "JLValidatorAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
-          "bin/placeholder/JLAuthenticationAPI.dll": {}
+          "bin/placeholder/JLValidatorAPI.dll": {}
         },
         "runtime": {
-          "bin/placeholder/JLAuthenticationAPI.dll": {}
+          "bin/placeholder/JLValidatorAPI.dll": {}
         }
       }
     }
@@ -2574,15 +2574,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "JLAuthenticationAPI/1.0.0": {
+    "JLValidatorAPI/1.0.0": {
       "type": "project",
-      "path": "../JLAuthenticationAPI/JLAuthenticationAPI.csproj",
-      "msbuildProject": "../JLAuthenticationAPI/JLAuthenticationAPI.csproj"
+      "path": "../JLAuthenticationAPI/JLValidatorAPI.csproj",
+      "msbuildProject": "../JLAuthenticationAPI/JLValidatorAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "JLAuthenticationAPI >= 1.0.0",
+      "JLValidatorAPI >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Sqlite >= 8.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.6"
@@ -2621,8 +2621,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLAuthenticationAPI.csproj": {
-              "projectPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLAuthenticationAPI.csproj"
+            "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLValidatorAPI.csproj": {
+              "projectPath": "C:\\Users\\chiyu\\OneDrive\\Desktop\\Programming\\JournalLibraryApp\\JLAuthenticationAPI\\JLValidatorAPI.csproj"
             }
           }
         }

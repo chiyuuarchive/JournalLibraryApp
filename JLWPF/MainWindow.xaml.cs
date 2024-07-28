@@ -32,7 +32,5 @@ namespace JLWPF
                 DragMove();
             }
         }
-
-        public void ResetUser() => _user = null;
     }
 }

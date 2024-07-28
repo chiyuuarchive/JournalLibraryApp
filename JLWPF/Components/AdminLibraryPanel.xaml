@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="JLWPF.Components.AdminLibraryPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JLWPF.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnRemoveArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnRemoveArticle_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Images/remove.png" Style="{StaticResource InputFieldHeaderIcons}"/>
+                    <TextBlock Text="Remove article" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="btnEditArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnEditArticle_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Images/edit.png" Style="{StaticResource InputFieldHeaderIcons}"/>
+                    <TextBlock Text="Edit article" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="btnViewArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnViewArticle_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Images/article.png" Style="{StaticResource InputFieldHeaderIcons}"/>
+                    <TextBlock Text="View article" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

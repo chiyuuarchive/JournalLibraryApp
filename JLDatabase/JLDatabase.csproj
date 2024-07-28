@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\JLAuthenticationAPI\JLAuthenticationAPI.csproj" />
+    <ProjectReference Include="..\JLAuthenticationAPI\JLValidatorAPI.csproj" />
   </ItemGroup>
 
 </Project>

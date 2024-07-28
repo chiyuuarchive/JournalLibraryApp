@@ -9,40 +9,18 @@
              Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
-        <Style x:Key="InputFields" TargetType="TextBox">
-            <Setter Property="Margin" Value="7.5"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="MinWidth" Value="150"/>
-            <Setter Property="TextAlignment" Value="Justify"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-        </Style>
-
-        <Style x:Key="InputFieldHeaderIcons" TargetType="Image">
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Margin" Value="10 0"/>
-        </Style>
-
-        <Style x:Key="InputFieldIcons" TargetType="Image">
-            <Setter Property="Width" Value="12.5"/>
-            <Setter Property="Margin" Value="15 0 5 0"/>
-        </Style>
-
-        <Style x:Key="InputFieldHeaders" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="24"/>
-            <Setter Property="Margin" Value="5 0"/>
-        </Style>
-
-        <Style x:Key="Buttons" TargetType="Button">
-            <Setter Property="Width" Value="65"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".25*"/>
             <RowDefinition/>
+            <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -51,7 +29,7 @@
         </Grid.ColumnDefinitions>
         
         <TextBlock Text="New User Registration" FontSize="26" Foreground="PaleVioletRed" Margin="10"/>
-        <Button x:Name="btnBack" Grid.Column="1" Style="{StaticResource Buttons}" HorizontalAlignment="Right" Height="50" Command="{Binding UpdateViewCommand}" CommandParameter="LoginView">
+        <Button x:Name="btnBack" Grid.Column="1" Style="{StaticResource ButtonsWithIcons}" HorizontalAlignment="Right" Height="50" Command="{Binding UpdateViewCommand}" CommandParameter="LoginView">
             <StackPanel>
                 <Image Source="../../Images/back.png" Width="25"/>
                 <TextBlock Text="Back"/>
@@ -72,7 +50,7 @@
             </StackPanel>
 
             <CheckBox x:Name="chkIsAdmin" Margin="15 10">Is Admin</CheckBox>
-            </StackPanel>
+        </StackPanel>
         
 
         <StackPanel Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Left">
@@ -92,7 +70,6 @@
                 <TextBox Grid.Column="1" x:Name="txtEmail" Text="Email (e.g. john_doe@gmail.com)" HorizontalAlignment="Right" Style="{StaticResource InputFields}" GotFocus="txtEmail_GotFocus" LostFocus="txtEmail_LostFocus"/>
             </Grid>
 
-
             <TextBlock Text="Password" FontWeight="Bold" Margin="10 0"/>
 
             <Grid>
@@ -105,26 +82,24 @@
             </Grid>
 
             <Rectangle Height="50"/>
+        </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
-                <Button x:Name="btnClear" Style="{StaticResource Buttons}" Click="btnClear_Click">
-                    <StackPanel>
-                        <Image Source="../../Images/clear.png" Width="25"/>
-                        <TextBlock Text="Clear Form" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="15">
+            <Button x:Name="btnClear" Style="{StaticResource ButtonsWithIcons}" Click="btnClear_Click">
+                <StackPanel>
+                    <Image Source="../../Images/clear.png" Width="25"/>
+                    <TextBlock Text="Clear Form" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            
+            <Rectangle Width="75"/>
 
-
-                <Rectangle Width="75"/>
-
-
-                <Button x:Name="btnSubmit" Style="{StaticResource Buttons}" Click="btnSubmit_Click">
-                    <StackPanel>
-                        <Image Source="../../Images/submit.png" Width="25"/>
-                        <TextBlock Text="Submit" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
+            <Button x:Name="btnSubmit" Style="{StaticResource ButtonsWithIcons}" Click="btnSubmit_Click">
+                <StackPanel>
+                    <Image Source="../../Images/submit.png" Width="25"/>
+                    <TextBlock Text="Submit" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>

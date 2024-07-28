@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLAuthenticationAPI", "JLAuthenticationAPI\JLAuthenticationAPI.csproj", "{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLValidatorAPI", "JLAuthenticationAPI\JLValidatorAPI.csproj", "{AEC17F0D-C7F3-4672-8A9C-C4AA6526C0A5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JLDatabase", "JLDatabase\JLDatabase.csproj", "{8466CB22-6ECF-4A9C-B42B-304D3A66EFE7}"
 	ProjectSection(ProjectDependencies) = postProject

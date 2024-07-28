@@ -1,4 +1,4 @@
-﻿using JLAuthenticationAPI;
+﻿using JLValidatorAPI;
 using JLDatabase.Database.Data;
 using JLDatabase.Database.Models;
 
@@ -6,7 +6,6 @@ namespace JLDatabase.Validators
 {
     internal class ArticleRegistrationValidator : IValidator
     {
-        private const string invalidIEEECategoryMsg = "Category is unspecified/ incorrect";
         private const string invalidAuthorMsg = "Invalid name format (rf. to bibliographic format, e.g. 'John Doe, Tee Bee')";
         private const string invalidArticleTitleMsg = "Invalid article title (e.g. The Future of AI: Trends & Predictions)";
         private const string invalidJournalTitleMsg = "Invalid journal title (e.g. Journal of Machine Learning Research)";
@@ -15,7 +14,6 @@ namespace JLDatabase.Validators
 
         // Field validator delegates
         ValidateRequiredField _validateRequiredField;
-        ValidateFieldWithinIntBounds _validateFieldWithinIntBounds;
         ValidateMatchPattern _validateMatchPattern;
 
         FieldValidator _fieldValidator;
@@ -23,7 +21,6 @@ namespace JLDatabase.Validators
         public ArticleRegistrationValidator()
         {
             _validateRequiredField = FieldValidators.ValidateRequiredField;
-            _validateFieldWithinIntBounds = FieldValidators.ValidateFieldBelowIntValue;
             _validateMatchPattern = FieldValidators.ValidateMatchPattern;
 
             _fieldValidator = new FieldValidator(ValidateFieldsExperimental);
@@ -44,9 +41,6 @@ namespace JLDatabase.Validators
                     case ArticleFieldTypes.Registration.IEEECategory:
                         // Check if field is specified
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Choose a category";
-                        // Verify category number is within bounds
-                        int val = int.Parse(fields[i]);
-                        errorMessage = _validateFieldWithinIntBounds(val, 0, enumLength - 1)? errorMessage : invalidIEEECategoryMsg;
                         break;
                     case ArticleFieldTypes.Registration.Author:
                         // Check if author is defined
@@ -90,7 +84,7 @@ namespace JLDatabase.Validators
                     case ArticleFieldTypes.Registration.IEEECategory:
                         // Verify category number is within bounds
                         int val = int.Parse(fields[i]);
-                        fieldStatus = _validateRequiredField(fields[i]) && _validateFieldWithinIntBounds(val, 0, enumLength - 1) ? fieldStatus : InvalidInputFieldStatus.IEEECategory;
+                        fieldStatus = _validateRequiredField(fields[i]) ? fieldStatus : InvalidInputFieldStatus.IEEECategory;
                         break;
                     case ArticleFieldTypes.Registration.Author:
                         // Validate correct name format

@@ -82,8 +82,7 @@ namespace JLWPF.MVVM.ViewModels
             {
                 case InvalidAuthenticationStatus.None:
                     if (u == null) return;
-                    if (u.IsAdmin) UpdateViewCommand?.Execute("AdminHomeView");
-                    else UpdateViewCommand?.Execute("UserHomeView");
+                    UpdateViewCommand?.Execute("HomeView");
                     break;
                 case InvalidAuthenticationStatus.UserDoesntExist:
                     ShowMessage(_owner, "Invalid login information. User not found!");

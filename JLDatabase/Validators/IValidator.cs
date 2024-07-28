@@ -1,5 +1,5 @@
 ﻿using JLDatabase.Database.Models;
-namespace JLAuthenticationAPI
+namespace JLValidatorAPI
 {
 
     internal delegate bool FieldValidator(string[] fields, out string errorMessage);
