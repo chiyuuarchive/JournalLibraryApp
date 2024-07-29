@@ -16,11 +16,6 @@ namespace JLWPF.MVVM.Views
             InitializeComponent();
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            _vm = (LibraryViewModel)DataContext;
-            _vm.InitializeView(this, Window.GetWindow(this));
-        }
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
@@ -41,6 +36,16 @@ namespace JLWPF.MVVM.Views
             if (_vm != null)
                 _vm.UpdateSelectedArticle(this);
 
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is LibraryViewModel)
+            {
+                _vm = (LibraryViewModel)DataContext;
+                if (_vm != null)
+                    _vm.InitializeView(this, Window.GetWindow(this));
+            }
         }
     }
 }

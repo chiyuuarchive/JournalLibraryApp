@@ -31,7 +31,7 @@ namespace JLWPF.Components
         private void btnViewArticle_Click(object sender, RoutedEventArgs e)
         {
             if (_vm != null)
-                _vm.ViewSelectedArticle();
+                _vm.ViewSelectedArticle(Window.GetWindow(this));
         }
 
         public void EnableViewArticleButton(bool isTrue)
@@ -41,9 +41,12 @@ namespace JLWPF.Components
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            _vm = (LibraryViewModel)DataContext;
-            if (_vm == null)
-                throw new Exception("DataContext not type of LibraryViewModel");
+            if (DataContext is LibraryViewModel)
+            {
+                _vm = (LibraryViewModel)DataContext;
+                if (_vm == null)
+                    throw new Exception("DataContext not type of LibraryViewModel");
+            }
         }
     }
 }

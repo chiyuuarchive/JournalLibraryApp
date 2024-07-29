@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace JLWPF.MVVM.Auxiliaries
 {
-    class BooleanToVisbilityConverter : IValueConverter
+    public class BooleanToVisbilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

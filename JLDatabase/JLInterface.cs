@@ -98,6 +98,12 @@ namespace JLDatabase
             }
         }
 
+        public static void UpdateVerifiedUser(string emailID, User user)
+        {
+            UserManager userManager = new UserManager();
+            userManager.ChangeAt(user, emailID);
+        }
+
         public static List<Article> FetchArticles()
         {
             ArticleManager articleManager = new ArticleManager();

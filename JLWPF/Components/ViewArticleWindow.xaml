@@ -5,17 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
-        Title="Article Details" Height="450" Width="450">
+        Title="Article Details" Height="450" Width="450"
+        WindowStartupLocation="CenterOwner">
 
     <Window.Resources>
-        <Style x:Key="ViewArticleBorders" TargetType="Border">
-            <Setter Property="BorderThickness" Value=".5"/>
-            <Setter Property="BorderBrush" Value="Black"/>
-        </Style>
-        <Style x:Key="ViewArticleTextBlocks" TargetType="TextBlock">
-            <Setter Property="Background" Value="LightGray"/>
-            <Setter Property="Padding" Value="2.5"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     
     <Grid>
@@ -31,7 +29,7 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Margin="25 10" Grid.ColumnSpan="2">
-            <TextBlock x:Name="txtArticleTitle" Text="Article Title: (placeholder)" Style="{StaticResource ViewArticleTextBlocks}" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="txtArticleTitle" Text="Article Title: (placeholder)" Style="{StaticResource ViewArticleTextBlocks}" HorizontalAlignment="Center" Padding="5"/>
             <TextBlock Text="Abstract:" FontWeight="Bold"/>
             <Border Style="{StaticResource ViewArticleBorders}">
                 <TextBlock x:Name="txtAbstract" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}"/>
@@ -52,13 +50,19 @@
         
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="25 10">
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtRegisteredAt" Text="Registered at:" Style="{StaticResource ViewArticleTextBlocks}"/>
+                <TextBlock x:Name="txtCategory" Text="Category:" Style="{StaticResource ViewArticleTextBlocks}"/>
             </Border>
         </StackPanel>
 
+
+        <TextBlock Grid.Row="2" x:Name="txtSource" HorizontalAlignment="Center" VerticalAlignment="Center" Text="www.placeholder.com" Style="{StaticResource ViewArticleTextBlocks}"/>
+
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btnSource" Padding="5">
-                Get source link
+            <Button x:Name="btnSource" Padding="5" Style="{StaticResource ButtonsWithIcons}" Click="btnSource_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Images/download.png" Style="{StaticResource InputFieldIcons}"/>
+                    <TextBlock Text="Get Source Link"/>
+                </StackPanel>
             </Button>
         </StackPanel>
     </Grid>

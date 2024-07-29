@@ -68,4 +68,15 @@
         <Setter Property="Margin" Value="10 5"/>
     </Style>
     
+    <!--ViewArticleWindow styles-->
+    <Style x:Key="ViewArticleBorders" TargetType="Border">
+        <Setter Property="BorderThickness" Value=".5"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+    </Style>
+    
+    <Style x:Key="ViewArticleTextBlocks" TargetType="TextBlock">
+        <Setter Property="Background" Value="LightGray"/>
+        <Setter Property="Padding" Value="4"/>
+    </Style>
+
 </ResourceDictionary>

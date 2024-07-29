@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:JLWPF.MVVM.Views"   
-             xmlns:auxiliaries="clr-namespace:JLWPF.MVVM.Auxiliaries"
+             xmlns:aux="clr-namespace:JLWPF.MVVM.Auxiliaries"
              xmlns:components="clr-namespace:JLWPF.Components"
+             xmlns:local="clr-namespace:JLWPF.MVVM.Views"   
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
         <ResourceDictionary>
-            <auxiliaries:BooleanToVisbilityConverter x:Key="BoolToVis"/>
+            <aux:BooleanToVisbilityConverter x:Key="BoolToVis"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
@@ -39,7 +39,7 @@
         <DataGrid x:Name="ArticleDataGrid" Grid.Row="2" Margin="10 0" AutoGenerateColumns="True" Loaded="ArticleDataGrid_Loaded" SelectionChanged="ArticleDataGrid_SelectionChanged"/>
 
         <components:UserLibraryPanel x:Name="UserLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsUserLibraryPanelVisible, Converter={StaticResource BoolToVis}}"/>
-        <components:AdminLibraryPanel x:Name="AdminLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsAdminLibraryPanelVisible, Converter={StaticResource BoolToVis}}"/>
+<components:AdminLibraryPanel x:Name="AdminLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsAdminLibraryPanelVisible, Converter={StaticResource BoolToVis}}"/>
 
     </Grid>
 </UserControl>

@@ -12,7 +12,6 @@ namespace JLWPF.MVVM.ViewModels
 {
     class LibraryViewModel : ViewModelBase
     {
-        User _currentUser;
         UserLibraryPanel _userLibraryPanel;
         AdminLibraryPanel _adminLibraryPanel;
         List<DisplayArticleToLibrary> articles;
@@ -86,18 +85,19 @@ namespace JLWPF.MVVM.ViewModels
                 articleKey = string.Empty;
         }
 
-        public void ViewSelectedArticle()
+        public void ViewSelectedArticle(Window window)
         {
+            MainWindow mw = (MainWindow)window;
+            if (mw.User == null)
+                throw new Exception("User not defined");
+
             // Get Article to display
             Article a = JLInterface.GetArticleByKey(articleKey);
 
             // Send the article to the dialog
-            ViewArticleWindow w = new ViewArticleWindow();
+            ViewArticleWindow w = new ViewArticleWindow(a, mw.User);
+            w.Owner = mw;
             w.ShowDialog();
-
-            // Dialog should provide more in depth info about the article + a button to reveal the hyperlink
-
-            // Pressing the hyperlink generates an ArticleDownloadLog for the user
         }
     }
 }

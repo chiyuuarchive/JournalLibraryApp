@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JLWPF.MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,8 @@ namespace JLWPF.Components
     /// </summary>
     public partial class AdminLibraryPanel : UserControl
     {
+        LibraryViewModel _vm;
+
         public AdminLibraryPanel()
         {
             InitializeComponent();
@@ -38,6 +41,16 @@ namespace JLWPF.Components
         private void btnViewArticle_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is LibraryViewModel)
+            {
+                _vm = (LibraryViewModel)DataContext;
+                if (_vm == null)
+                    throw new Exception("DataContext not type of LibraryViewModel");
+            }
         }
     }
 }
