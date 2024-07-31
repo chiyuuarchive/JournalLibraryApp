@@ -12,13 +12,11 @@ namespace JLDatabase.Authentication
     {
         public InvalidAuthenticationStatus Authenticate(string[] fields)
         {
-            IEntityManager _userManager = new UserManager();
-
+            IEntityManager manager = new UserManager();
             string email = fields[(int)UserFieldTypes.Registration.Email];
 
-            List<User> users = _userManager.Entities.Cast<User>().ToList();
+            List<User> users = manager.Entities.Cast<User>().ToList();
             User? user = users.SingleOrDefault(u => u.Email == email);
-
             return user == null ? InvalidAuthenticationStatus.None : InvalidAuthenticationStatus.EmailAlreadyRegistered;
         }
     }

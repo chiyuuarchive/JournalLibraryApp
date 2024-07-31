@@ -62,7 +62,7 @@ namespace JLWPF.MVVM.ViewModels
             }
 
             mw.User.LastTimeLoggedIn = DateTime.Now;
-            JLInterface.UpdateUserLoginTime(mw.User);
+            JLDatabaseConnector.UpdateUserLoginTime(mw.User);
         }
 
         public void NavigateToLoginView(Window window)
@@ -72,11 +72,10 @@ namespace JLWPF.MVVM.ViewModels
                 throw new Exception("Window is not of type MainWindow");
 
             // Prompt a confirm window
-            YesNoWindow w = new YesNoWindow("Do you want to log out?");
-            w.Owner = mw;
-            w.ShowDialog();
+            YesNoWindow dialog = new YesNoWindow(window, "Do you want to log out?");
+            dialog.ShowDialog();
 
-            if (w.Confirmed)
+            if (dialog.Confirmed)
             {
                 mw.User = null;
                 UpdateViewCommand?.Execute("LoginView");

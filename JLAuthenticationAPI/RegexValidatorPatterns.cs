@@ -28,7 +28,9 @@ namespace JLValidatorAPI
         // Journal title
         public const string JournalTitle = @"^[A-Za-z0-9.,:;!?'""()&\- ]+$";
         // Hyperlink
-        public const string Hyperlink = @"^(https?:\/\/)?(www\.)[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$";
+        public const string Hyperlink = @"\b((https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(/[a-zA-Z0-9-._~:/?#@!$&'()*+,;=%]*)?)\b";
+
+        //public const string Hyperlink = @"^(https?:\/\/)?(www\.)[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}(\/[^\s]*)?$";
 
     }
 }

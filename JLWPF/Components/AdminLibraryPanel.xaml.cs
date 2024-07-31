@@ -1,18 +1,6 @@
 ﻿using JLWPF.MVVM.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JLWPF.Components
 {
@@ -30,17 +18,20 @@ namespace JLWPF.Components
 
         private void btnRemoveArticle_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_vm != null)
+                _vm.RemoveSelectedArticle(Window.GetWindow(this));
         }
 
         private void btnEditArticle_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_vm != null)
+                _vm.AddEditSelectedArticle(Window.GetWindow(this));
         }
 
         private void btnViewArticle_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_vm != null)
+                _vm.ViewSelectedArticle(Window.GetWindow(this));
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -52,5 +43,16 @@ namespace JLWPF.Components
                     throw new Exception("DataContext not type of LibraryViewModel");
             }
         }
+
+        public void EnableViewArticleButton(bool enable)
+        {
+            btnViewArticle.IsEnabled = enable;
+        }
+
+        public void EnableRemoveArticleButton(bool enable)
+        {
+            btnRemoveArticle.IsEnabled = enable;
+        }
+
     }
 }

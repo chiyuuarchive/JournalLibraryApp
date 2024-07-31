@@ -16,22 +16,10 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height=".05*"/>
-            <RowDefinition Height=".075*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <components:Header Grid.Row="0" x:Name="UIHeader" MouseDown="UIHeader_MouseDown"/>
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
-            <TextBlock Text="Quick menu bar for debug: " VerticalAlignment="Center" Margin="5"/>
-            <Button Content="Login" Margin="10 0" Padding="5" 
-                    Command="{Binding UpdateViewCommand}" 
-                    CommandParameter="LoginView"/>
-            <Button Content="Home" Margin="10 0" Padding="5"
-                    Command="{Binding UpdateViewCommand}" 
-                    CommandParameter="HomeView"/>
-        </StackPanel>
-        
-        <ContentControl Grid.Row="2" x:Name="ccMainWindow" Content="{Binding CurrentViewModel}"/>
+        <ContentControl Grid.Row="1" x:Name="ccMainWindow" Content="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>

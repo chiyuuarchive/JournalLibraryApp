@@ -23,7 +23,7 @@ namespace JLWPF.MVVM.Views
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if (_vm != null)
-                _vm.SubmitChanges(this, Window.GetWindow(this));
+                _vm.SubmitUserDetails(this, Window.GetWindow(this));
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)

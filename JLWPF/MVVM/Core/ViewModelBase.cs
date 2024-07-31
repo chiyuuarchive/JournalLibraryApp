@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace JLWPF.MVVM.Core
 {
-    abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
         public ICommand? UpdateViewCommand { get; set; } = null;
 

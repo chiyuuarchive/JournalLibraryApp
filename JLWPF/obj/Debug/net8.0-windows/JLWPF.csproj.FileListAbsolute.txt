@@ -97,3 +97,5 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\ne
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\JLWPF.pdb
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\JLWPF.genruntimeconfig.cache
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\ref\JLWPF.dll
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\ArticleDetailsWindow.g.cs
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\ArticleDetailsWindow.baml

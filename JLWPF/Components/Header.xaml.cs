@@ -38,7 +38,7 @@ namespace JLWPF.Components
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            YesNoWindow w = new YesNoWindow("Are you sure you want to exit?");
+            YesNoWindow w = new YesNoWindow(Window.GetWindow(this), "Are you sure you want to exit?");
 
             // Set owner to the main window
             w.Owner = Owner;

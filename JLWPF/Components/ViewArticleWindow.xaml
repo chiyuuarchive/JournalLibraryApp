@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
-        Title="Article Details" Height="450" Width="450"
+        Title="Article Details" Height="500" Width="500"
         WindowStartupLocation="CenterOwner">
 
     <Window.Resources>
@@ -19,44 +19,48 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height=".4*"/>
-            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".55*"/>
+            <RowDefinition Height=".25*"/>
         </Grid.RowDefinitions>
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <StackPanel Margin="25 10" Grid.ColumnSpan="2">
-            <TextBlock x:Name="txtArticleTitle" Text="Article Title: (placeholder)" Style="{StaticResource ViewArticleTextBlocks}" HorizontalAlignment="Center" Padding="5"/>
+
+        <StackPanel Margin="15 10 15 0" Grid.ColumnSpan="2">
+            <TextBlock x:Name="txtArticleTitle" Text="Article Title: (placeholder)" Style="{StaticResource ViewArticleTextBlocks}" HorizontalAlignment="Center" Padding="5" TextWrapping="Wrap" FontSize="10"/>
             <TextBlock Text="Abstract:" FontWeight="Bold"/>
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtAbstract" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}"/>
+                <TextBlock x:Name="txtAbstract" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10"/>
             </Border>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="25 10">
+        <StackPanel Grid.Row="1" Margin="15 0" VerticalAlignment="Top">
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtAuthors" Text="Author(s):" Style="{StaticResource ViewArticleTextBlocks}"/>
+                <TextBlock x:Name="txtAuthors" Text="Author(s):" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
             </Border>
             
             <Rectangle Height="20"/>
 
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtPublishedAt" Text="Published at: " Style="{StaticResource ViewArticleTextBlocks}"/>
+                <TextBlock x:Name="txtPublishedAt" Text="Published at: " Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
             </Border>
         </StackPanel>
         
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="25 10">
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="15 0" VerticalAlignment="Top">
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtCategory" Text="Category:" Style="{StaticResource ViewArticleTextBlocks}"/>
+                <TextBlock x:Name="txtCategory" Text="Category:" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
             </Border>
         </StackPanel>
 
 
-        <TextBlock Grid.Row="2" x:Name="txtSource" HorizontalAlignment="Center" VerticalAlignment="Center" Text="www.placeholder.com" Style="{StaticResource ViewArticleTextBlocks}"/>
-
+        <StackPanel Grid.Row="2" Margin="15 5 -25 5">
+            <TextBlock Text="Source:" FontWeight="Bold" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="txtSource" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewArticleTextBlocks}" Background="LightGray" Margin="5" TextWrapping="Wrap">
+                <Hyperlink x:Name="linkSource" RequestNavigate="linkSource_RequestNavigate" FontSize="10"/>
+            </TextBlock>
+        </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnSource" Padding="5" Style="{StaticResource ButtonsWithIcons}" Click="btnSource_Click">
                 <StackPanel Orientation="Horizontal">

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\App.xaml
-16-245509797
+17-931356391
 
-301867776372
+31519164863
 2181213386149
-Components\AdminLibraryPanel.xaml;Components\AdminNavigationPanel.xaml;Components\Header.xaml;Components\MessageWindow.xaml;Components\UserLibraryPanel.xaml;Components\UserNavigationPanel.xaml;Components\ViewArticleWindow.xaml;Components\YesNoWindow.xaml;MainWindow.xaml;MVVM\Views\HomeView.xaml;MVVM\Views\LibraryView.xaml;MVVM\Views\LoginView.xaml;MVVM\Views\MembersView.xaml;MVVM\Views\SettingsView.xaml;MVVM\Views\UserRegistrationView.xaml;Styles\Styles.xaml;
+Components\AdminLibraryPanel.xaml;Components\AdminNavigationPanel.xaml;Components\ArticleDetailsWindow.xaml;Components\Header.xaml;Components\MessageWindow.xaml;Components\UserLibraryPanel.xaml;Components\UserNavigationPanel.xaml;Components\ViewArticleWindow.xaml;Components\YesNoWindow.xaml;MainWindow.xaml;MVVM\Views\HomeView.xaml;MVVM\Views\LibraryView.xaml;MVVM\Views\LoginView.xaml;MVVM\Views\MembersView.xaml;MVVM\Views\SettingsView.xaml;MVVM\Views\UserRegistrationView.xaml;Styles\Styles.xaml;
 
 False
 

@@ -15,9 +15,10 @@ namespace JLWPF.Components
             set { _confirmed = value; }
         }
 
-        public YesNoWindow(string message)
+        public YesNoWindow(Window parent, string message)
         {
             InitializeComponent();
+            Owner = parent;
             Confirmed = false;
             txtMessage.Text = message;
         }

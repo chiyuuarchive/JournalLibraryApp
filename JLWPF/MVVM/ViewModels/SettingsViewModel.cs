@@ -32,7 +32,7 @@ namespace JLWPF.MVVM.ViewModels
             view.txtPassword.Text = _user.Password;
         }
 
-        public void SubmitChanges(SettingsView view, Window owner)
+        public void SubmitUserDetails(SettingsView view, Window owner)
         {
             MainWindow mw = (MainWindow)owner;
 
@@ -47,7 +47,7 @@ namespace JLWPF.MVVM.ViewModels
             InvalidInputFieldStatus validateResult = InvalidInputFieldStatus.None;
             InvalidAuthenticationStatus authenticateResult = InvalidAuthenticationStatus.None;
 
-            JLInterface.UpdateUserDetails(_user.Email, fields, out validateResult, out authenticateResult);
+            JLDatabaseConnector.UpdateUserDetails(_user.Email, fields, out validateResult, out authenticateResult);
 
             // Handle validation results
             switch (validateResult)
@@ -82,7 +82,7 @@ namespace JLWPF.MVVM.ViewModels
                     ShowMessage(mw.Owner, "Email is already registered");
                     return;
                 default:
-                    throw new Exception("Unexpected error from SettingsViewModel.cs");
+                    throw new Exception("Unexpected authentication error from SettingsViewModel.cs");
             }
 
             // Update active user details

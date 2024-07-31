@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JLDatabase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc2e24ae25df398f59c66a7effa4c7e239523e7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53bb664f9aa4f7f001fa93ea5d8ca54d3284e8c3")]
 [assembly: System.Reflection.AssemblyProductAttribute("JLDatabase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JLDatabase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

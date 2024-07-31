@@ -1,0 +1,81 @@
+﻿<Window x:Class="JLWPF.Components.ArticleDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JLWPF.Components"
+        mc:Ignorable="d"
+        Title="Article Details" Height="600" Width="600"
+        WindowStartupLocation="CenterOwner" WindowStyle="None">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Article Details" FontSize="26" Foreground="PaleVioletRed" Margin="10"/>
+
+        <Button  Grid.Column="1" x:Name="btnReturn" Style="{StaticResource ButtonsWithIcons}" HorizontalAlignment="Right" Click="btnReturn_Click" Margin="10 0">
+            <StackPanel>
+                <Image Source="../Images/back.png" Width="25"/>
+                <TextBlock Text="Return"/>
+            </StackPanel>
+        </Button>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Left" Margin="5">
+            <StackPanel Margin="10 0">
+                <TextBlock Text="Article Title" FontWeight="Bold"/>
+                <TextBox x:Name="txtArticleTitle" Text="" Style="{StaticResource InputFields}"/>
+                <TextBlock Text="Author(s)" FontWeight="Bold"/>
+                <TextBox x:Name="txtAuthors" Text="" Style="{StaticResource InputFields}"/>
+                <Rectangle Height="35"/>
+                <TextBlock Text="Abstract" FontWeight="Bold"/>
+                <TextBox x:Name="txtAbstract" Style="{StaticResource InputFields}" MinHeight="175" MinWidth="245" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Margin="5">
+            <StackPanel Margin="10 0">
+                <TextBlock Text="Published at (Journal title)" FontWeight="Bold"/>
+                <TextBox x:Name="txtJournalTitle" Text="" Style="{StaticResource InputFields}"/>
+                <TextBlock Text="Source (Hyperlink)" FontWeight="Bold"/>
+                <TextBox x:Name="txtHyperlink" Text="" Style="{StaticResource InputFields}"/>
+                <Rectangle Height="35"/>
+                <TextBlock Text="Category" FontWeight="Bold"/>
+                <ComboBox x:Name="cmbCategory" Margin="10"/>
+            </StackPanel>
+        </StackPanel>
+
+
+
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 35">
+            <Button x:Name="btnClear" Style="{StaticResource ButtonsWithIcons}" Click="btnClear_Click">
+                <StackPanel>
+                    <Image Source="../Images/clear.png" Width="25"/>
+                    <TextBlock Text="Clear" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Rectangle Width="75"/>
+            <Button x:Name="btnSubmit" Style="{StaticResource ButtonsWithIcons}" Click="btnSubmit_Click">
+                <StackPanel>
+                    <Image Source="../Images/submit.png" Width="25"/>
+                    <TextBlock Text="Submit Changes" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

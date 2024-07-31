@@ -1,6 +1,9 @@
 ﻿using JLDatabase;
 using JLDatabase.Database.Models;
+using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media.TextFormatting;
 
 namespace JLWPF.Components
@@ -20,16 +23,19 @@ namespace JLWPF.Components
             _activeUser = activeUser;
 
             // Set article fields
-            txtArticleTitle.Text = $"Article Title: {article.ArticleTitle}";
+            SetText(txtArticleTitle, "Article Title", article.ArticleTitle);
             txtAbstract.Text = article.Abstract;
-            txtAuthors.Text = $"Author(s): {article.Author}";
 
-            txtPublishedAt.Text = article.JournalTitle != string.Empty ? $"Published at: {article.JournalTitle}" : "Published at: Unspecified";
-            txtCategory.Text = article.Category.ToString();
+            SetText(txtAuthors, "Author(s):", article.Author);
+            SetText(txtPublishedAt, "Published at:", article.JournalTitle != string.Empty? article.JournalTitle : "Unspecified");
+            SetText(txtCategory, "Category:", article.Category.ToString());
 
             // Set hyperlink
             txtSource.Visibility = Visibility.Hidden;
-            txtSource.Text = article.Hyperlink;
+            string url = $"{article.Hyperlink}";
+            url = url.StartsWith("www.") ? $"https://{url}" : url;
+            linkSource.NavigateUri = new Uri(url);
+            linkSource.Inlines.Add(article.Hyperlink);
         }
 
         private void btnSource_Click(object sender, RoutedEventArgs e)
@@ -49,8 +55,24 @@ namespace JLWPF.Components
                     _activeUser.Log = new List<ArticleDownloadLog>();
 
                 _activeUser.Log.Add(log);
-                JLInterface.UpdateVerifiedUser(_activeUser.Email, _activeUser);
+                JLDatabaseConnector.UpdateVerifiedUser(_activeUser.Email, _activeUser);
             }
+        }
+
+        private void linkSource_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+            e.Handled = true;
+        }
+
+        void SetText(TextBlock txt, string title, string content)
+        {
+            Bold boldText = new Bold(new Run(title));
+            Run normalText = new Run(content);
+            txt.Text = string.Empty;
+            txt.Inlines.Add(boldText);
+            txt.Inlines.Add(new LineBreak());
+            txt.Inlines.Add(normalText);
         }
     }
 }

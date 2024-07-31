@@ -18,17 +18,10 @@
 
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btnRemoveArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnRemoveArticle_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="../Images/remove.png" Style="{StaticResource InputFieldHeaderIcons}"/>
-                    <TextBlock Text="Remove article" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-
             <Button x:Name="btnEditArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnEditArticle_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="../Images/edit.png" Style="{StaticResource InputFieldHeaderIcons}"/>
-                    <TextBlock Text="Edit article" VerticalAlignment="Center"/>
+                    <TextBlock Text="Add/Edit article" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
 
@@ -36,6 +29,13 @@
                 <StackPanel Orientation="Horizontal">
                     <Image Source="../Images/article.png" Style="{StaticResource InputFieldHeaderIcons}"/>
                     <TextBlock Text="View article" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            
+            <Button x:Name="btnRemoveArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnRemoveArticle_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="../Images/remove.png" Style="{StaticResource InputFieldHeaderIcons}"/>
+                    <TextBlock Text="Remove article" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
         </StackPanel>

@@ -31,11 +31,15 @@
     public enum InvalidInputFieldStatus
     {
         None,
+
+        // User validation states
         IsAdmin,
         FirstName,
         LastName,
         Email,
         Password,
+
+        // Article validation states
         IEEECategory,
         Author,
         ArticleTitle,
@@ -47,9 +51,14 @@
     public enum InvalidAuthenticationStatus
     {
         None,
+
+        // User authentication states
         EmailAlreadyRegistered,
         UserDoesntExist,
         UserNotVerified,
+
+        // Article authentication states
+        HyperlinkAlreadyRegistered,
     }
 
     public class UserFieldTypes

@@ -23,14 +23,6 @@ namespace JLWPF.MVVM.Views
                 _vm.NavigateToHome();
         }
 
-        private void ArticleDataGrid_Loaded(object sender, RoutedEventArgs e)
-        {
-            if (ArticleDataGrid.Columns.Count > 0)
-            {
-                ArticleDataGrid.Columns.Last().Width = new DataGridLength(1, DataGridLengthUnitType.Star);
-            }
-        }
-
         private void ArticleDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (_vm != null)
