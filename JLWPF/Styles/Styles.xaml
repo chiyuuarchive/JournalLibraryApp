@@ -79,4 +79,9 @@
         <Setter Property="Padding" Value="4"/>
     </Style>
 
+    
+    <!--DownloadLogWindow styles-->
+    <Style x:Key="DownloadLogTexts" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5 15"/>
+    </Style>
 </ResourceDictionary>

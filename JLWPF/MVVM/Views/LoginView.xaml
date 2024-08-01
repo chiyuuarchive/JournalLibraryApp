@@ -29,9 +29,9 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" Margin="25">
-            <TextBlock Text="Login View" Foreground="IndianRed"/>
+            <TextBlock Text="Journal Library App" Foreground="IndianRed" Margin="0 25"/>
 
-            <Rectangle Height="50"/>
+            <Rectangle Height="25"/>
             <StackPanel Orientation="Horizontal">
                 <Image Source="../../Images/email.png" Style="{StaticResource Icons}"/>
                 <TextBlock Text="Email" FontWeight="Bold"/>

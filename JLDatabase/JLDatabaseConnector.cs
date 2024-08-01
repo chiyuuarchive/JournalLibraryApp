@@ -64,7 +64,7 @@ namespace JLDatabase
                 throw new Exception("Active user has invalid details!");
         }
 
-        public static void UpdateUserDetails(string emailID, string[] fields, out InvalidInputFieldStatus validateResult, out InvalidAuthenticationStatus authenticateResult)
+        public static void UpdateUserDetails(string emailID, string[] fields, bool isVerified, out InvalidInputFieldStatus validateResult, out InvalidAuthenticationStatus authenticateResult)
         {
             IAuthentication authentication = new UserRegistrationAuthentication();
             IValidator validator = new UserRegistrationValidator();
@@ -77,7 +77,7 @@ namespace JLDatabase
             if (validateResult != InvalidInputFieldStatus.None)
                 return;
 
-            User u = factory.CreateUser(fields);
+            User u = isVerified? factory.CreateVerifiedUser(fields) : factory.CreateUser(fields);
 
             // If email is different replace the user details of the old email
             if (authenticateResult == InvalidAuthenticationStatus.None)
@@ -106,9 +106,14 @@ namespace JLDatabase
 
         public static List<Article> FetchArticles()
         {
-            ArticleManager articleManager = new ArticleManager();
-            List<Article> articles = articleManager.Entities.Cast<Article>().ToList();
-            return articles;
+            ArticleManager manager = new ArticleManager();
+            return manager.Entities.Cast<Article>().ToList();
+        }
+
+        public static List<User> FetchUsers()
+        {
+            UserManager manager = new UserManager();
+            return manager.Entities.Cast<User>().ToList();
         }
 
         public static Article GetArticleByKey(string hyperlinkKey)
@@ -123,10 +128,27 @@ namespace JLDatabase
             return a;
         }
 
+        public static User GetUserByKey(string emailKey)
+        {
+            UserManager userManager = new UserManager();
+            List<User> users = userManager.Entities.Cast<User>().ToList();
+            User? u = users.FirstOrDefault(u => u.Email == emailKey);
+            if (u == null)
+                throw new Exception("Can't find user");
+
+            return u;
+        }
+
         public static void RemoveArticleByKey(string hyperlinkKey)
         {
             ArticleManager manager = new ArticleManager();
             manager.RemoveAt(hyperlinkKey);
+        }
+
+        public static void RemoveUserByKey(string emailKey)
+        {
+            UserManager manager = new UserManager();
+            manager.RemoveAt(emailKey);
         }
 
         public static void UpdateArticleDetails(string hyperlinkID, string[]fields, out InvalidInputFieldStatus validateResult, out InvalidAuthenticationStatus authenticateResult)

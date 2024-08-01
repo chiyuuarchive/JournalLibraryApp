@@ -26,7 +26,7 @@ namespace JLWPF.MVVM.Views
         private void ArticleDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (_vm != null)
-                _vm.UpdateSelectedArticle(this);
+                _vm.UpdateSelectedArticle();
 
         }
 

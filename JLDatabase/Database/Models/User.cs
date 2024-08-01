@@ -30,8 +30,6 @@ namespace JLDatabase.Database.Models
             Log = other.Log;
         }
 
-        public bool IsSameUser(int otherId) => Id == otherId;
         public string Name => $"{FirstName} {LastName}";
-        
     }
 }

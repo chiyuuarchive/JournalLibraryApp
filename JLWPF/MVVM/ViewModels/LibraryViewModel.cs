@@ -15,7 +15,7 @@ namespace JLWPF.MVVM.ViewModels
     {
         UserLibraryPanel _userLibraryPanel;
         AdminLibraryPanel _adminLibraryPanel;
-        List<DisplayArticleToLibrary> articles;
+        List<UIArticle> _articles;
 
         LibraryView _libraryView;
         
@@ -54,32 +54,19 @@ namespace JLWPF.MVVM.ViewModels
             IsAdminLibraryPanelVisible = mw.User.IsAdmin;
 
             UpdateTable();
-            DisablePanelButtons();
+            EnablePanelButtons(true);
             
         }
 
-        private void DisablePanelButtons()
+        private void EnablePanelButtons(bool enabled)
         {
             if (IsAdminLibraryPanelVisible)
             {
-                _adminLibraryPanel.EnableRemoveArticleButton(false);
-                _adminLibraryPanel.EnableViewArticleButton(false);
+                _adminLibraryPanel.btnRemoveArticle.IsEnabled = enabled;
+                _adminLibraryPanel.btnEditArticle.IsEnabled = enabled;
             }
             else
-                _userLibraryPanel.EnableViewArticleButton(false);
-
-
-            _libraryView.ArticleDataGrid.SelectedIndex = -1;
-        }
-        private void EnablePanelButtons()
-        {
-            if (IsAdminLibraryPanelVisible)
-            {
-                _adminLibraryPanel.EnableViewArticleButton(true);
-                _adminLibraryPanel.EnableRemoveArticleButton(true);
-            }
-            else
-                _userLibraryPanel.EnableViewArticleButton(true);
+                _userLibraryPanel.btnViewArticle.IsEnabled = enabled;
         }
 
         public void NavigateToHome()
@@ -89,29 +76,31 @@ namespace JLWPF.MVVM.ViewModels
 
         private void UpdateTable()
         {
-            // Update articles
-            articles = JLDatabaseConnector.FetchArticles().
+            _articles = JLDatabaseConnector.FetchArticles().
                 Select(a =>
                 {
-                    DisplayArticleToLibrary da = new();
-                    da.Copy(a);
-                    return da;
+                    UIArticle uiArticle = new();
+                    uiArticle.Copy(a);
+                    return uiArticle;
                 }).ToList();
 
             DataGrid dg = _libraryView.ArticleDataGrid;
             dg.Columns.Clear();
-            dg.ItemsSource = articles;
+            dg.ItemsSource = _articles;
         }
 
-        public void UpdateSelectedArticle(LibraryView view)
+        public void UpdateSelectedArticle()
         {
-            if (view.ArticleDataGrid.SelectedIndex != -1)
+            if (_libraryView.ArticleDataGrid.SelectedIndex != -1)
             {
-                articleKey = articles[view.ArticleDataGrid.SelectedIndex].Key();
-                EnablePanelButtons();
+                articleKey = _articles[_libraryView.ArticleDataGrid.SelectedIndex].Key();
+                EnablePanelButtons(true);
             }
             else
+            {
                 articleKey = string.Empty;
+                EnablePanelButtons(false);
+            }
         }
 
         public void ViewSelectedArticle(Window window)
@@ -137,7 +126,7 @@ namespace JLWPF.MVVM.ViewModels
                 throw new Exception("User not defined");
 
             // Remove article by selection
-            DisplayArticleToLibrary? articleToRemove = articles.FirstOrDefault(a => a.Key() == articleKey);
+            UIArticle? articleToRemove = _articles.FirstOrDefault(a => a.Key() == articleKey);
             if (articleToRemove == null)
                 throw new Exception("Selected article does not exist");
 
@@ -164,12 +153,11 @@ namespace JLWPF.MVVM.ViewModels
         }
         #endregion
 
-
         #region ArticleDetailsWindow
         public void CloseArticleDetailsWindow(ArticleDetailsWindow window)
         {
             articleKey = string.Empty;
-            DisablePanelButtons();
+            EnablePanelButtons(false);
             window.Close();
         }
         public void SubmitArticleDetails(ArticleDetailsWindow window)

@@ -33,28 +33,36 @@
             </StackPanel>
         </Button>
 
-        <DataGrid x:Name="MembersDataGrid" Grid.Row="2" Margin="10 0" AutoGenerateColumns="True"/>
+        <DataGrid x:Name="MembersDataGrid" Grid.Row="2" Margin="10 0" AutoGenerateColumns="True" IsReadOnly="True" SelectionChanged="MembersDataGrid_SelectionChanged"/>
 
         <Grid Grid.Row="4" HorizontalAlignment="Right" Margin="25 10">
+            
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button x:Name="btnRemoveArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnRemoveArticle_Click">
+                <Button x:Name="btnAdmin" Padding="10" Style="{StaticResource ButtonsWithIcons}" BorderBrush="Transparent" Click="btnAdmin_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../../Images/admin.png" Style="{StaticResource InputFieldHeaderIcons}"/>
+                        <TextBlock Text="Grant admin access" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnVerify" Padding="10" Style="{StaticResource ButtonsWithIcons}" BorderBrush="Transparent" Click="btnVerify_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="../../Images/edit.png" Style="{StaticResource InputFieldHeaderIcons}"/>
+                        <TextBlock Text="Verify member" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnRemoveMember" Padding="10" Style="{StaticResource ButtonsWithIcons}" BorderBrush="Transparent" Click="btnRemoveMember_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="../../Images/remove.png" Style="{StaticResource InputFieldHeaderIcons}"/>
                         <TextBlock Text="Remove member" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:Name="btnEditArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnEditArticle_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="../../Images/edit.png" Style="{StaticResource InputFieldHeaderIcons}"/>
-                        <TextBlock Text="Edit member" VerticalAlignment="Center"/>
-                    </StackPanel>
-                </Button>
-
-                <Button x:Name="btnViewArticle" Padding="10" Style="{StaticResource ButtonsWithIcons}" Click="btnViewArticle_Click">
+                <Button x:Name="btnViewDownloadLog" Padding="10" Style="{StaticResource ButtonsWithIcons}" BorderBrush="Transparent" Click="btnViewDownloadLog_Click">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="../../Images/user.png" Style="{StaticResource InputFieldHeaderIcons}"/>
-                        <TextBlock Text="View member" VerticalAlignment="Center"/>
+                        <TextBlock Text="View download log" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
             </StackPanel>

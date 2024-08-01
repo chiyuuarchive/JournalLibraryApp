@@ -1,0 +1,30 @@
+﻿<Window x:Class="JLWPF.Components.DownloadLogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JLWPF.Components"
+        mc:Ignorable="d"
+        Title="Download Log" Height="500" Width="500" WindowStartupLocation="CenterOwner">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock x:Name="txtName" Text="Name: (placeholder)" Style="{StaticResource DownloadLogTexts}" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="txtEmail" Text="Email: (placeholder)" Style="{StaticResource DownloadLogTexts}"/>
+            <TextBlock x:Name="txtLastTimeLoggedIn" Text="Last time Logged in: (placeholder)" Style="{StaticResource DownloadLogTexts}"/>
+            <Rectangle Height="35"/>
+            <TextBlock Text="Article Download Log:" FontWeight="Bold" Margin="5 0"/>
+            <Border Style="{StaticResource ViewArticleBorders}" Margin="5 0">
+                <TextBlock x:Name="txtLog" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10" MinWidth="450" MinHeight="250"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

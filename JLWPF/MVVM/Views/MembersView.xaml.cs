@@ -29,31 +29,51 @@ namespace JLWPF.MVVM.Views
         }
 
 
-        private void btnRemoveArticle_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnEditArticle_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnViewArticle_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            _vm = (MembersViewModel)DataContext;
-            _vm.InitializeView(this, Window.GetWindow(this));
+            if (DataContext is  MembersViewModel vm)
+            {
+                _vm = vm;
+                _vm.InitializeView(this, Window.GetWindow(this));
+            }
         }
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
-            if (_vm!=null)
+            if (_vm != null)
                 _vm.NavigateToHome();
+        }
+
+        private void btnViewDownloadLog_Click(object sender, RoutedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.ViewDownloadLog(Window.GetWindow(this));
+        }
+
+        private void btnRemoveMember_Click(object sender, RoutedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.RemoveUser();
+        }
+
+
+        private void btnVerify_Click(object sender, RoutedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.ToggleVerifyStatus();
+        }
+
+        private void btnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.ToggleAdminStatus();
+        }
+
+        private void MembersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (_vm != null)
+                _vm.UpdateSelectedUser();
         }
     }
 }

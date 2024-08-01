@@ -99,3 +99,5 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\ne
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\ref\JLWPF.dll
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\ArticleDetailsWindow.g.cs
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\ArticleDetailsWindow.baml
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\DownloadLogWindow.g.cs
+C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\obj\Debug\net8.0-windows\Components\DownloadLogWindow.baml

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JLWPF.MVVM.Auxiliaries
 {
-    internal class DisplayArticleToLibrary
+    internal class UIArticle
     {
         public string Title { get; set; }
         public string Author {  get; set; }
