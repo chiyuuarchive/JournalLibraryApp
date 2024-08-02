@@ -24,10 +24,13 @@ namespace JLWPF.Components
 
             // Set article fields
             SetText(txtArticleTitle, "Article Title", article.ArticleTitle);
-            txtAbstract.Text = article.Abstract;
+            string? abs = article.Abstract;
+            if (abs != null)
+                txtAbstract.Text = TruncateStringToWords(abs, 250);
 
             SetText(txtAuthors, "Author(s):", article.Author);
             SetText(txtPublishedAt, "Published at:", article.JournalTitle != string.Empty? article.JournalTitle : "Unspecified");
+            SetText(txtYearOfPublication, "Year of Publication:", article.YearOfPublication);
             SetText(txtCategory, "Category:", article.Category.ToString());
 
             // Set hyperlink
@@ -47,7 +50,8 @@ namespace JLWPF.Components
                 txtSource.Visibility = Visibility.Visible;
                 ArticleDownloadLog log = new ArticleDownloadLog()
                 {
-                    Article = _article,
+                    ArticleId = _article.Id,
+                    UserId = _activeUser.Id,
                     DownloadDateTime = DateTime.Now,
                 };
 
@@ -73,6 +77,19 @@ namespace JLWPF.Components
             txt.Inlines.Add(boldText);
             txt.Inlines.Add(new LineBreak());
             txt.Inlines.Add(normalText);
+        }
+
+        string TruncateStringToWords(string input, int maxLength)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+                return input;
+
+            var words = input.Split(" ").ToList();
+
+            if (words.Count <= maxLength)
+                return input;
+
+            return $"{string.Join(" ", words.Take(maxLength))}...";
         }
     }
 }

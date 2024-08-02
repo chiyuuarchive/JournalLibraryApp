@@ -13,6 +13,7 @@ namespace JLDatabase.Database.Models
         public string ArticleTitle { get; set; } = null!;
         public string? Abstract { get; set; }
         public string JournalTitle { get; set; } = null!;
+        public string YearOfPublication { get; set; } = null!;
         public string Hyperlink { get; set; } = null!;
 
         public void Copy(Article other)
@@ -23,6 +24,7 @@ namespace JLDatabase.Database.Models
             ArticleTitle = other.ArticleTitle;
             Abstract = other.Abstract;
             JournalTitle = other.JournalTitle;
+            YearOfPublication = other.YearOfPublication;
             Hyperlink = other.Hyperlink;
         }
     }

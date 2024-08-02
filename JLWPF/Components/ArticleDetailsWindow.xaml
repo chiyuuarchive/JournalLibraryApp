@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
         Title="Article Details" Height="600" Width="600"
-        WindowStartupLocation="CenterOwner" WindowStyle="None">
+        WindowStartupLocation="CenterOwner" WindowStyle="None" MouseDown="Window_MouseDown">
     
     <Window.Resources>
         <ResourceDictionary>
@@ -52,9 +52,11 @@
             <StackPanel Margin="10 0">
                 <TextBlock Text="Published at (Journal title)" FontWeight="Bold"/>
                 <TextBox x:Name="txtJournalTitle" Text="" Style="{StaticResource InputFields}"/>
+                <TextBlock Text="Year of Publication" FontWeight="Bold"/>
+                <TextBox x:Name="txtYearOfPublication" Text="" Style="{StaticResource InputFields}"/>
+                <Rectangle Height="35"/>
                 <TextBlock Text="Source (Hyperlink)" FontWeight="Bold"/>
                 <TextBox x:Name="txtHyperlink" Text="" Style="{StaticResource InputFields}"/>
-                <Rectangle Height="35"/>
                 <TextBlock Text="Category" FontWeight="Bold"/>
                 <ComboBox x:Name="cmbCategory" Margin="10"/>
             </StackPanel>

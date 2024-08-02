@@ -66,6 +66,7 @@ namespace JLDatabase
                 ArticleTitle = fields[(int)ArticleFieldTypes.Registration.ArticleTitle],
                 Abstract = fields[(int)ArticleFieldTypes.Registration.Abstract],
                 JournalTitle = fields[(int)ArticleFieldTypes.Registration.JournalTitle],
+                YearOfPublication = fields[(int)ArticleFieldTypes.Registration.YearOfPublication],
                 Hyperlink = fields[(int)ArticleFieldTypes.Registration.Hyperlink]
             };
             return article;

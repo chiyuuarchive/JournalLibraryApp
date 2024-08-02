@@ -4,7 +4,6 @@ using JLWPF.Components;
 using JLWPF.MVVM.Auxiliaries;
 using JLWPF.MVVM.Core;
 using JLWPF.MVVM.Views;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -54,7 +53,7 @@ namespace JLWPF.MVVM.ViewModels
             IsAdminLibraryPanelVisible = mw.User.IsAdmin;
 
             UpdateTable();
-            EnablePanelButtons(true);
+            EnablePanelButtons(false);
             
         }
 
@@ -62,8 +61,8 @@ namespace JLWPF.MVVM.ViewModels
         {
             if (IsAdminLibraryPanelVisible)
             {
+                _adminLibraryPanel.btnViewArticle.IsEnabled = enabled;
                 _adminLibraryPanel.btnRemoveArticle.IsEnabled = enabled;
-                _adminLibraryPanel.btnEditArticle.IsEnabled = enabled;
             }
             else
                 _userLibraryPanel.btnViewArticle.IsEnabled = enabled;
@@ -167,6 +166,7 @@ namespace JLWPF.MVVM.ViewModels
             fields[(int)ArticleFieldTypes.Registration.Author] = window.txtAuthors.Text;
             fields[(int)ArticleFieldTypes.Registration.Abstract] = window.txtAbstract.Text;            
             fields[(int)ArticleFieldTypes.Registration.JournalTitle] = window.txtJournalTitle.Text;
+            fields[(int)ArticleFieldTypes.Registration.YearOfPublication] = window.txtYearOfPublication.Text;
             fields[(int)ArticleFieldTypes.Registration.Hyperlink] = window.txtHyperlink.Text;
             fields[(int)ArticleFieldTypes.Registration.IEEECategory] = window.cmbCategory.SelectedIndex.ToString();
 
@@ -188,6 +188,9 @@ namespace JLWPF.MVVM.ViewModels
                     throw new Exception("Invalid abstract");
                 case InvalidInputFieldStatus.JournalTitle:
                     ShowMessage(window.Owner, "Invalid journal title");
+                    return;
+                case InvalidInputFieldStatus.YearOfPublication:
+                    ShowMessage(window.Owner, "Invalid year format");
                     return;
                 case InvalidInputFieldStatus.Hyperlink:
                     ShowMessage(window.Owner, "Invalid hyperlink format");

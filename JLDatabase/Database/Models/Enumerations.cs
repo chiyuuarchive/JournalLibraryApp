@@ -45,6 +45,7 @@
         ArticleTitle,
         Abstract,
         JournalTitle,
+        YearOfPublication,
         Hyperlink,
     }
 
@@ -91,6 +92,7 @@
             ArticleTitle,
             Abstract,
             JournalTitle,
+            YearOfPublication,
             Hyperlink,
         }
     }

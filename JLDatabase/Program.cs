@@ -10,7 +10,7 @@ namespace JLDatabase
         private static void Main(string[] args)
         {
             //TestUserRegistrationOperations();
-            TestArticleRegistrationOperations();
+            //TestArticleRegistrationOperations();
         }
 
         static void TestUserRegistrationOperations()
@@ -18,10 +18,10 @@ namespace JLDatabase
             Console.WriteLine("Attempt registering user...");
 
             string[] mockUserData = new string[Enum.GetValues(typeof(UserFieldTypes.Registration)).Length];
-            mockUserData[(int)UserFieldTypes.Registration.IsAdmin] = "True";
-            mockUserData[(int)UserFieldTypes.Registration.FirstName] = "Admin";
+            mockUserData[(int)UserFieldTypes.Registration.IsAdmin] = "False";
+            mockUserData[(int)UserFieldTypes.Registration.FirstName] = "User";
             mockUserData[(int)UserFieldTypes.Registration.LastName] = "Doe";
-            mockUserData[(int)UserFieldTypes.Registration.Email] = "admin@gmail.com";
+            mockUserData[(int)UserFieldTypes.Registration.Email] = "user@gmail.com";
             mockUserData[(int)UserFieldTypes.Registration.Password] = "Abc123";
 
             EntityFactory factory = new EntityFactory();
@@ -49,6 +49,7 @@ namespace JLDatabase
             mockArticleData[(int)ArticleFieldTypes.Registration.ArticleTitle] = "Simulation of a four-legged landing rover";
             mockArticleData[(int)ArticleFieldTypes.Registration.Abstract] = "Placeholder text for abstract";
             mockArticleData[(int)ArticleFieldTypes.Registration.JournalTitle] = "Nature";
+            mockArticleData[(int)ArticleFieldTypes.Registration.YearOfPublication] = "1999";
             mockArticleData[(int)ArticleFieldTypes.Registration.Hyperlink] = "www.nature.com/simcategory";
 
             EntityFactory factory = new EntityFactory();

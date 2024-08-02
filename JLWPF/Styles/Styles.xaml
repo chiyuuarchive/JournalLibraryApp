@@ -82,6 +82,6 @@
     
     <!--DownloadLogWindow styles-->
     <Style x:Key="DownloadLogTexts" TargetType="TextBlock">
-        <Setter Property="Margin" Value="5 15"/>
+        <Setter Property="Margin" Value="5 10"/>
     </Style>
 </ResourceDictionary>

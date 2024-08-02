@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
-        Title="Article Details" Height="500" Width="500"
+        Title="Article Details" Height="600" Width="500"
         WindowStartupLocation="CenterOwner">
 
     <Window.Resources>
@@ -19,7 +19,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height=".55*"/>
+            <RowDefinition Height=".35*"/>
             <RowDefinition Height=".25*"/>
         </Grid.RowDefinitions>
         
@@ -28,11 +28,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="15 10 15 0" Grid.ColumnSpan="2">
+        <StackPanel Margin="15 10 15 10" Grid.ColumnSpan="2">
             <TextBlock x:Name="txtArticleTitle" Text="Article Title: (placeholder)" Style="{StaticResource ViewArticleTextBlocks}" HorizontalAlignment="Center" Padding="5" TextWrapping="Wrap" FontSize="10"/>
             <TextBlock Text="Abstract:" FontWeight="Bold"/>
+
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtAbstract" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <TextBlock x:Name="txtAbstract" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10"/>
+                </ScrollViewer>
             </Border>
         </StackPanel>
 
@@ -49,13 +52,20 @@
         </StackPanel>
         
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="15 0" VerticalAlignment="Top">
+
+            <Border Style="{StaticResource ViewArticleBorders}">
+                <TextBlock x:Name="txtYearOfPublication" Text="Year of Publication:" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
+            </Border>
+
+            <Rectangle Height="20"/>
             <Border Style="{StaticResource ViewArticleBorders}">
                 <TextBlock x:Name="txtCategory" Text="Category:" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
             </Border>
+
         </StackPanel>
 
 
-        <StackPanel Grid.Row="2" Margin="15 5 -25 5">
+        <StackPanel Grid.Row="2" Margin="15 20 -25 5">
             <TextBlock Text="Source:" FontWeight="Bold" HorizontalAlignment="Left"/>
             <TextBlock x:Name="txtSource" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewArticleTextBlocks}" Background="LightGray" Margin="5" TextWrapping="Wrap">
                 <Hyperlink x:Name="linkSource" RequestNavigate="linkSource_RequestNavigate" FontSize="10"/>

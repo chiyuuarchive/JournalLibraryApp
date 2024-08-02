@@ -47,6 +47,7 @@ namespace JLWPF.Components
                 txtAuthors.Text = article.Author;
                 txtAbstract.Text = article.Abstract;
                 txtJournalTitle.Text = article.JournalTitle;
+                txtYearOfPublication.Text = article.YearOfPublication;
                 txtHyperlink.Text = article.Hyperlink;
 
                 int index = 0;
@@ -73,6 +74,7 @@ namespace JLWPF.Components
             txtAuthors.Text = string.Empty;
             txtAbstract.Text = string.Empty;
             txtJournalTitle.Text = string.Empty;
+            txtYearOfPublication.Text = string.Empty;
             txtHyperlink.Text = string.Empty;
         }
 
@@ -84,6 +86,14 @@ namespace JLWPF.Components
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             _vm.CloseArticleDetailsWindow(this);
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

@@ -82,20 +82,43 @@ namespace JLWPF.MVVM.ViewModels
             UpdateTable();
         }
 
-        public void RemoveUser()
+        public void RemoveUser(Window window)
         {
-            JLDatabaseConnector.RemoveUserByKey(userKey);
+            MainWindow mw = (MainWindow)window;
+            if (mw.User == null)
+                throw new Exception("Active user not defined!");
+
+            UIUser? user = _users.FirstOrDefault(u => u.Email == userKey);
+            if (user == null)
+                throw new Exception("User not found");
+
+            YesNoWindow dialog = new YesNoWindow(window, $"Confirm to delete user '{user.Name()}'");
+            dialog.ShowDialog();
+            if (dialog.Confirmed)
+            {
+                // Save key as it gets deleted when table is updated
+                string tempKey = userKey;
+                JLDatabaseConnector.RemoveUserByKey(userKey);
+                UpdateTable();
+
+                // If the logged in user is deleted log out immediatedly
+                if (mw.User.Email == tempKey)
+                    UpdateViewCommand?.Execute("LoginView");
+            }
         }
 
         public void ViewDownloadLog(Window window)
         {
             // Get user to display
-            UIUser user = _users.FirstOrDefault(u => u.Email == userKey);
+            UIUser? user = _users.FirstOrDefault(u => u.Email == userKey);
             if (user == null)
                 throw new Exception("User in table not found");
 
+            // Get log related to the user
+            List<ArticleDownloadLog> log = JLDatabaseConnector.GetLogByUserKey(userKey);
+
             // Send the user to the dialog
-            DownloadLogWindow dialog = new DownloadLogWindow(window, user);
+            DownloadLogWindow dialog = new DownloadLogWindow(window, user, log);
             dialog.ShowDialog();
         }
 

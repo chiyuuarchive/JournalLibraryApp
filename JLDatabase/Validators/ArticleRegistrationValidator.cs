@@ -9,6 +9,7 @@ namespace JLDatabase.Validators
         private const string invalidAuthorMsg = "Invalid name format (rf. to bibliographic format, e.g. 'John Doe, Tee Bee')";
         private const string invalidArticleTitleMsg = "Invalid article title (e.g. The Future of AI: Trends & Predictions)";
         private const string invalidJournalTitleMsg = "Invalid journal title (e.g. Journal of Machine Learning Research)";
+        private const string invalidYearOfPublicationMsg = "Invalid year format (e.g. 1999)";
         private const string invalidHyperlinkMsg = "Invalid link address to source (e.g. www.example.com)";
         private const string hyperlinkAlreadyRegistered = "Same source link has already been registered";
 
@@ -58,6 +59,10 @@ namespace JLDatabase.Validators
                         if (isPublishedInJournal)
                             errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.JournalTitle) ? errorMessage : invalidJournalTitleMsg;
                         break;
+                    case ArticleFieldTypes.Registration.YearOfPublication:
+                        errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Year of publication not defined";
+                        errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.YearOfPublication) ? errorMessage : invalidYearOfPublicationMsg;
+                        break;
                     case ArticleFieldTypes.Registration.Hyperlink:
                         // Check if a source link was provided
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Provide a source link";
@@ -97,6 +102,9 @@ namespace JLDatabase.Validators
                     case ArticleFieldTypes.Registration.JournalTitle:
                         if (isPublishedInJournal)
                             fieldStatus = _validateMatchPattern(fields[i], RegexValidatorPatterns.JournalTitle) ? fieldStatus : InvalidInputFieldStatus.JournalTitle;
+                        break;
+                    case ArticleFieldTypes.Registration.YearOfPublication:
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.YearOfPublication) ? fieldStatus : InvalidInputFieldStatus.YearOfPublication;
                         break;
                     case ArticleFieldTypes.Registration.Hyperlink:
                         // Validate link address format

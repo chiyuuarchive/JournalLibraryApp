@@ -11,6 +11,7 @@ namespace JLWPF.MVVM.Auxiliaries
     {
         public string Title { get; set; }
         public string Author {  get; set; }
+        public string Year { get; set; }
         public string Category { get; set; }
         public string Journal {  get; set; }
         public string RegisteredAt { get; set; }
@@ -22,6 +23,7 @@ namespace JLWPF.MVVM.Auxiliaries
             Category = a.Category.ToString();
             Title = a.ArticleTitle;
             Author = a.Author.ToString();
+            Year = a.YearOfPublication;
             Journal = a.JournalTitle;
             RegisteredAt = a.RegisteredAt.ToString("dd/MM/yyyy, HH:mm:ss");
             _hyperlink = a.Hyperlink;

@@ -22,11 +22,12 @@ namespace JLValidatorAPI
         /// Regex patterns for article 
         /// </summary>
         // Follows the bibliographic format of author names (e.g. "John Doe, Tee Bee")
-        public const string AuthorNameFormat = @"^([A-Z][a-z]+( [A-Z][a-z]+)*(, )?)+$";
-        // Article title
+        public const string AuthorNameFormat = @"^([A-Za-z]+(?:-[A-Za-z]+)?(?:\s[A-Za-z]\.)?(?:\s[A-Za-z]+)?\s[A-Za-z]+(?:-[A-Za-z]+)?)(?:,\s[A-Za-z]+(?:-[A-Za-z]+)?(?:\s[A-Za-z]\.)?(?:\s[A-Za-z]+)?\s[A-Za-z]+(?:-[A-Za-z]+)?)*$";
+        //public const string AuthorNameFormat = @"^([A-Z][a-z]+( [A-Z][a-z]+)*(, )?)+$";
+        public const string YearOfPublication = @"\b\d{4}\b";
         public const string ArticleTitle = @"^[A-Za-z0-9.,:;!?'()\[\]{}&\- ]+$";
-        // Journal title
         public const string JournalTitle = @"^[A-Za-z0-9.,:;!?'""()&\- ]+$";
+        
         // Hyperlink
         public const string Hyperlink = @"\b((https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+(/[a-zA-Z0-9-._~:/?#@!$&'()*+,;=%]*)?)\b";
 

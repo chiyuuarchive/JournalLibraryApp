@@ -7,6 +7,7 @@ namespace JLDatabase.Database.Data
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Article> Articles { get; set; }
+        public DbSet<ArticleDownloadLog> ArticleDownloadLog { get; set; }
 
         public string DbPath { get; }
         public JournalLibraryDbContext()

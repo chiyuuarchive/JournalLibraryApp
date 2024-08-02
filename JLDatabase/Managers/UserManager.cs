@@ -6,10 +6,13 @@ namespace JLDatabase.Managers
     internal class UserManager : IEntityManager
     {
         ICollection<User> _users;
+        ICollection<ArticleDownloadLog> _log;
         public ICollection<object> Entities => new List<object>(_users);
+        public ICollection<ArticleDownloadLog> Log => _log;
         public UserManager()
         {
             _users = new List<User>();
+            _log = new List<ArticleDownloadLog>();
             InitializeManager();
         }
 
@@ -49,6 +52,9 @@ namespace JLDatabase.Managers
                 dbContext.Database.EnsureCreated();
                 foreach (var userSet in dbContext.Users)
                     _users.Add(userSet);
+
+                foreach(var logSet in dbContext.ArticleDownloadLog)
+                    _log.Add(logSet);
             }
         }
 
@@ -86,10 +92,14 @@ namespace JLDatabase.Managers
                 User? userToRemove = _users.SingleOrDefault(u => u.Email == emailID);
                 if (userToRemove == null) return false;
 
+                // Find logs related to the user to remove
+                List<ArticleDownloadLog> logs = _log.Where(l => l.UserId == userToRemove.Id).ToList();
+
                 // Update database
                 using (var dbContext = new JournalLibraryDbContext())
                 {
                     dbContext.Users.Remove(userToRemove);
+                    dbContext.ArticleDownloadLog.RemoveRange(logs);
                     dbContext.SaveChanges();
                 }
 

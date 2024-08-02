@@ -128,6 +128,18 @@ namespace JLDatabase
             return a;
         }
 
+        public static Article GetArticleById(int id)
+        {
+            ArticleManager articleManager = new ArticleManager();
+            List<Article> articles = articleManager.Entities.Cast<Article>().ToList();
+            Article? a = articles.FirstOrDefault(a => a.Id == id);
+
+            if (a == null)
+                throw new Exception("Can't find article");
+
+            return a;
+        }
+
         public static User GetUserByKey(string emailKey)
         {
             UserManager userManager = new UserManager();
@@ -137,6 +149,16 @@ namespace JLDatabase
                 throw new Exception("Can't find user");
 
             return u;
+        }
+
+        public static List<ArticleDownloadLog> GetLogByUserKey(string emailKey)
+        {
+            UserManager manager = new UserManager();
+            User? user = manager.Entities.Cast<User>().ToList().FirstOrDefault(u => u.Email == emailKey);
+            if (user == null)
+                throw new Exception("User not found");
+
+            return manager.Log.Where(l => l.UserId == user.Id).ToList();
         }
 
         public static void RemoveArticleByKey(string hyperlinkKey)

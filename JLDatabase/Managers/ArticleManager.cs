@@ -89,6 +89,11 @@ namespace JLDatabase.Managers
                 using (var dbContext = new JournalLibraryDbContext())
                 {
                     dbContext.Articles.Remove(articleToRemove);
+
+                    // Find logs related to the specific article and remove
+                    var log = dbContext.ArticleDownloadLog.Where(l => l.ArticleId == articleToRemove.Id).ToList();
+                    dbContext.ArticleDownloadLog.RemoveRange(log);
+
                     dbContext.SaveChanges();
                 }
 

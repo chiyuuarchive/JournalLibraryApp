@@ -48,6 +48,10 @@ namespace JLDatabase.Migrations
                     b.Property<DateTime>("RegisteredAt")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("YearOfPublication")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Articles");
@@ -65,12 +69,10 @@ namespace JLDatabase.Migrations
                     b.Property<DateTime>("DownloadDateTime")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ArticleId");
 
                     b.HasIndex("UserId");
 
@@ -118,17 +120,11 @@ namespace JLDatabase.Migrations
 
             modelBuilder.Entity("JLDatabase.Database.Models.ArticleDownloadLog", b =>
                 {
-                    b.HasOne("JLDatabase.Database.Models.Article", "Article")
-                        .WithMany()
-                        .HasForeignKey("ArticleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("JLDatabase.Database.Models.User", null)
                         .WithMany("Log")
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Article");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("JLDatabase.Database.Models.User", b =>
