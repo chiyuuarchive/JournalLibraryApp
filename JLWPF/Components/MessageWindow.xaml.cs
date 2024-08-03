@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace JLWPF.Components
 {
@@ -7,10 +8,12 @@ namespace JLWPF.Components
     /// </summary>
     public partial class MessageWindow : Window
     {
-        public MessageWindow(Window owner, string message)
+        public MessageWindow(Window mainWindow, string message)
         {
             InitializeComponent();
-            Owner = owner;
+            UIHeader.Owner = this;
+
+            Owner = mainWindow;
             txtMessage.Text = message;
             WindowStartupLocation = WindowStartupLocation.CenterOwner;
         }
@@ -18,6 +21,14 @@ namespace JLWPF.Components
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

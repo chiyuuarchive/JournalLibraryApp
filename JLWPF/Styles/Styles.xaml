@@ -3,85 +3,84 @@
 
     <!--Modal window styles-->
     <Style x:Key="WindowText" TargetType="TextBlock">
-        <Setter Property="MaxWidth" Value="275"/>
-        <Setter Property="Margin" Value="10"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="MaxWidth" Value="275" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
-    
+
     <Style x:Key="WindowButtons" TargetType="Button">
-        <Setter Property="MinWidth" Value="75"/>
-        <Setter Property="Margin" Value="5"/>
+        <Setter Property="MinWidth" Value="75" />
+        <Setter Property="Margin" Value="5" />
     </Style>
-    
+
     <!--General styles-->
     <Style x:Key="ButtonsWithIcons" TargetType="Button">
-        <Setter Property="MinWidth" Value="65"/>
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="MinWidth" Value="65" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
     </Style>
     <Style x:Key="InputFields" TargetType="TextBox">
-        <Setter Property="Margin" Value="7.5"/>
-        <Setter Property="Height" Value="25"/>
-        <Setter Property="MinWidth" Value="150"/>
-        <Setter Property="TextAlignment" Value="Justify"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="7.5" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="MinWidth" Value="150" />
+        <Setter Property="TextAlignment" Value="Justify" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
     </Style>
 
     <Style x:Key="InputFieldHeaderIcons" TargetType="Image">
-        <Setter Property="Width" Value="20"/>
-        <Setter Property="Margin" Value="10 0"/>
+        <Setter Property="Width" Value="20" />
+        <Setter Property="Margin" Value="10 0" />
     </Style>
 
     <Style x:Key="InputFieldIcons" TargetType="Image">
-        <Setter Property="Width" Value="12.5"/>
-        <Setter Property="Margin" Value="15 0 5 0"/>
+        <Setter Property="Width" Value="12.5" />
+        <Setter Property="Margin" Value="15 0 5 0" />
     </Style>
 
     <Style x:Key="InputFieldHeaders" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="24"/>
-        <Setter Property="Margin" Value="5 0"/>
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="Margin" Value="5 0" />
     </Style>
 
     <!--LoginView styles-->
     <Style x:Key="LoginFields" TargetType="TextBox">
-        <Setter Property="Margin" Value="0 5 0 0"/>
-        <Setter Property="MinWidth" Value="150"/>
-        <Setter Property="Height" Value="20"/>
+        <Setter Property="Margin" Value="0 5 0 0" />
+        <Setter Property="MinWidth" Value="150" />
+        <Setter Property="Height" Value="20" />
     </Style>
     <Style x:Key="LoginIcons" TargetType="Image">
-        <Setter Property="MaxWidth" Value="15"/>
-        <Setter Property="Margin" Value="2.5 0"/>
-    </Style>
-    
-    <!--HomeView styles-->
-    <Style x:Key="HomeViewTexts" TargetType="TextBlock">
-        <Setter Property="Margin" Value="5"/>
-    </Style>
-    
-    <!--UserSettingsView styles-->
-    <Style x:Key="UserSettingsTexts" TargetType="TextBlock">
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Margin" Value="10 5"/>
-    </Style>
-    <Style x:Key="UserSettingsFields" TargetType="TextBox">
-        <Setter Property="Margin" Value="10 5"/>
-    </Style>
-    
-    <!--ViewArticleWindow styles-->
-    <Style x:Key="ViewArticleBorders" TargetType="Border">
-        <Setter Property="BorderThickness" Value=".5"/>
-        <Setter Property="BorderBrush" Value="Black"/>
-    </Style>
-    
-    <Style x:Key="ViewArticleTextBlocks" TargetType="TextBlock">
-        <Setter Property="Background" Value="LightGray"/>
-        <Setter Property="Padding" Value="4"/>
+        <Setter Property="MaxWidth" Value="15" />
+        <Setter Property="Margin" Value="2.5 0" />
     </Style>
 
-    
+    <!--HomeView styles-->
+    <Style x:Key="HomeViewTexts" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5" />
+    </Style>
+
+    <!--UserSettingsView styles-->
+    <Style x:Key="UserSettingsTexts" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="10 5" />
+    </Style>
+    <Style x:Key="UserSettingsFields" TargetType="TextBox">
+        <Setter Property="Margin" Value="10 5" />
+    </Style>
+
+    <!--ViewArticleWindow styles-->
+    <Style x:Key="ViewArticleBorders" TargetType="Border">
+        <Setter Property="BorderThickness" Value=".5" />
+        <Setter Property="BorderBrush" Value="Black" />
+    </Style>
+
+    <Style x:Key="ViewArticleTextBlocks" TargetType="TextBlock">
+        <Setter Property="Background" Value="LightGray" />
+        <Setter Property="Padding" Value="4" />
+    </Style>
+
     <!--DownloadLogWindow styles-->
     <Style x:Key="DownloadLogTexts" TargetType="TextBlock">
-        <Setter Property="Margin" Value="5 10"/>
+        <Setter Property="Margin" Value="5 10" />
     </Style>
 </ResourceDictionary>

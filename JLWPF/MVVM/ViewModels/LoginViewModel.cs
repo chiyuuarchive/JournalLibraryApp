@@ -10,10 +10,12 @@ using System.Windows.Input;
 
 namespace JLWPF.MVVM.ViewModels
 {
-    class LoginViewModel : ViewModelBase
+    internal class LoginViewModel : ViewModelBase
     {
         private MainWindow _owner;
+
         public void SetParentWindow(Window owner) => _owner = (MainWindow)owner;
+
         public LoginViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
@@ -70,9 +72,11 @@ namespace JLWPF.MVVM.ViewModels
                 case InvalidInputFieldStatus.Email:
                     ShowMessage(_owner, "Invalid email format");
                     return;
+
                 case InvalidInputFieldStatus.Password:
                     ShowMessage(_owner, "Invalid password format");
                     return;
+
                 default:
                     break;
             }
@@ -84,12 +88,15 @@ namespace JLWPF.MVVM.ViewModels
                     if (u == null) return;
                     UpdateViewCommand?.Execute("HomeView");
                     break;
+
                 case InvalidAuthenticationStatus.UserDoesntExist:
                     ShowMessage(_owner, "Invalid login information. User not found!");
                     return;
+
                 case InvalidAuthenticationStatus.UserNotVerified:
                     ShowMessage(_owner, "User found but not verified. Contact adminstration!");
                     return;
+
                 default:
                     throw new Exception("Unexpected error from LoginViewModel.cs");
             }
@@ -103,5 +110,5 @@ namespace JLWPF.MVVM.ViewModels
             MessageWindow mw = new MessageWindow(parent, message);
             mw.ShowDialog();
         }
-    } 
+    }
 }

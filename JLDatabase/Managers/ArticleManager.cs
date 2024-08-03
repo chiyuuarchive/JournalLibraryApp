@@ -5,7 +5,7 @@ namespace JLDatabase.Managers
 {
     internal class ArticleManager : IEntityManager
     {
-        ICollection<Article> _articles;
+        private readonly List<Article> _articles;
         public ICollection<object> Entities => new List<object>(_articles);
 
         public ArticleManager()
@@ -43,12 +43,10 @@ namespace JLDatabase.Managers
 
         public void InitializeManager()
         {
-            using (var dbContext = new JournalLibraryDbContext())
-            {
-                dbContext.Database.EnsureCreated();
-                foreach (var article in dbContext.Articles)
-                    _articles.Add(article);
-            }
+            using var dbContext = new JournalLibraryDbContext();
+            dbContext.Database.EnsureCreated();
+            foreach (var article in dbContext.Articles)
+                _articles.Add(article);
         }
 
         public bool Register(object entity)

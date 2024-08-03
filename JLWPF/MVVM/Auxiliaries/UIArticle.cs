@@ -1,23 +1,19 @@
 ﻿using JLDatabase.Database.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JLWPF.MVVM.Auxiliaries
 {
     internal class UIArticle
     {
-        public string Title { get; set; }
-        public string Author {  get; set; }
-        public string Year { get; set; }
-        public string Category { get; set; }
-        public string Journal {  get; set; }
-        public string RegisteredAt { get; set; }
-        private string _hyperlink;
+        public string Title { get; set; } = null!;
+        public string Author { get; set; } = null!;
+        public string Year { get; set; } = null!;
+        public string Category { get; set; } = null!;
+        public string Journal { get; set; } = null!;
+        public string RegisteredAt { get; set; } = null!;
+        private string _hyperlink = null!;
 
         public string Key() => _hyperlink;
+
         public void Copy(Article a)
         {
             Category = a.Category.ToString();
@@ -28,6 +24,5 @@ namespace JLWPF.MVVM.Auxiliaries
             RegisteredAt = a.RegisteredAt.ToString("dd/MM/yyyy, HH:mm:ss");
             _hyperlink = a.Hyperlink;
         }
-
     }
 }

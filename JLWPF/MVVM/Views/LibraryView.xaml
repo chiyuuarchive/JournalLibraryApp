@@ -5,41 +5,40 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:aux="clr-namespace:JLWPF.MVVM.Auxiliaries"
              xmlns:components="clr-namespace:JLWPF.Components"
-             xmlns:local="clr-namespace:JLWPF.MVVM.Views"   
-             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:JLWPF.MVVM.Views"
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
              Loaded="UserControl_Loaded">
 
     <UserControl.Resources>
         <ResourceDictionary>
-            <aux:BooleanToVisbilityConverter x:Key="BoolToVis"/>
+            <aux:BooleanToVisbilityConverter x:Key="BoolToVis" />
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../Styles/Styles.xaml"/>
+                <ResourceDictionary Source="../../Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height=".25*"/>
-            <RowDefinition Height=".1*"/>
-            <RowDefinition/>
-            <RowDefinition Height=".25*"/>
+            <RowDefinition Height=".25*" />
+            <RowDefinition Height=".1*" />
+            <RowDefinition />
+            <RowDefinition Height=".25*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Library" FontSize="26" Foreground="PaleVioletRed" Margin="10"/>
+        <TextBlock Text="Library" FontSize="26" Foreground="PaleVioletRed" Margin="10" />
 
         <Button Grid.Column="1" x:Name="btnReturn" Style="{StaticResource ButtonsWithIcons}" HorizontalAlignment="Right" Click="btnReturn_Click">
             <StackPanel>
-                <Image Source="../../Images/back.png" Width="25"/>
-                <TextBlock Text="Return"/>
+                <Image Source="../../Images/back.png" Width="25" />
+                <TextBlock Text="Return" />
             </StackPanel>
         </Button>
 
-        <DataGrid x:Name="ArticleDataGrid" Grid.Row="2" Margin="10 0" IsReadOnly="True" AutoGenerateColumns="True" SelectionChanged="ArticleDataGrid_SelectionChanged"/>
+        <DataGrid x:Name="ArticleDataGrid" Grid.Row="2" Margin="10 0" IsReadOnly="True" AutoGenerateColumns="True" SelectionChanged="ArticleDataGrid_SelectionChanged" />
 
-        <components:UserLibraryPanel x:Name="UserLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsUserLibraryPanelVisible, Converter={StaticResource BoolToVis}}"/>
-<components:AdminLibraryPanel x:Name="AdminLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsAdminLibraryPanelVisible, Converter={StaticResource BoolToVis}}"/>
-
+        <components:UserLibraryPanel x:Name="UserLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsUserLibraryPanelVisible, Converter={StaticResource BoolToVis}}" />
+<components:AdminLibraryPanel x:Name="AdminLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsAdminLibraryPanelVisible, Converter={StaticResource BoolToVis}}" />
     </Grid>
 </UserControl>

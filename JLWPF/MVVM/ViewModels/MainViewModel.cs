@@ -1,12 +1,12 @@
 ﻿using JLWPF.Commands;
 using JLWPF.MVVM.Core;
-using System.Windows.Input;
 
 namespace JLWPF.MVVM.ViewModels
 {
-    class MainViewModel : ViewModelBase
+    internal class MainViewModel : ViewModelBase
     {
-        private ViewModelBase _currentViewModel;
+        private ViewModelBase _currentViewModel = null!;
+
         public ViewModelBase CurrentViewModel
         {
             get => _currentViewModel;

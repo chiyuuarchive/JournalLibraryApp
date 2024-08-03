@@ -10,6 +10,7 @@ namespace JLWPF.MVVM.Views
     public partial class LoginView : UserControl
     {
         private LoginViewModel? _vm;
+
         public LoginView()
         {
             InitializeComponent();
@@ -27,7 +28,6 @@ namespace JLWPF.MVVM.Views
             if (_vm != null)
                 _vm.ResetInputFields(this);
         }
-
 
         private void txtEmail_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -56,7 +56,6 @@ namespace JLWPF.MVVM.Views
 
         private void txtPassword_LostFocus(object sender, RoutedEventArgs e)
         {
-
             if (_vm != null)
                 _vm.UpdateInputField(txtPassword, Auxiliaries.InputFieldHandler.PlaceholderMsgType.Password, false);
         }

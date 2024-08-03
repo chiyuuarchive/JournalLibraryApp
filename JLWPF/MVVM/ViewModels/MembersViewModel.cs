@@ -4,28 +4,26 @@ using JLWPF.Components;
 using JLWPF.MVVM.Auxiliaries;
 using JLWPF.MVVM.Core;
 using JLWPF.MVVM.Views;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace JLWPF.MVVM.ViewModels
 {
-    class MembersViewModel : ViewModelBase
+    internal class MembersViewModel : ViewModelBase
     {
-        List<UIUser> _users;
-        MembersView _view;
-        string userKey;
+        private List<UIUser> _users;
+        private MembersView _view;
+        private string userKey;
 
         public MembersViewModel(ICommand updateViewCommand)
         {
-            UpdateViewCommand = updateViewCommand; 
+            UpdateViewCommand = updateViewCommand;
         }
 
         public void InitializeView(MembersView view, Window window)
         {
             _view = view;
-
 
             userKey = string.Empty;
             UpdateTable();
@@ -69,7 +67,7 @@ namespace JLWPF.MVVM.ViewModels
         public void ToggleVerifyStatus()
         {
             User u = JLDatabaseConnector.GetUserByKey(userKey);
-            u.IsVerified = u.IsVerified? false : true;
+            u.IsVerified = u.IsVerified ? false : true;
             JLDatabaseConnector.UpdateVerifiedUser(userKey, u);
             UpdateTable();
         }

@@ -1,37 +1,37 @@
 ﻿<UserControl x:Class="JLWPF.Components.AdminNavigationPanel"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:JLWPF.Components"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+                <ResourceDictionary Source="../Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <Button x:Name="btnSettings" Style="{StaticResource ButtonsWithIcons}" Click="btnSettings_Click">
+            <Button x:Name="btnMyAccount" Style="{StaticResource ButtonsWithIcons}" Click="btnMyAccount_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Images/settings.png" Style="{StaticResource InputFieldHeaderIcons}"/>
-                    <TextBlock Text="Settings" VerticalAlignment="Center"/>
+                    <Image Source="../Images/settings.png" Style="{StaticResource InputFieldHeaderIcons}" />
+                    <TextBlock Text="My Account" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnLibrary" Style="{StaticResource ButtonsWithIcons}" Click="btnLibrary_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Images/library.png" Style="{StaticResource InputFieldHeaderIcons}"/>
-                    <TextBlock Text="Library" VerticalAlignment="Center"/>
+                    <Image Source="../Images/library.png" Style="{StaticResource InputFieldHeaderIcons}" />
+                    <TextBlock Text="Library" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button x:Name="btnMembers" Style="{StaticResource ButtonsWithIcons}" Click="btnMembers_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Images/user.png" Style="{StaticResource InputFieldHeaderIcons}"/>
-                    <TextBlock Text="Members" VerticalAlignment="Center"/>
+                    <Image Source="../Images/user.png" Style="{StaticResource InputFieldHeaderIcons}" />
+                    <TextBlock Text="Members" VerticalAlignment="Center" />
                 </StackPanel>
             </Button>
         </StackPanel>

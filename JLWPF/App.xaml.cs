@@ -1,7 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
-using JLWPF.MVVM.ViewModels;
+﻿using System.Windows;
 
 namespace JLWPF
 {

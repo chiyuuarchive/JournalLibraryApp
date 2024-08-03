@@ -10,6 +10,7 @@ namespace JLWPF
     public partial class MainWindow : Window
     {
         private User? _user;
+
         public User? User
         {
             get => _user;

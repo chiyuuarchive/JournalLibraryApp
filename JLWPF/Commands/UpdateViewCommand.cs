@@ -1,22 +1,10 @@
 ﻿using JLWPF.MVVM.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace JLWPF.Commands
 {
-    class UpdateViewCommand : ICommand
+    internal class UpdateViewCommand(MainViewModel viewModel) : ICommand
     {
-        private MainViewModel _parentViewModel;
-
-        public UpdateViewCommand(MainViewModel viewModel)
-        {
-            _parentViewModel = viewModel;
-        }
-
         public event EventHandler? CanExecuteChanged;
 
         public bool CanExecute(object? parameter)
@@ -29,32 +17,19 @@ namespace JLWPF.Commands
             if (parameter is not string)
                 return;
 
-            if (_parentViewModel.UpdateViewCommand == null) 
+            if (viewModel.UpdateViewCommand == null)
                 return;
 
-            switch (parameter.ToString())
+            viewModel.CurrentViewModel = parameter.ToString() switch
             {
-                case "LoginView":
-                    _parentViewModel.CurrentViewModel = new LoginViewModel(_parentViewModel.UpdateViewCommand);
-                    break;
-                case "UserRegistrationView":
-                    _parentViewModel.CurrentViewModel = new UserRegistrationViewModel(_parentViewModel.UpdateViewCommand);
-                    break;
-                case "HomeView":
-                    _parentViewModel.CurrentViewModel = new HomeViewModel(_parentViewModel.UpdateViewCommand);
-                    break;
-                case "SettingsView":
-                    _parentViewModel.CurrentViewModel = new SettingsViewModel(_parentViewModel.UpdateViewCommand);
-                    break;
-                case "LibraryView":
-                    _parentViewModel.CurrentViewModel = new LibraryViewModel(_parentViewModel.UpdateViewCommand);
-                    break;
-                case "MembersView":
-                    _parentViewModel.CurrentViewModel = new MembersViewModel(_parentViewModel.UpdateViewCommand);
-                    break;
-                default:
-                    throw new Exception("Invalid navigation string");
-            }
+                "LoginView" => new LoginViewModel(viewModel.UpdateViewCommand),
+                "UserRegistrationView" => new UserRegistrationViewModel(viewModel.UpdateViewCommand),
+                "HomeView" => new HomeViewModel(viewModel.UpdateViewCommand),
+                "MyAccountView" => new MyAccountViewModel(viewModel.UpdateViewCommand),
+                "LibraryView" => new LibraryViewModel(viewModel.UpdateViewCommand),
+                "MembersView" => new MembersViewModel(viewModel.UpdateViewCommand),
+                _ => throw new Exception("Invalid navigation string"),
+            };
         }
     }
 }

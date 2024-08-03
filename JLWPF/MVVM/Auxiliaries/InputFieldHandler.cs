@@ -1,6 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows;
 
 namespace JLWPF.MVVM.Auxiliaries
 {
@@ -27,7 +27,6 @@ namespace JLWPF.MVVM.Auxiliaries
 
         public static void SetDefaultFontstyle(TextBox textBox)
         {
-
             textBox.FontStyle = FontStyles.Normal;
             textBox.Foreground = Brushes.Black;
         }

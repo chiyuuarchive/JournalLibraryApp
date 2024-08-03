@@ -5,20 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
-        Title="MessageWindow" Height="150" Width="300">
+        Title="MessageWindow" Height="150" Width="300" WindowStartupLocation="CenterOwner" WindowStyle="None" MouseDown="Window_MouseDown">
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+                <ResourceDictionary Source="../Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="txtMessage" Text="Placeholder message" Style="{StaticResource WindowText}"/>
-            <Button x:Name="btnConfirm" Content="Confirm" Style="{StaticResource WindowButtons}" Click="btnConfirm_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <local:Header x:Name="UIHeader" />
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="txtMessage" Text="Placeholder message" Style="{StaticResource WindowText}" />
+            <Button x:Name="btnConfirm" Content="Confirm" Style="{StaticResource WindowButtons}" Click="btnConfirm_Click" />
         </StackPanel>
     </Grid>
 </Window>

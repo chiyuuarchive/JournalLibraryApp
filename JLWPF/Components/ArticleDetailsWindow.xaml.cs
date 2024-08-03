@@ -1,26 +1,15 @@
 ﻿using JLDatabase.Database.Models;
 using JLWPF.MVVM.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace JLWPF.Components
 {
     public partial class ArticleDetailsWindow : Window
     {
-        Article _article;
-        string articleKey;
-        LibraryViewModel _vm;
+        private Article _article;
+        private string articleKey;
+        private LibraryViewModel _vm;
         private bool _confirmed;
 
         public bool Confirmed
@@ -29,10 +18,13 @@ namespace JLWPF.Components
             set { _confirmed = value; }
         }
 
-        public ArticleDetailsWindow(Window window, LibraryViewModel vm, Article? article)
+        public ArticleDetailsWindow(Window mainWindow, LibraryViewModel vm, Article? article)
         {
             InitializeComponent();
-            Owner = window;
+            // Attach header to current window
+            UIHeader.Owner = this;
+
+            Owner = mainWindow;
             _vm = vm;
             Confirmed = false;
 

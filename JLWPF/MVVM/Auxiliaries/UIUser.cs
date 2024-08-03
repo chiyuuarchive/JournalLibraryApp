@@ -1,9 +1,4 @@
 ﻿using JLDatabase.Database.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JLWPF.MVVM.Auxiliaries
 {
@@ -20,6 +15,7 @@ namespace JLWPF.MVVM.Auxiliaries
         public string LastTimeLoggedIn { get; set; } = null!;
 
         public ICollection<ArticleDownloadLog>? Log() => _log;
+
         public string Password() => _password;
 
         public string Name() => $"{FirstName} {LastName}";

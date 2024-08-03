@@ -1,19 +1,18 @@
-﻿using JLValidatorAPI;
-using JLDatabase.Wrappers;
+﻿using JLDatabase.Database.Models;
 using JLDatabase.Managers;
-using JLDatabase.Database.Models;
+using JLDatabase.Wrappers;
 
 namespace JLDatabase
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
-            //TestUserRegistrationOperations();
-            //TestArticleRegistrationOperations();
+            TestUserRegistrationOperations();
+            TestArticleRegistrationOperations();
         }
 
-        static void TestUserRegistrationOperations()
+        private static void TestUserRegistrationOperations()
         {
             Console.WriteLine("Attempt registering user...");
 
@@ -24,9 +23,9 @@ namespace JLDatabase
             mockUserData[(int)UserFieldTypes.Registration.Email] = "user@gmail.com";
             mockUserData[(int)UserFieldTypes.Registration.Password] = "Abc123";
 
-            EntityFactory factory = new EntityFactory();
+            EntityFactory factory = new();
             IEntityManager userManager = new UserManager();
-            UserWrapper userWrapper = new UserWrapper(factory, userManager);
+            UserWrapper userWrapper = new(factory, userManager);
 
             // Test registration
             userWrapper.RegisterUser(mockUserData);
@@ -39,7 +38,7 @@ namespace JLDatabase
             //userWrapper.ChangeUser(mockUserData, "john_doe@gmail.com");
         }
 
-        static void TestArticleRegistrationOperations()
+        private static void TestArticleRegistrationOperations()
         {
             Console.WriteLine("Attempt registering article...");
 
@@ -52,9 +51,9 @@ namespace JLDatabase
             mockArticleData[(int)ArticleFieldTypes.Registration.YearOfPublication] = "1999";
             mockArticleData[(int)ArticleFieldTypes.Registration.Hyperlink] = "www.nature.com/simcategory";
 
-            EntityFactory factory = new EntityFactory();
+            EntityFactory factory = new();
             IEntityManager articleManager = new ArticleManager();
-            ArticleWrapper articleWrapper = new ArticleWrapper(factory, articleManager);
+            ArticleWrapper articleWrapper = new(factory, articleManager);
 
             // Test registration
             articleWrapper.RegisterArticle(mockArticleData);

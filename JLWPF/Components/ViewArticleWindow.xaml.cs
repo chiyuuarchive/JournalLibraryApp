@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Media.TextFormatting;
+using System.Windows.Input;
 
 namespace JLWPF.Components
 {
@@ -13,12 +13,14 @@ namespace JLWPF.Components
     /// </summary>
     public partial class ViewArticleWindow : Window
     {
-        User _activeUser;
-        Article _article;
+        private User _activeUser;
+        private Article _article;
 
         public ViewArticleWindow(Article article, User activeUser)
         {
             InitializeComponent();
+            UIHeader.Owner = this;
+
             _article = article;
             _activeUser = activeUser;
 
@@ -29,7 +31,7 @@ namespace JLWPF.Components
                 txtAbstract.Text = TruncateStringToWords(abs, 250);
 
             SetText(txtAuthors, "Author(s):", article.Author);
-            SetText(txtPublishedAt, "Published at:", article.JournalTitle != string.Empty? article.JournalTitle : "Unspecified");
+            SetText(txtPublishedAt, "Published at:", article.JournalTitle != string.Empty ? article.JournalTitle : "Unspecified");
             SetText(txtYearOfPublication, "Year of Publication:", article.YearOfPublication);
             SetText(txtCategory, "Category:", article.Category.ToString());
 
@@ -69,7 +71,7 @@ namespace JLWPF.Components
             e.Handled = true;
         }
 
-        void SetText(TextBlock txt, string title, string content)
+        private void SetText(TextBlock txt, string title, string content)
         {
             Bold boldText = new Bold(new Run(title));
             Run normalText = new Run(content);
@@ -79,7 +81,7 @@ namespace JLWPF.Components
             txt.Inlines.Add(normalText);
         }
 
-        string TruncateStringToWords(string input, int maxLength)
+        private string TruncateStringToWords(string input, int maxLength)
         {
             if (string.IsNullOrWhiteSpace(input))
                 return input;
@@ -90,6 +92,14 @@ namespace JLWPF.Components
                 return input;
 
             return $"{string.Join(" ", words.Take(maxLength))}...";
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

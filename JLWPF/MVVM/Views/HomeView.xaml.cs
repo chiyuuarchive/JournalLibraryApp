@@ -9,7 +9,7 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class HomeView : UserControl
     {
-        HomeViewModel _vm;
+        private HomeViewModel _vm = null!;
 
         public HomeView()
         {
@@ -18,8 +18,7 @@ namespace JLWPF.MVVM.Views
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            if (_vm != null)
-                _vm.NavigateToLoginView(Window.GetWindow(this));
+            _vm?.NavigateToLoginView(Window.GetWindow(this));
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

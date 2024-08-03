@@ -9,7 +9,7 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class MembersView : UserControl
     {
-        MembersViewModel _vm;
+        private MembersViewModel _vm;
 
         public MembersView()
         {
@@ -18,7 +18,7 @@ namespace JLWPF.MVVM.Views
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (DataContext is  MembersViewModel vm)
+            if (DataContext is MembersViewModel vm)
             {
                 _vm = vm;
                 _vm.InitializeView(this, Window.GetWindow(this));
@@ -42,7 +42,6 @@ namespace JLWPF.MVVM.Views
             if (_vm != null)
                 _vm.RemoveUser(Window.GetWindow(this));
         }
-
 
         private void btnVerify_Click(object sender, RoutedEventArgs e)
         {

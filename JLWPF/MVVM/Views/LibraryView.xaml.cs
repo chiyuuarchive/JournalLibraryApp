@@ -9,13 +9,12 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class LibraryView : UserControl
     {
-        LibraryViewModel _vm;
+        private LibraryViewModel _vm;
 
         public LibraryView()
         {
             InitializeComponent();
         }
-
 
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
@@ -27,7 +26,6 @@ namespace JLWPF.MVVM.Views
         {
             if (_vm != null)
                 _vm.UpdateSelectedArticle();
-
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

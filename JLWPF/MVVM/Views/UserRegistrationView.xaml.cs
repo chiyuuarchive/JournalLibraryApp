@@ -10,7 +10,8 @@ namespace JLWPF.MVVM.Views
     /// </summary>
     public partial class UserRegistrationView : UserControl
     {
-        UserRegistrationViewModel? _viewModel;
+        private UserRegistrationViewModel? _viewModel;
+
         public UserRegistrationView()
         {
             InitializeComponent();
@@ -36,7 +37,6 @@ namespace JLWPF.MVVM.Views
 
         private void txtFirstName_LostFocus(object sender, RoutedEventArgs e)
         {
-
             if (_viewModel != null)
                 _viewModel.UpdateInputField(txtFirstName, InputFieldHandler.PlaceholderMsgType.FirstName, false);
         }

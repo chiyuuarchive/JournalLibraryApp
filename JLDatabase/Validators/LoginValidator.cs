@@ -1,5 +1,5 @@
-﻿using JLValidatorAPI;
-using JLDatabase.Database.Models;
+﻿using JLDatabase.Database.Models;
+using JLValidatorAPI;
 
 namespace JLDatabase.Validators
 {
@@ -9,10 +9,10 @@ namespace JLDatabase.Validators
         private const string invalidEmailMsg = "Invalid email format (e.g. john_doe@gmail.com)";
         private const string invalidPasswordMsg = "Invalid password format (at least 6 letters + numbers)";
 
-        ValidateRequiredField _validateRequiredField;
-        ValidateMatchPattern _validateMatchPattern;
+        private ValidateRequiredField _validateRequiredField;
+        private ValidateMatchPattern _validateMatchPattern;
 
-        FieldValidator _fieldValidator;
+        private FieldValidator _fieldValidator;
 
         public LoginValidator()
         {
@@ -33,10 +33,11 @@ namespace JLDatabase.Validators
                 switch (fieldType)
                 {
                     case UserFieldTypes.Login.Email:
-                        errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.Email)? errorMessage : invalidEmailMsg;
+                        errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.Email) ? errorMessage : invalidEmailMsg;
                         break;
+
                     case UserFieldTypes.Login.Password:
-                        errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.Password)? errorMessage : invalidPasswordMsg;
+                        errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.Password) ? errorMessage : invalidPasswordMsg;
                         break;
                 }
             }
@@ -47,15 +48,16 @@ namespace JLDatabase.Validators
         public InvalidInputFieldStatus ValidateFields(string[] fields)
         {
             InvalidInputFieldStatus fieldStatus = InvalidInputFieldStatus.None;
-            
+
             for (int i = 0; i < Enum.GetValues(typeof(UserFieldTypes.Login)).Length; i++)
             {
                 UserFieldTypes.Login fieldType = (UserFieldTypes.Login)i;
                 switch (fieldType)
                 {
                     case UserFieldTypes.Login.Email:
-                        fieldStatus = _validateRequiredField(fields[i])  && _validateMatchPattern(fields[i], RegexValidatorPatterns.Email) ? fieldStatus : InvalidInputFieldStatus.Email;
+                        fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Email) ? fieldStatus : InvalidInputFieldStatus.Email;
                         break;
+
                     case UserFieldTypes.Login.Password:
                         fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Password) ? fieldStatus : InvalidInputFieldStatus.Password;
                         break;

@@ -1,9 +1,8 @@
-﻿using JLValidatorAPI;
-using JLDatabase.Authentication;
+﻿using JLDatabase.Authentication;
 using JLDatabase.Database.Models;
 using JLDatabase.Managers;
 using JLDatabase.Validators;
-using Microsoft.Extensions.Options;
+using JLValidatorAPI;
 
 namespace JLDatabase
 {
@@ -13,15 +12,15 @@ namespace JLDatabase
         {
             IAuthentication authentication = new UserRegistrationAuthentication();
             IValidator validator = new UserRegistrationValidator();
-            UserManager userManager = new UserManager();
+            UserManager userManager = new();
 
-            validateResult = new UserRegistrationValidator().ValidateFields(fields);
-            authenticateResult = new UserRegistrationAuthentication().Authenticate(fields);
+            validateResult = validator.ValidateFields(fields);
+            authenticateResult = authentication.Authenticate(fields);
 
             if (validateResult == InvalidInputFieldStatus.None &&
                 authenticateResult == InvalidAuthenticationStatus.None)
             {
-                EntityFactory factory = new EntityFactory();
+                EntityFactory factory = new();
                 userManager.Register(factory.CreateUser(fields));
             }
         }
@@ -30,7 +29,7 @@ namespace JLDatabase
         {
             IAuthentication authentication = new LoginAuthentication();
             IValidator validator = new LoginValidator();
-            UserManager userManager = new UserManager();
+            UserManager userManager = new();
 
             User? user = null;
             validateResult = validator.ValidateFields(fields);
@@ -42,7 +41,7 @@ namespace JLDatabase
                 string email = fields[(int)UserFieldTypes.Login.Email];
                 string password = fields[(int)UserFieldTypes.Login.Password];
 
-                // Try to find user 
+                // Try to find user
                 List<User> users = userManager.Entities.Cast<User>().ToList();
                 user = users.SingleOrDefault(u => u.Email == email && u.Password == password);
             }
@@ -52,9 +51,9 @@ namespace JLDatabase
 
         public static void UpdateUserLoginTime(User u)
         {
-            EntityFactory factory = new EntityFactory();
+            EntityFactory factory = new();
             IValidator validator = new UserRegistrationValidator();
-            UserManager userManager = new UserManager();
+            UserManager userManager = new();
 
             InvalidInputFieldStatus validateResult = validator.ValidateFields(factory.CreateUserStringArray(u));
 
@@ -68,8 +67,8 @@ namespace JLDatabase
         {
             IAuthentication authentication = new UserRegistrationAuthentication();
             IValidator validator = new UserRegistrationValidator();
-            UserManager userManager = new UserManager();
-            EntityFactory factory = new EntityFactory();
+            UserManager userManager = new();
+            EntityFactory factory = new();
 
             validateResult = validator.ValidateFields(fields);
             authenticateResult = authentication.Authenticate(fields);
@@ -77,7 +76,7 @@ namespace JLDatabase
             if (validateResult != InvalidInputFieldStatus.None)
                 return;
 
-            User u = isVerified? factory.CreateVerifiedUser(fields) : factory.CreateUser(fields);
+            User u = isVerified ? factory.CreateVerifiedUser(fields) : factory.CreateUser(fields);
 
             // If email is different replace the user details of the old email
             if (authenticateResult == InvalidAuthenticationStatus.None)
@@ -100,89 +99,79 @@ namespace JLDatabase
 
         public static void UpdateVerifiedUser(string emailID, User user)
         {
-            UserManager userManager = new UserManager();
+            UserManager userManager = new();
             userManager.ChangeAt(user, emailID);
         }
 
         public static List<Article> FetchArticles()
         {
-            ArticleManager manager = new ArticleManager();
+            ArticleManager manager = new();
             return manager.Entities.Cast<Article>().ToList();
         }
 
         public static List<User> FetchUsers()
         {
-            UserManager manager = new UserManager();
+            UserManager manager = new();
             return manager.Entities.Cast<User>().ToList();
         }
 
         public static Article GetArticleByKey(string hyperlinkKey)
         {
-            ArticleManager articleManager = new ArticleManager();
+            ArticleManager articleManager = new();
             List<Article> articles = articleManager.Entities.Cast<Article>().ToList();
             Article? a = articles.FirstOrDefault(a => a.Hyperlink == hyperlinkKey);
-            
-            if (a == null)
-                throw new Exception("Can't find article");
-            
-            return a;
+
+            return a ?? throw new Exception("Can't find article");
         }
 
         public static Article GetArticleById(int id)
         {
-            ArticleManager articleManager = new ArticleManager();
+            ArticleManager articleManager = new();
             List<Article> articles = articleManager.Entities.Cast<Article>().ToList();
             Article? a = articles.FirstOrDefault(a => a.Id == id);
 
-            if (a == null)
-                throw new Exception("Can't find article");
-
-            return a;
+            return a ?? throw new Exception("Can't find article");
         }
 
         public static User GetUserByKey(string emailKey)
         {
-            UserManager userManager = new UserManager();
+            UserManager userManager = new();
             List<User> users = userManager.Entities.Cast<User>().ToList();
             User? u = users.FirstOrDefault(u => u.Email == emailKey);
-            if (u == null)
-                throw new Exception("Can't find user");
 
-            return u;
+            return u ?? throw new Exception("Can't find user");
         }
 
         public static List<ArticleDownloadLog> GetLogByUserKey(string emailKey)
         {
-            UserManager manager = new UserManager();
+            UserManager manager = new();
             User? user = manager.Entities.Cast<User>().ToList().FirstOrDefault(u => u.Email == emailKey);
-            if (user == null)
-                throw new Exception("User not found");
 
-            return manager.Log.Where(l => l.UserId == user.Id).ToList();
+            return user == null ? throw new Exception("User not found") : manager.Log.Where(l => l.UserId == user.Id).ToList();
         }
 
         public static void RemoveArticleByKey(string hyperlinkKey)
         {
-            ArticleManager manager = new ArticleManager();
+            ArticleManager manager = new();
             manager.RemoveAt(hyperlinkKey);
         }
 
         public static void RemoveUserByKey(string emailKey)
         {
-            UserManager manager = new UserManager();
+            UserManager manager = new();
             manager.RemoveAt(emailKey);
         }
 
-        public static void UpdateArticleDetails(string hyperlinkID, string[]fields, out InvalidInputFieldStatus validateResult, out InvalidAuthenticationStatus authenticateResult)
+        public static void UpdateArticleDetails(string hyperlinkID, string[] fields, out InvalidInputFieldStatus validateResult, out InvalidAuthenticationStatus authenticateResult)
         {
             IAuthentication authentication = new ArticleRegistrationAuthentication();
             IValidator validator = new ArticleRegistrationValidator();
-            ArticleManager manager = new ArticleManager();
-            EntityFactory entityFactory = new EntityFactory();
+            ArticleManager manager = new();
+            EntityFactory entityFactory = new();
 
             validateResult = validator.ValidateFields(fields);
             authenticateResult = authentication.Authenticate(fields);
-            
+
             if (validateResult != InvalidInputFieldStatus.None)
                 return;
 
@@ -198,7 +187,7 @@ namespace JLDatabase
             // Handle case if same hyperlink is recognized
             if (authenticateResult == InvalidAuthenticationStatus.HyperlinkAlreadyRegistered)
             {
-                if (fields[(int)ArticleFieldTypes.Registration.Hyperlink] == hyperlinkID) 
+                if (fields[(int)ArticleFieldTypes.Registration.Hyperlink] == hyperlinkID)
                 {
                     manager.ChangeAt(article, hyperlinkID);
                     authenticateResult = InvalidAuthenticationStatus.None;

@@ -10,16 +10,15 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="CanMinimize"
-        AllowsTransparency="True"
-        >
+        AllowsTransparency="True">
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height=".05*"/>
-            <RowDefinition/>
+            <RowDefinition Height=".05*" />
+            <RowDefinition />
         </Grid.RowDefinitions>
 
-        <components:Header Grid.Row="0" x:Name="UIHeader" MouseDown="UIHeader_MouseDown"/>
-        <ContentControl Grid.Row="1" x:Name="ccMainWindow" Content="{Binding CurrentViewModel}"/>
+        <components:Header Grid.Row="0" x:Name="UIHeader" MouseDown="UIHeader_MouseDown" />
+        <ContentControl Grid.Row="1" x:Name="ccMainWindow" Content="{Binding CurrentViewModel}" />
     </Grid>
 </Window>

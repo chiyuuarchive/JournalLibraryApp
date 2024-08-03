@@ -1,19 +1,7 @@
 ﻿using JLDatabase.Database.Models;
 using JLWPF.MVVM.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace JLWPF.Components
 {
@@ -27,13 +15,13 @@ namespace JLWPF.Components
             InitializeComponent();
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        private void btnMyAccount_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mw = (MainWindow)Window.GetWindow(this);
             User? u = mw.User;
             MainViewModel vm = (MainViewModel)mw.DataContext;
             if (vm != null)
-                vm.UpdateViewCommand?.Execute("SettingsView");
+                vm.UpdateViewCommand?.Execute("MyAccountView");
         }
 
         private void btnLibrary_Click(object sender, RoutedEventArgs e)
@@ -49,7 +37,7 @@ namespace JLWPF.Components
         {
             MainWindow mw = (MainWindow)Window.GetWindow(this);
             User? u = mw.User;
-            MainViewModel vm =(MainViewModel)mw.DataContext;
+            MainViewModel vm = (MainViewModel)mw.DataContext;
             if (vm != null)
                 vm.UpdateViewCommand?.Execute("MembersView");
         }

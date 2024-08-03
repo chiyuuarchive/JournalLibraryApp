@@ -6,22 +6,28 @@
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
         Title="Confirm" Height="150" Width="300"
-        WindowStartupLocation="CenterOwner">
-    
+        WindowStartupLocation="CenterOwner" WindowStyle="None" MouseDown="Window_MouseDown">
+
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+                <ResourceDictionary Source="../Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock  x:Name="txtMessage"  Text="Placeholder text?" Style="{StaticResource WindowText}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".15*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <local:Header x:Name="UIHeader" />
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock  x:Name="txtMessage"  Text="Placeholder text?" Style="{StaticResource WindowText}" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-                <Button Name="btnYes" Content="Yes" Style="{StaticResource WindowButtons}" Click="btnYes_Click"/>
-                <Button Name="btnNo" Content="No" Style="{StaticResource WindowButtons}" Click="btnNo_Click"/>
+                <Button Name="btnNo" Content="No" Style="{StaticResource WindowButtons}" Click="btnNo_Click" />
+                <Button Name="btnYes" Content="Yes" Style="{StaticResource WindowButtons}" Click="btnYes_Click" />
             </StackPanel>
         </StackPanel>
     </Grid>

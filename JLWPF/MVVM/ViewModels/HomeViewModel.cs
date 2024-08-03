@@ -8,10 +8,11 @@ using System.Windows.Input;
 
 namespace JLWPF.MVVM.ViewModels
 {
-    class HomeViewModel : ViewModelBase
+    internal class HomeViewModel : ViewModelBase
     {
         private bool _isAdminPanelVisible;
         public bool IsUserPanelVisible => !_isAdminPanelVisible;
+
         public bool IsAdminPanelVisible
         {
             get => _isAdminPanelVisible;
@@ -44,7 +45,6 @@ namespace JLWPF.MVVM.ViewModels
 
             // Update navigation panel
             IsAdminPanelVisible = mw.User.IsAdmin;
-
 
             if (mw.User.IsAdmin)
             {

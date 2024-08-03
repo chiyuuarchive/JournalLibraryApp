@@ -5,13 +5,14 @@ namespace JLDatabase.Managers
 {
     internal class UserManager : IEntityManager
     {
-        ICollection<User> _users;
-        ICollection<ArticleDownloadLog> _log;
+        private readonly List<User> _users;
+        private readonly List<ArticleDownloadLog> _log;
         public ICollection<object> Entities => new List<object>(_users);
         public ICollection<ArticleDownloadLog> Log => _log;
+
         public UserManager()
         {
-            _users = new List<User>();
+            _users = new();
             _log = new List<ArticleDownloadLog>();
             InitializeManager();
         }
@@ -47,15 +48,13 @@ namespace JLDatabase.Managers
         public void InitializeManager()
         {
             // Update user list in manager class with current database
-            using (var dbContext = new JournalLibraryDbContext())
-            {
-                dbContext.Database.EnsureCreated();
-                foreach (var userSet in dbContext.Users)
-                    _users.Add(userSet);
+            using var dbContext = new JournalLibraryDbContext();
+            dbContext.Database.EnsureCreated();
+            foreach (var userSet in dbContext.Users)
+                _users.Add(userSet);
 
-                foreach(var logSet in dbContext.ArticleDownloadLog)
-                    _log.Add(logSet);
-            }
+            foreach (var logSet in dbContext.ArticleDownloadLog)
+                _log.Add(logSet);
         }
 
         public bool Register(object entity)

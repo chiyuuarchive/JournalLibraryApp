@@ -1,6 +1,5 @@
-﻿using JLValidatorAPI;
-using JLDatabase.Database.Data;
-using JLDatabase.Database.Models;
+﻿using JLDatabase.Database.Models;
+using JLValidatorAPI;
 
 namespace JLDatabase.Validators
 {
@@ -11,20 +10,16 @@ namespace JLDatabase.Validators
         private const string invalidJournalTitleMsg = "Invalid journal title (e.g. Journal of Machine Learning Research)";
         private const string invalidYearOfPublicationMsg = "Invalid year format (e.g. 1999)";
         private const string invalidHyperlinkMsg = "Invalid link address to source (e.g. www.example.com)";
-        private const string hyperlinkAlreadyRegistered = "Same source link has already been registered";
 
         // Field validator delegates
-        ValidateRequiredField _validateRequiredField;
-        ValidateMatchPattern _validateMatchPattern;
+        private readonly ValidateRequiredField _validateRequiredField;
 
-        FieldValidator _fieldValidator;
+        private readonly ValidateMatchPattern _validateMatchPattern;
 
         public ArticleRegistrationValidator()
         {
             _validateRequiredField = FieldValidators.ValidateRequiredField;
             _validateMatchPattern = FieldValidators.ValidateMatchPattern;
-
-            _fieldValidator = new FieldValidator(ValidateFieldsExperimental);
         }
 
         public bool ValidateFieldsExperimental(string[] fields, out string errorMessage)
@@ -43,26 +38,31 @@ namespace JLDatabase.Validators
                         // Check if field is specified
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Choose a category";
                         break;
+
                     case ArticleFieldTypes.Registration.Author:
                         // Check if author is defined
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Author not defined";
                         // Validate correct name format
                         errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.AuthorNameFormat) ? errorMessage : invalidAuthorMsg;
                         break;
+
                     case ArticleFieldTypes.Registration.ArticleTitle:
                         // Check if title is defined
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Article title not defined";
                         // Validate article title format
                         errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.ArticleTitle) ? errorMessage : invalidArticleTitleMsg;
                         break;
+
                     case ArticleFieldTypes.Registration.JournalTitle:
                         if (isPublishedInJournal)
                             errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.JournalTitle) ? errorMessage : invalidJournalTitleMsg;
                         break;
+
                     case ArticleFieldTypes.Registration.YearOfPublication:
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Year of publication not defined";
                         errorMessage = _validateMatchPattern(fields[i], RegexValidatorPatterns.YearOfPublication) ? errorMessage : invalidYearOfPublicationMsg;
                         break;
+
                     case ArticleFieldTypes.Registration.Hyperlink:
                         // Check if a source link was provided
                         errorMessage = _validateRequiredField(fields[i]) ? errorMessage : "Provide a source link";
@@ -91,21 +91,26 @@ namespace JLDatabase.Validators
                         int val = int.Parse(fields[i]);
                         fieldStatus = _validateRequiredField(fields[i]) ? fieldStatus : InvalidInputFieldStatus.IEEECategory;
                         break;
+
                     case ArticleFieldTypes.Registration.Author:
                         // Validate correct name format
                         fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.AuthorNameFormat) ? fieldStatus : InvalidInputFieldStatus.Author;
                         break;
+
                     case ArticleFieldTypes.Registration.ArticleTitle:
                         // Validate article title format
                         fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.ArticleTitle) ? fieldStatus : InvalidInputFieldStatus.ArticleTitle;
                         break;
+
                     case ArticleFieldTypes.Registration.JournalTitle:
                         if (isPublishedInJournal)
                             fieldStatus = _validateMatchPattern(fields[i], RegexValidatorPatterns.JournalTitle) ? fieldStatus : InvalidInputFieldStatus.JournalTitle;
                         break;
+
                     case ArticleFieldTypes.Registration.YearOfPublication:
                         fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.YearOfPublication) ? fieldStatus : InvalidInputFieldStatus.YearOfPublication;
                         break;
+
                     case ArticleFieldTypes.Registration.Hyperlink:
                         // Validate link address format
                         fieldStatus = _validateRequiredField(fields[i]) && _validateMatchPattern(fields[i], RegexValidatorPatterns.Hyperlink) ? fieldStatus : InvalidInputFieldStatus.Hyperlink;

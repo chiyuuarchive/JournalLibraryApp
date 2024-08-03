@@ -15,13 +15,13 @@ namespace JLWPF.Components
             InitializeComponent();
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        private void btnMyAccount_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mw = (MainWindow)Window.GetWindow(this);
             User? u = mw.User;
             MainViewModel vm = (MainViewModel)mw.DataContext;
             if (vm != null)
-                vm.UpdateViewCommand?.Execute("SettingsView");
+                vm.UpdateViewCommand?.Execute("MyAccountView");
         }
 
         private void btnLibrary_Click(object sender, RoutedEventArgs e)
@@ -31,7 +31,6 @@ namespace JLWPF.Components
             MainViewModel vm = (MainViewModel)mw.DataContext;
             if (vm != null)
                 vm.UpdateViewCommand?.Execute("LibraryView");
-
         }
     }
 }

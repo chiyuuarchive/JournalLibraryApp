@@ -4,7 +4,7 @@ using JLWPF.MVVM.Auxiliaries;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Shapes;
+using System.Windows.Input;
 
 namespace JLWPF.Components
 {
@@ -13,10 +13,13 @@ namespace JLWPF.Components
     /// </summary>
     public partial class DownloadLogWindow : Window
     {
-        public DownloadLogWindow(Window window, UIUser user, List<ArticleDownloadLog> log)
+        public DownloadLogWindow(Window mainWIndow, UIUser user, List<ArticleDownloadLog> log)
         {
             InitializeComponent();
-            Owner = window;
+            // Attach header to current window
+            UIHeader.Owner = this;
+
+            Owner = mainWIndow;
             ClearFields();
             SetText(txtName, "Name: ", user.Name());
             SetText(txtEmail, "Email: ", user.Email);
@@ -29,7 +32,8 @@ namespace JLWPF.Components
                 if (counter == 0) break;
                 Article a = JLDatabaseConnector.GetArticleById(log[i].ArticleId);
 
-                string msg = $"Article: {a.ArticleTitle}\nDownloaded at {log[i].DownloadDateTime.ToString("dd/MM/yyyy, HH:mm:ss")}";
+                string formattedDate = log[i].DownloadDateTime.ToString("dd/MM/yyyy, HH:mm:ss");
+                string msg = $"Article: {a.ArticleTitle}\nDownloaded at {formattedDate}";
                 txtLog.Inlines.Add(msg);
                 txtLog.Inlines.Add(new LineBreak());
                 txtLog.Inlines.Add("=====");
@@ -38,7 +42,7 @@ namespace JLWPF.Components
             }
         }
 
-        void ClearFields()
+        private void ClearFields()
         {
             txtName.Text = string.Empty;
             txtEmail.Text = string.Empty;
@@ -46,13 +50,21 @@ namespace JLWPF.Components
             txtLog.Text = string.Empty;
         }
 
-        void SetText(TextBlock txt, string title, string content)
+        private void SetText(TextBlock txt, string title, string content)
         {
-            Bold boldText = new Bold(new Run(title));
-            Run normalText = new Run(content);
+            Bold boldText = new(new Run(title));
+            Run normalText = new(content);
             txt.Text = string.Empty;
             txt.Inlines.Add(boldText);
             txt.Inlines.Add(normalText);
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

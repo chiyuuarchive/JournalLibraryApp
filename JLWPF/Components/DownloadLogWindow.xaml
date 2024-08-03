@@ -5,25 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
-        Title="Download Log" Height="500" Width="500" WindowStartupLocation="CenterOwner">
+        Title="Download Log" Height="500" Width="500" WindowStartupLocation="CenterOwner" WindowStyle="None" MouseDown="Window_MouseDown">
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+                <ResourceDictionary Source="../Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-            <TextBlock x:Name="txtName" Text="Name: (placeholder)" Style="{StaticResource DownloadLogTexts}" HorizontalAlignment="Center"/>
-            <TextBlock x:Name="txtEmail" Text="Email: (placeholder)" Style="{StaticResource DownloadLogTexts}"/>
-            <TextBlock x:Name="txtLastTimeLoggedIn" Text="Last time Logged in: (placeholder)" Style="{StaticResource DownloadLogTexts}"/>
-            <Rectangle Height="25"/>
-            <TextBlock Text="Article Download Log:" FontWeight="Bold" Margin="5 0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".05*" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <local:Header x:Name="UIHeader" />
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock x:Name="txtName" Text="Name: (placeholder)" Style="{StaticResource DownloadLogTexts}" HorizontalAlignment="Center" />
+            <TextBlock x:Name="txtEmail" Text="Email: (placeholder)" Style="{StaticResource DownloadLogTexts}" />
+            <TextBlock x:Name="txtLastTimeLoggedIn" Text="Last time Logged in: (placeholder)" Style="{StaticResource DownloadLogTexts}" />
+            <Rectangle Height="25" />
+            <TextBlock Text="Article Download Log:" FontWeight="Bold" Margin="5 0" />
             <Border Style="{StaticResource ViewArticleBorders}" Margin="5 0">
-                <TextBlock x:Name="txtLog" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10" MinWidth="450" MinHeight="250"/>
+                <TextBlock x:Name="txtLog" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10" MinWidth="450" MinHeight="250" />
             </Border>
         </StackPanel>
     </Grid>

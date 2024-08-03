@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\App.xaml
-18465280856
+18-1829373927
 
-35-219245344
+35-1901721421
 2181213386149
-Components\AdminLibraryPanel.xaml;Components\AdminNavigationPanel.xaml;Components\ArticleDetailsWindow.xaml;Components\DownloadLogWindow.xaml;Components\Header.xaml;Components\MessageWindow.xaml;Components\UserLibraryPanel.xaml;Components\UserNavigationPanel.xaml;Components\ViewArticleWindow.xaml;Components\YesNoWindow.xaml;MainWindow.xaml;MVVM\Views\HomeView.xaml;MVVM\Views\LibraryView.xaml;MVVM\Views\LoginView.xaml;MVVM\Views\MembersView.xaml;MVVM\Views\SettingsView.xaml;MVVM\Views\UserRegistrationView.xaml;Styles\Styles.xaml;
+Components\AdminLibraryPanel.xaml;Components\AdminNavigationPanel.xaml;Components\ArticleDetailsWindow.xaml;Components\DownloadLogWindow.xaml;Components\Header.xaml;Components\MessageWindow.xaml;Components\UserLibraryPanel.xaml;Components\UserNavigationPanel.xaml;Components\ViewArticleWindow.xaml;Components\YesNoWindow.xaml;MainWindow.xaml;MVVM\Views\HomeView.xaml;MVVM\Views\LibraryView.xaml;MVVM\Views\LoginView.xaml;MVVM\Views\MembersView.xaml;MVVM\Views\MyAccountView.xaml;MVVM\Views\UserRegistrationView.xaml;Styles\Styles.xaml;
 
 True
 

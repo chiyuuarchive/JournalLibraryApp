@@ -1,10 +1,4 @@
-﻿using JLValidatorAPI;
-using JLDatabase.Database.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JLDatabase.Database.Models;
 
 namespace JLDatabase
 {
@@ -12,7 +6,7 @@ namespace JLDatabase
     {
         public User CreateUser(string[] fields)
         {
-            User user = new User
+            User user = new()
             {
                 RegisteredAt = DateTime.Now,
                 IsAdmin = bool.Parse(fields[(int)UserFieldTypes.Registration.IsAdmin]),
@@ -41,7 +35,7 @@ namespace JLDatabase
 
         public User CreateVerifiedUser(string[] fields)
         {
-            User user = new User
+            User user = new()
             {
                 RegisteredAt = DateTime.Now,
                 IsAdmin = bool.Parse(fields[(int)UserFieldTypes.Registration.IsAdmin]),
@@ -58,7 +52,7 @@ namespace JLDatabase
 
         public Article CreateArticle(string[] fields)
         {
-            Article article = new Article
+            Article article = new()
             {
                 RegisteredAt = DateTime.Now,
                 Category = (IEEECategory)int.Parse(fields[(int)ArticleFieldTypes.Registration.IEEECategory]),

@@ -9,7 +9,7 @@ namespace JLWPF.Components
     /// </summary>
     public partial class AdminLibraryPanel : UserControl
     {
-        LibraryViewModel _vm;
+        private LibraryViewModel _vm;
 
         public AdminLibraryPanel()
         {
@@ -53,6 +53,5 @@ namespace JLWPF.Components
         {
             btnRemoveArticle.IsEnabled = enable;
         }
-
     }
 }

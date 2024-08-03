@@ -20,20 +20,13 @@
         Transportation
     }
 
-    public enum ProjectStatus
-    {
-        Active,
-        Completed,
-        Cancelled,
-        OnHold
-    }
-
     public enum InvalidInputFieldStatus
     {
         None,
 
         // User validation states
         IsAdmin,
+
         FirstName,
         LastName,
         Email,
@@ -41,6 +34,7 @@
 
         // Article validation states
         IEEECategory,
+
         Author,
         ArticleTitle,
         Abstract,
@@ -55,6 +49,7 @@
 
         // User authentication states
         EmailAlreadyRegistered,
+
         UserDoesntExist,
         UserNotVerified,
 
@@ -72,7 +67,7 @@
             IsAdmin = 0,
             FirstName = 4,
             LastName = 3,
-            Email = 2, 
+            Email = 2,
             Password = 1,
         }
 
@@ -80,7 +75,7 @@
         {
             Email = 1,
             Password = 0,
-        }      
+        }
     }
 
     public class ArticleFieldTypes

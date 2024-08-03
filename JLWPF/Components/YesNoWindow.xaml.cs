@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace JLWPF.Components
 {
@@ -15,10 +16,12 @@ namespace JLWPF.Components
             set { _confirmed = value; }
         }
 
-        public YesNoWindow(Window parent, string message)
+        public YesNoWindow(Window mainWindow, string message)
         {
             InitializeComponent();
-            Owner = parent;
+            UIHeader.Owner = this;
+
+            Owner = mainWindow;
             Confirmed = false;
             txtMessage.Text = message;
         }
@@ -31,7 +34,16 @@ namespace JLWPF.Components
 
         private void btnNo_Click(object sender, RoutedEventArgs e)
         {
+            Confirmed = false;
             Close();
+        }
+
+        private void Window_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }

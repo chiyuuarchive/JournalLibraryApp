@@ -12,16 +12,17 @@ namespace JLWPF.MVVM.ViewModels
 {
     public class LibraryViewModel : ViewModelBase
     {
-        UserLibraryPanel _userLibraryPanel;
-        AdminLibraryPanel _adminLibraryPanel;
-        List<UIArticle> _articles;
+        private UserLibraryPanel _userLibraryPanel = null!;
+        private AdminLibraryPanel _adminLibraryPanel = null!;
+        private List<UIArticle> _articles = null!;
 
-        LibraryView _libraryView;
-        
-        string articleKey;
+        private LibraryView _libraryView = null!;
+
+        private string articleKey = null!;
 
         private bool _isAdminLibraryPanelVisible;
         public bool IsUserLibraryPanelVisible => !_isAdminLibraryPanelVisible;
+
         public bool IsAdminLibraryPanelVisible
         {
             get => _isAdminLibraryPanelVisible;
@@ -54,7 +55,6 @@ namespace JLWPF.MVVM.ViewModels
 
             UpdateTable();
             EnablePanelButtons(false);
-            
         }
 
         private void EnablePanelButtons(bool enabled)
@@ -112,12 +112,13 @@ namespace JLWPF.MVVM.ViewModels
             Article a = JLDatabaseConnector.GetArticleByKey(articleKey);
 
             // Send the article to the dialog
-            ViewArticleWindow w = new ViewArticleWindow(a, mw.User);
+            ViewArticleWindow w = new(a, mw.User);
             w.Owner = mw;
             w.ShowDialog();
         }
 
         #region AdminLibraryPanel
+
         public void RemoveSelectedArticle(Window window)
         {
             MainWindow mw = (MainWindow)window;
@@ -129,7 +130,7 @@ namespace JLWPF.MVVM.ViewModels
             if (articleToRemove == null)
                 throw new Exception("Selected article does not exist");
 
-            YesNoWindow dialog = new YesNoWindow(window, $"Confirm to delete article '{articleToRemove.Title}'");
+            YesNoWindow dialog = new(window, $"Confirm to delete article '{articleToRemove.Title}'");
             dialog.ShowDialog();
             if (dialog.Confirmed)
             {
@@ -144,27 +145,30 @@ namespace JLWPF.MVVM.ViewModels
             if (articleKey != string.Empty)
                 a = JLDatabaseConnector.GetArticleByKey(articleKey);
 
-            ArticleDetailsWindow editArticle = new ArticleDetailsWindow(window, this, a);
+            ArticleDetailsWindow editArticle = new(window, this, a);
             editArticle.ShowDialog();
 
             if (editArticle.Confirmed)
                 UpdateTable();
         }
-        #endregion
+
+        #endregion AdminLibraryPanel
 
         #region ArticleDetailsWindow
+
         public void CloseArticleDetailsWindow(ArticleDetailsWindow window)
         {
             articleKey = string.Empty;
             EnablePanelButtons(false);
             window.Close();
         }
+
         public void SubmitArticleDetails(ArticleDetailsWindow window)
         {
             string[] fields = new string[Enum.GetValues(typeof(ArticleFieldTypes.Registration)).Length];
             fields[(int)ArticleFieldTypes.Registration.ArticleTitle] = window.txtArticleTitle.Text;
             fields[(int)ArticleFieldTypes.Registration.Author] = window.txtAuthors.Text;
-            fields[(int)ArticleFieldTypes.Registration.Abstract] = window.txtAbstract.Text;            
+            fields[(int)ArticleFieldTypes.Registration.Abstract] = window.txtAbstract.Text;
             fields[(int)ArticleFieldTypes.Registration.JournalTitle] = window.txtJournalTitle.Text;
             fields[(int)ArticleFieldTypes.Registration.YearOfPublication] = window.txtYearOfPublication.Text;
             fields[(int)ArticleFieldTypes.Registration.Hyperlink] = window.txtHyperlink.Text;
@@ -181,20 +185,25 @@ namespace JLWPF.MVVM.ViewModels
                 case InvalidInputFieldStatus.ArticleTitle:
                     ShowMessage(window.Owner, "Invalid article title");
                     return;
+
                 case InvalidInputFieldStatus.Author:
                     ShowMessage(window.Owner, "Invalid author format");
                     return;
+
                 case InvalidInputFieldStatus.Abstract:
                     throw new Exception("Invalid abstract");
                 case InvalidInputFieldStatus.JournalTitle:
                     ShowMessage(window.Owner, "Invalid journal title");
                     return;
+
                 case InvalidInputFieldStatus.YearOfPublication:
                     ShowMessage(window.Owner, "Invalid year format");
                     return;
+
                 case InvalidInputFieldStatus.Hyperlink:
                     ShowMessage(window.Owner, "Invalid hyperlink format");
                     return;
+
                 case InvalidInputFieldStatus.IEEECategory:
                     throw new Exception("Invalid category");
                 default:
@@ -202,16 +211,18 @@ namespace JLWPF.MVVM.ViewModels
             }
 
             // handle authentication result
-            switch(authenticateResult)
+            switch (authenticateResult)
             {
                 case InvalidAuthenticationStatus.None:
                     ShowMessage(window.Owner, "Article details successfully updated!");
                     window.Confirmed = true;
                     CloseArticleDetailsWindow(window);
                     break;
+
                 case InvalidAuthenticationStatus.HyperlinkAlreadyRegistered:
                     ShowMessage(window.Owner, "Hyperlink already registered");
                     return;
+
                 default:
                     throw new Exception("Unexpected authentication error from LibraryViewModel.cs");
             }
@@ -219,9 +230,10 @@ namespace JLWPF.MVVM.ViewModels
 
         private void ShowMessage(Window parent, string message)
         {
-            MessageWindow mw = new MessageWindow(parent, message);
+            MessageWindow mw = new(parent, message);
             mw.ShowDialog();
         }
-        #endregion
+
+        #endregion ArticleDetailsWindow
     }
 }

@@ -6,76 +6,77 @@
         xmlns:local="clr-namespace:JLWPF.Components"
         mc:Ignorable="d"
         Title="Article Details" Height="600" Width="500"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner" WindowStyle="None" MouseDown="Window_MouseDown">
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+                <ResourceDictionary Source="../Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height=".35*"/>
-            <RowDefinition Height=".25*"/>
+            <RowDefinition Height=".05*" />
+            <RowDefinition />
+            <RowDefinition Height=".35*" />
+            <RowDefinition Height=".25*" />
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Margin="15 10 15 10" Grid.ColumnSpan="2">
-            <TextBlock x:Name="txtArticleTitle" Text="Article Title: (placeholder)" Style="{StaticResource ViewArticleTextBlocks}" HorizontalAlignment="Center" Padding="5" TextWrapping="Wrap" FontSize="10"/>
-            <TextBlock Text="Abstract:" FontWeight="Bold"/>
+        <local:Header Grid.ColumnSpan="2" x:Name="UIHeader" />
+
+        <StackPanel Grid.Row="1" Margin="15 10 15 10" Grid.ColumnSpan="2">
+            <TextBlock x:Name="txtArticleTitle" Text="Article Title: (placeholder)" Style="{StaticResource ViewArticleTextBlocks}" HorizontalAlignment="Center" Padding="5" TextWrapping="Wrap" FontSize="10" />
+            <TextBlock Text="Abstract:" FontWeight="Bold" />
 
             <Border Style="{StaticResource ViewArticleBorders}">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <TextBlock x:Name="txtAbstract" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10"/>
+                    <TextBlock x:Name="txtAbstract" Text="placeholder text" Style="{StaticResource ViewArticleTextBlocks}" TextWrapping="Wrap" FontSize="10" />
                 </ScrollViewer>
             </Border>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="15 0" VerticalAlignment="Top">
+        <StackPanel Grid.Row="2" Margin="15 0" VerticalAlignment="Top">
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtAuthors" Text="Author(s):" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
+                <TextBlock x:Name="txtAuthors" Text="Author(s):" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap" />
             </Border>
-            
-            <Rectangle Height="20"/>
+
+            <Rectangle Height="20" />
 
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtPublishedAt" Text="Published at: " Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
+                <TextBlock x:Name="txtPublishedAt" Text="Published at: " Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap" />
             </Border>
         </StackPanel>
-        
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="15 0" VerticalAlignment="Top">
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="15 0" VerticalAlignment="Top">
 
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtYearOfPublication" Text="Year of Publication:" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
+                <TextBlock x:Name="txtYearOfPublication" Text="Year of Publication:" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap" />
             </Border>
 
-            <Rectangle Height="20"/>
+            <Rectangle Height="20" />
             <Border Style="{StaticResource ViewArticleBorders}">
-                <TextBlock x:Name="txtCategory" Text="Category:" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap"/>
+                <TextBlock x:Name="txtCategory" Text="Category:" Style="{StaticResource ViewArticleTextBlocks}" FontSize="10" TextWrapping="Wrap" />
             </Border>
-
         </StackPanel>
 
-
-        <StackPanel Grid.Row="2" Margin="15 20 -25 5">
-            <TextBlock Text="Source:" FontWeight="Bold" HorizontalAlignment="Left"/>
+        <StackPanel Grid.Row="3" Margin="15 20 -25 5">
+            <TextBlock Text="Source:" FontWeight="Bold" HorizontalAlignment="Left" />
             <TextBlock x:Name="txtSource" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource ViewArticleTextBlocks}" Background="LightGray" Margin="5" TextWrapping="Wrap">
-                <Hyperlink x:Name="linkSource" RequestNavigate="linkSource_RequestNavigate" FontSize="10"/>
+                <Hyperlink x:Name="linkSource" RequestNavigate="linkSource_RequestNavigate" FontSize="10" />
             </TextBlock>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnSource" Padding="5" Style="{StaticResource ButtonsWithIcons}" Click="btnSource_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="../Images/download.png" Style="{StaticResource InputFieldIcons}"/>
-                    <TextBlock Text="Get Source Link"/>
+                    <Image Source="../Images/download.png" Style="{StaticResource InputFieldIcons}" />
+                    <TextBlock Text="Get Source Link" />
                 </StackPanel>
             </Button>
         </StackPanel>

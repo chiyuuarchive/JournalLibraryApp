@@ -10,9 +10,8 @@ using System.Windows.Input;
 
 namespace JLWPF.MVVM.ViewModels
 {
-    class UserRegistrationViewModel : ViewModelBase
+    internal class UserRegistrationViewModel : ViewModelBase
     {
-
         public UserRegistrationViewModel(ICommand updateViewCommand)
         {
             UpdateViewCommand = updateViewCommand;
@@ -71,7 +70,7 @@ namespace JLWPF.MVVM.ViewModels
 
             InvalidInputFieldStatus validateResult = InvalidInputFieldStatus.None;
             InvalidAuthenticationStatus authenticateResult = InvalidAuthenticationStatus.None;
-            
+
             JLDatabaseConnector.RegisterUser(fields, out validateResult, out authenticateResult);
 
             // Handle validation results
@@ -80,19 +79,24 @@ namespace JLWPF.MVVM.ViewModels
                 case InvalidInputFieldStatus.IsAdmin:
                     ShowMessage(owner, "Invalid admin settings");
                     return;
+
                 case InvalidInputFieldStatus.FirstName:
                     ShowMessage(owner, "Invalid first name");
                     return;
+
                 case InvalidInputFieldStatus.LastName:
                     ShowMessage(owner, "Invalid last name");
                     return;
+
                 case InvalidInputFieldStatus.Email:
                     ShowMessage(owner, "Invalid email format");
                     return;
+
                 case InvalidInputFieldStatus.Password:
                     ShowMessage(owner, "Invalid password format");
                     return;
-                default: 
+
+                default:
                     break;
             }
 
@@ -103,12 +107,13 @@ namespace JLWPF.MVVM.ViewModels
                     ShowMessage(owner, "User registered. Wait for admin verification");
                     UpdateViewCommand?.Execute("LoginView");
                     break;
+
                 case InvalidAuthenticationStatus.EmailAlreadyRegistered:
                     ShowMessage(owner, "Email is already registered");
                     return;
+
                 default:
                     throw new Exception("Unexpected error from UserRegistrationViewModel.cs");
-
             }
         }
 
