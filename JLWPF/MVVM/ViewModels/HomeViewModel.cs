@@ -62,7 +62,7 @@ namespace JLWPF.MVVM.ViewModels
             }
 
             mw.User.LastTimeLoggedIn = DateTime.Now;
-            JLDatabaseConnector.UpdateUserLoginTime(mw.User);
+            JLDatabaseInterface.UpdateUserLoginTime(mw.User);
         }
 
         public void NavigateToLoginView(Window window)

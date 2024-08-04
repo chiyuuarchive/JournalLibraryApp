@@ -85,7 +85,7 @@ namespace JLWPF.MVVM.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/JLWPF;component/mvvm/views/loginview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/JLWPF;V1.0.0.0;component/mvvm/views/loginview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\Views\LoginView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

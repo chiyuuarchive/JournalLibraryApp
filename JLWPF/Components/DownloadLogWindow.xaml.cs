@@ -30,7 +30,7 @@ namespace JLWPF.Components
             for (int i = log.Count - 1; i >= 0; i--)
             {
                 if (counter == 0) break;
-                Article a = JLDatabaseConnector.GetArticleById(log[i].ArticleId);
+                Article a = JLDatabaseInterface.GetArticleById(log[i].ArticleId);
 
                 string formattedDate = log[i].DownloadDateTime.ToString("dd/MM/yyyy, HH:mm:ss");
                 string msg = $"Article: {a.ArticleTitle}\nDownloaded at {formattedDate}";

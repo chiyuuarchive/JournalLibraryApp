@@ -64,7 +64,7 @@ namespace JLWPF.MVVM.ViewModels
             InvalidInputFieldStatus validateResult = InvalidInputFieldStatus.None;
             InvalidAuthenticationStatus authenticateResult = InvalidAuthenticationStatus.None;
 
-            User? u = JLDatabaseConnector.Login(fields, out validateResult, out authenticateResult);
+            User? u = JLDatabaseInterface.Login(fields, out validateResult, out authenticateResult);
 
             // Handle validation results
             switch (validateResult)

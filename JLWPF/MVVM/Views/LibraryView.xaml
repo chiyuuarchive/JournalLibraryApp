@@ -39,6 +39,6 @@
         <DataGrid x:Name="ArticleDataGrid" Grid.Row="2" Margin="10 0" IsReadOnly="True" AutoGenerateColumns="True" SelectionChanged="ArticleDataGrid_SelectionChanged" />
 
         <components:UserLibraryPanel x:Name="UserLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsUserLibraryPanelVisible, Converter={StaticResource BoolToVis}}" />
-<components:AdminLibraryPanel x:Name="AdminLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsAdminLibraryPanelVisible, Converter={StaticResource BoolToVis}}" />
+        <components:AdminLibraryPanel x:Name="AdminLibrary" Grid.Row="4" HorizontalAlignment="Right" Margin="25 10" Visibility="{Binding IsAdminLibraryPanelVisible, Converter={StaticResource BoolToVis}}" />
     </Grid>
 </UserControl>

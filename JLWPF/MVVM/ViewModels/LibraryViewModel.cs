@@ -75,7 +75,7 @@ namespace JLWPF.MVVM.ViewModels
 
         private void UpdateTable()
         {
-            _articles = JLDatabaseConnector.FetchArticles().
+            _articles = JLDatabaseInterface.FetchArticles().
                 Select(a =>
                 {
                     UIArticle uiArticle = new();
@@ -109,7 +109,7 @@ namespace JLWPF.MVVM.ViewModels
                 throw new Exception("User not defined");
 
             // Get Article to display
-            Article a = JLDatabaseConnector.GetArticleByKey(articleKey);
+            Article a = JLDatabaseInterface.GetArticleByKey(articleKey);
 
             // Send the article to the dialog
             ViewArticleWindow w = new(a, mw.User);
@@ -134,7 +134,7 @@ namespace JLWPF.MVVM.ViewModels
             dialog.ShowDialog();
             if (dialog.Confirmed)
             {
-                JLDatabaseConnector.RemoveArticleByKey(articleKey);
+                JLDatabaseInterface.RemoveArticleByKey(articleKey);
                 UpdateTable();
             }
         }
@@ -143,7 +143,7 @@ namespace JLWPF.MVVM.ViewModels
         {
             Article? a = null;
             if (articleKey != string.Empty)
-                a = JLDatabaseConnector.GetArticleByKey(articleKey);
+                a = JLDatabaseInterface.GetArticleByKey(articleKey);
 
             ArticleDetailsWindow editArticle = new(window, this, a);
             editArticle.ShowDialog();
@@ -177,7 +177,7 @@ namespace JLWPF.MVVM.ViewModels
             InvalidInputFieldStatus validateResult = InvalidInputFieldStatus.None;
             InvalidAuthenticationStatus authenticateResult = InvalidAuthenticationStatus.None;
 
-            JLDatabaseConnector.UpdateArticleDetails(articleKey, fields, out validateResult, out authenticateResult);
+            JLDatabaseInterface.UpdateArticleDetails(articleKey, fields, out validateResult, out authenticateResult);
 
             // Handle validation results
             switch (validateResult)

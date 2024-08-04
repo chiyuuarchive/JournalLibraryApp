@@ -6,7 +6,7 @@ using JLValidatorAPI;
 
 namespace JLDatabase
 {
-    public static class JLDatabaseConnector
+    public static class JLDatabaseInterface
     {
         public static void RegisterUser(string[] fields, out InvalidInputFieldStatus validateResult, out InvalidAuthenticationStatus authenticateResult)
         {

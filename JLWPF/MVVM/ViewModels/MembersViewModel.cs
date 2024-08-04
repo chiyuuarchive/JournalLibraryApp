@@ -32,7 +32,7 @@ namespace JLWPF.MVVM.ViewModels
 
         private void UpdateTable()
         {
-            _users = JLDatabaseConnector.FetchUsers().
+            _users = JLDatabaseInterface.FetchUsers().
                 Select(u =>
             {
                 UIUser uiUser = new();
@@ -66,17 +66,17 @@ namespace JLWPF.MVVM.ViewModels
 
         public void ToggleVerifyStatus()
         {
-            User u = JLDatabaseConnector.GetUserByKey(userKey);
+            User u = JLDatabaseInterface.GetUserByKey(userKey);
             u.IsVerified = u.IsVerified ? false : true;
-            JLDatabaseConnector.UpdateVerifiedUser(userKey, u);
+            JLDatabaseInterface.UpdateVerifiedUser(userKey, u);
             UpdateTable();
         }
 
         public void ToggleAdminStatus()
         {
-            User u = JLDatabaseConnector.GetUserByKey(userKey);
+            User u = JLDatabaseInterface.GetUserByKey(userKey);
             u.IsAdmin = u.IsAdmin ? false : true;
-            JLDatabaseConnector.UpdateVerifiedUser(userKey, u);
+            JLDatabaseInterface.UpdateVerifiedUser(userKey, u);
             UpdateTable();
         }
 
@@ -96,7 +96,7 @@ namespace JLWPF.MVVM.ViewModels
             {
                 // Save key as it gets deleted when table is updated
                 string tempKey = userKey;
-                JLDatabaseConnector.RemoveUserByKey(userKey);
+                JLDatabaseInterface.RemoveUserByKey(userKey);
                 UpdateTable();
 
                 // If the logged in user is deleted log out immediatedly
@@ -113,7 +113,7 @@ namespace JLWPF.MVVM.ViewModels
                 throw new Exception("User in table not found");
 
             // Get log related to the user
-            List<ArticleDownloadLog> log = JLDatabaseConnector.GetLogByUserKey(userKey);
+            List<ArticleDownloadLog> log = JLDatabaseInterface.GetLogByUserKey(userKey);
 
             // Send the user to the dialog
             DownloadLogWindow dialog = new DownloadLogWindow(window, user, log);

@@ -61,7 +61,7 @@ namespace JLWPF.Components
                     _activeUser.Log = new List<ArticleDownloadLog>();
 
                 _activeUser.Log.Add(log);
-                JLDatabaseConnector.UpdateVerifiedUser(_activeUser.Email, _activeUser);
+                JLDatabaseInterface.UpdateVerifiedUser(_activeUser.Email, _activeUser);
             }
         }
 

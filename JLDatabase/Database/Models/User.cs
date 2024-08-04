@@ -7,7 +7,7 @@
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public string Password { get; set; } = null!;
-        public string Email { get; set; } = null!;    // Future works: A boolean for email
+        public string Email { get; set; } = null!;
         public DateTime LastTimeLoggedIn { get; set; }
         public ICollection<ArticleDownloadLog>? Log { get; set; }
 

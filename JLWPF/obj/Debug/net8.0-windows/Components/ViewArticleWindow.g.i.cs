@@ -133,7 +133,7 @@ namespace JLWPF.Components {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/JLWPF;component/components/viewarticlewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/JLWPF;V1.0.0.0;component/components/viewarticlewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Components\ViewArticleWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
