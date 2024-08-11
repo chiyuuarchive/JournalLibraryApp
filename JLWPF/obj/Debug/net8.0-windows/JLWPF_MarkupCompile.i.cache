@@ -16,5 +16,5 @@ C:\Users\chiyu\OneDrive\Desktop\Programming\JournalLibraryApp\JLWPF\App.xaml
 2181213386149
 Components\AdminLibraryPanel.xaml;Components\AdminNavigationPanel.xaml;Components\ArticleDetailsWindow.xaml;Components\DownloadLogWindow.xaml;Components\Header.xaml;Components\MessageWindow.xaml;Components\UserLibraryPanel.xaml;Components\UserNavigationPanel.xaml;Components\ViewArticleWindow.xaml;Components\YesNoWindow.xaml;MainWindow.xaml;MVVM\Views\HomeView.xaml;MVVM\Views\LibraryView.xaml;MVVM\Views\LoginView.xaml;MVVM\Views\MembersView.xaml;MVVM\Views\MyAccountView.xaml;MVVM\Views\UserRegistrationView.xaml;Styles\Styles.xaml;
 
-True
+False
 

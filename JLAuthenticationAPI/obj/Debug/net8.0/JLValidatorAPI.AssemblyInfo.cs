@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JLValidatorAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9bae21cb170e0c5d996a61779187ccba7e6a307")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97728758a3ce053c06267f0b77f16b9a3cfe3f2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("JLValidatorAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JLValidatorAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
